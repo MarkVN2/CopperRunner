@@ -3,15 +3,21 @@ using UnityEngine;
 
 namespace CopperRunner.Gameplay.Upgrade
 {
+	[CreateAssetMenu(
+		fileName = "NewUpgrade",
+		menuName = "ScriptableObjects/Collectables/Upgrade"
+	)]
 	public class UpgradeData : CollectableData
 	{
 		private int currentRank = 1;
 		[Range(1,5)]
 		public int maxRank;
-		public List<UpgradeAction> upgrades;
+		public int price;
+		[SerializeReference] // FIX the list to be able to add the Upgrade Actions
+		public List<UpgradeAction> upgradesActions;
 		public void ActivateUpgrades()
 		{
-			foreach (UpgradeAction action in upgrades)
+			foreach (UpgradeAction action in upgradesActions)
 			{
 				action.ActivateUpgrade(this);
 			}
@@ -20,6 +26,10 @@ namespace CopperRunner.Gameplay.Upgrade
 		{
 			if (currentRank < maxRank)
 			currentRank += 1;
+		}
+		public void IncreasePrice()
+		{
+
 		}
 
 	}

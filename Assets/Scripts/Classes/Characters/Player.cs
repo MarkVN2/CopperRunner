@@ -9,6 +9,8 @@ public class Player : Actor
     private ItemData equippedItem;
     private List<UpgradeData> upgrades;
 
+	private float weight = 0;
+
     void Start()
     {
         

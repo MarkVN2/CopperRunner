@@ -1,17 +1,19 @@
 using UnityEngine;
+using UnityEngine.Localization;
+
 public class CollectableData : ScriptableObject
 {
-    protected string collectableName;
-    protected string description;
-    protected Sprite icon;
-    protected Rarity rarity;
+    public LocalizedString collectableName;
+	public LocalizedString description;
+	public Sprite icon;
+	public Rarity rarity;
 
-    public string GetName()
+    public LocalizedString GetName()
     {
         return collectableName;
     }
     
-    public string GetDescription()
+    public LocalizedString GetDescription()
     {
         return description;
     }

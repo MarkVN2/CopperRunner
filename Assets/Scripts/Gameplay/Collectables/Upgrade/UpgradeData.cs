@@ -7,6 +7,7 @@ namespace CopperRunner.Gameplay.Upgrade
 		fileName = "NewUpgrade",
 		menuName = "ScriptableObjects/Collectables/Upgrade"
 	)]
+
 	public class UpgradeData : CollectableData
 	{
 		private int currentRank = 1;

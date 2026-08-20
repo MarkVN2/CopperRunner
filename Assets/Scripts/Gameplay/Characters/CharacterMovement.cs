@@ -1,14 +1,10 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))] 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Collider2D))]
 public class CharacterMovement : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
+    void FixedUpdate()
     {
         
     }

@@ -8,6 +8,8 @@ namespace CopperRunner.Gameplay.Item
 	)]
 	public class ItemData : CollectableData
 	{
+		public int price;
+
 		[SerializeReference]
 		public List<ItemAction> actions = new();
 

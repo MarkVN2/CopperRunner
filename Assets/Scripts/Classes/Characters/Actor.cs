@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    protected float moveSpeed;
-    protected float jumpForce;
+    [SerializeField]
+    protected float moveSpeed = 5f;
+
+    [SerializeField]
+    protected float jumpForce = 7f;
 
     public void SetMoveSpeed(float newSpeed)
     {

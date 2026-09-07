@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88f854678d9165e47ba0eccb3fd1fe72, type: 3}
-  m_Name: Zone00
+  m_Name: _Zone00
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCollection

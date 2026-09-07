@@ -15,7 +15,7 @@ namespace CopperRunner.Gameplay.Upgrade
 		public int maxRank;
 		public int price;
 		[SerializeReference] // FIX the list to be able to add the Upgrade Actions
-		public List<UpgradeAction> upgradesActions;
+		public List<UpgradeAction> upgradesActions = new List<UpgradeAction>();
 		public void ActivateUpgrades()
 		{
 			foreach (UpgradeAction action in upgradesActions)
@@ -27,6 +27,10 @@ namespace CopperRunner.Gameplay.Upgrade
 		{
 			if (currentRank < maxRank)
 			currentRank += 1;
+		}
+		public bool CanAddRank()
+		{
+			return currentRank < maxRank;
 		}
 		public void IncreasePrice()
 		{

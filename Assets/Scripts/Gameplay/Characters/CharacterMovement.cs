@@ -7,6 +7,19 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Actor))]
 public class CharacterMovement : MonoBehaviour
 {
+    [Header("Runner")]
+    [SerializeField]
+    private bool autoRun = true;
+
+    [SerializeField]
+    [Min(0f)]
+    private float forwardSpeed = 5f;
+
+    [Header("Air Control")]
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float airControl = 0.5f;
+
     private Rigidbody2D body;
     private Actor actor;
     private InputSystem_Actions input;
@@ -50,7 +63,21 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 velocity = body.linearVelocity;
-        velocity.x = moveAction.ReadValue<Vector2>().x * actor.GetMoveSpeed();
+        float horizontalInput = moveAction.ReadValue<Vector2>().x;
+        float targetHorizontalSpeed = autoRun
+            ? Mathf.Max(forwardSpeed, actor.GetMoveSpeed())
+            : horizontalInput * actor.GetMoveSpeed();
+
+        if (autoRun && !isGrounded)
+        {
+            float airControlTarget = Mathf.Max(
+                0f,
+                forwardSpeed + horizontalInput * actor.GetMoveSpeed()
+            );
+            targetHorizontalSpeed = Mathf.Lerp(velocity.x, airControlTarget, airControl);
+        }
+
+        velocity.x = targetHorizontalSpeed;
 
         if (jumpRequested)
         {

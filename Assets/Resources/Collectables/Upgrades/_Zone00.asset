@@ -12,3 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f854678d9165e47ba0eccb3fd1fe72, type: 3}
   m_Name: _Zone00
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCollection
+  regionID: 0
+  upgrades:
+  - {fileID: 11400000, guid: 59bf619528718a54ea8c6228c3a1cb5e, type: 2}
+  - {fileID: 11400000, guid: deb1a94f873651448a342e2c0d443663, type: 2}
+  - {fileID: 11400000, guid: 824f78c56fba23445942b86594449343, type: 2}
+  - {fileID: 11400000, guid: 7582e2fb553ec2e45926a5e544c43dfb, type: 2}
+  - {fileID: 11400000, guid: ce8666ec8f2a75542bae2a3d0700e3cf, type: 2}

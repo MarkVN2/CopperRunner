@@ -1,0 +1,2170 @@
+fileFormatVersion: 2
+guid: 6f31b8096dccda649a8bf0ffdc7be0a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3790080344440051554
+    second: atlas-stage-nassir_no_bg (1)_0
+  - first:
+      213: 7982074705010901701
+    second: atlas-stage-nassir_no_bg (1)_1
+  - first:
+      213: 6595867953265886577
+    second: atlas-stage-nassir_no_bg (1)_2
+  - first:
+      213: -3395186895783202560
+    second: atlas-stage-nassir_no_bg (1)_3
+  - first:
+      213: 2075627953789949661
+    second: atlas-stage-nassir_no_bg (1)_4
+  - first:
+      213: -1271343419567651735
+    second: atlas-stage-nassir_no_bg (1)_5
+  - first:
+      213: -6708255278967752572
+    second: atlas-stage-nassir_no_bg (1)_6
+  - first:
+      213: -775287041101575642
+    second: atlas-stage-nassir_no_bg (1)_7
+  - first:
+      213: -1048173762879535570
+    second: atlas-stage-nassir_no_bg (1)_8
+  - first:
+      213: 7014139077141427974
+    second: atlas-stage-nassir_no_bg (1)_9
+  - first:
+      213: -2198810631442184303
+    second: atlas-stage-nassir_no_bg (1)_10
+  - first:
+      213: 8690693922416297707
+    second: atlas-stage-nassir_no_bg (1)_11
+  - first:
+      213: -1774812976009577915
+    second: atlas-stage-nassir_no_bg (1)_12
+  - first:
+      213: 7943961622550048411
+    second: atlas-stage-nassir_no_bg (1)_13
+  - first:
+      213: 8556026061299757457
+    second: atlas-stage-nassir_no_bg (1)_14
+  - first:
+      213: 5255725661989006224
+    second: atlas-stage-nassir_no_bg (1)_15
+  - first:
+      213: 3187185849977336734
+    second: atlas-stage-nassir_no_bg (1)_16
+  - first:
+      213: -8184741560322567748
+    second: atlas-stage-nassir_no_bg (1)_17
+  - first:
+      213: -8693250642096031955
+    second: atlas-stage-nassir_no_bg (1)_18
+  - first:
+      213: 3597222867511994328
+    second: atlas-stage-nassir_no_bg (1)_19
+  - first:
+      213: 2645784322955302421
+    second: atlas-stage-nassir_no_bg (1)_20
+  - first:
+      213: -2848833132295791933
+    second: atlas-stage-nassir_no_bg (1)_21
+  - first:
+      213: 8040154505476307166
+    second: atlas-stage-nassir_no_bg (1)_22
+  - first:
+      213: 7003909533607954609
+    second: atlas-stage-nassir_no_bg (1)_23
+  - first:
+      213: 6898446361382833110
+    second: atlas-stage-nassir_no_bg (1)_24
+  - first:
+      213: 6056911419195743440
+    second: atlas-stage-nassir_no_bg (1)_25
+  - first:
+      213: -731180357618704620
+    second: atlas-stage-nassir_no_bg (1)_26
+  - first:
+      213: -7701228780703097718
+    second: atlas-stage-nassir_no_bg (1)_27
+  - first:
+      213: -2334514639604630547
+    second: atlas-stage-nassir_no_bg (1)_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_3
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 2250
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001f7cab18fd1e0d0800000000000000
+      internalID: -3395186895783202560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 2250
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 964c32155e74b5ee0800000000000000
+      internalID: -1271343419567651735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_6
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 2250
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488fc7a9d5d77e2a0800000000000000
+      internalID: -6708255278967752572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_7
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2250
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a4d243b80ad35f0800000000000000
+      internalID: -775287041101575642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_11
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 2100
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be60541c31c8b9870800000000000000
+      internalID: 8690693922416297707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_12
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 2100
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54af13e60099e57e0800000000000000
+      internalID: -1774812976009577915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1950
+        width: 450
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e6e6db10f9e3e60800000000000000
+      internalID: 7943961622550048411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_23
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1950
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b88cadcc92e23160800000000000000
+      internalID: 7003909533607954609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_32
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1800
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eb4148ac4bc91b4587575643c374c70
+      internalID: -199636048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_33
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1800
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a65cea354d5aa42ac91db2c43c6c06
+      internalID: -1274402686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_37
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1800
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d0c0e4013085e4daad2d328d99380a
+      internalID: 647899930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1650
+        width: 450
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2898ba87bda024d80b9ccbcbd11c9a
+      internalID: 1241087825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_41
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1650
+        width: 750
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79ba10c3a50c33741a7a02610a3eae04
+      internalID: -909178036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_46
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb5b6be321a48a499af707069032c6c
+      internalID: -1232399867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_47
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ba0d436d67e47847ba97639cbecaf8e
+      internalID: -1019727940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_48
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1650
+        width: 150
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250d106b2535eb1448cf885a3d22706b
+      internalID: 809492799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_49
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1651
+        width: 150
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098fc28b55957f34ba697e1cc605dea9
+      internalID: 280765198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_50
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4c68b7b1fc399144a03e0d679e8421f
+      internalID: -1187691520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_54
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a8cdd2dcfce4214baa42b37b293f553
+      internalID: 57390741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_55
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb2696c434614f44a34d3650491cd65
+      internalID: -529648766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_56
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06c1776638a0a145989c7e6c7d16a9a
+      internalID: -1771176649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_63
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9be0f65d9a7c9489ebc02fd54f2b48
+      internalID: 1705727459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_67
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe2c2308439b914eb85ca306ab9188d
+      internalID: -2117901151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_68
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fe6cc081c3a014f819a48eb0fef360
+      internalID: -189339332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_69
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7fa8061bb2b6c34da0982df6768deb6
+      internalID: 34886071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_75
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc2c63b9de3f8d4a9ecc538df7318f2
+      internalID: -1017439913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_79
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6d7031d60a12c499138a31e14cefaf
+      internalID: 2075467809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_80
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8ac2180fa51ad47b443f0a49c412b2
+      internalID: -446336312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_81
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c047c16ac73fbec4b843cdf25adffc3c
+      internalID: 1584630218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_87
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cbdf8e5a6489048843d925b941cbf2
+      internalID: -538984681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_88
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 450
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01620a79de8d12841b608fdd5fca6a7c
+      internalID: -1503406851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_91
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9a278cf994df949b978ad51decd824
+      internalID: 741056282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_92
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26590f6e1628ee0498f3df89a5e07269
+      internalID: 1514019460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_93
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16bfb8daf96b4344186cc96f9c36c687
+      internalID: -408260346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_94
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1050
+        width: 300
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ed6bb43234ef324996e9bdc325c3f30
+      internalID: 1795110881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_96
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1050
+        width: 150
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ebb41144fec2cb42a9124e4ffd7f9f4
+      internalID: -635125595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_97
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1050
+        width: 300
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf4a1c4ea123f04395352b0330f932d
+      internalID: 1315334666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_99
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10fdbf132a11472438310152ca109437
+      internalID: -677206196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_104
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 900
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c71d7ee1af05c4c8fff5e1471836e6
+      internalID: 1046714906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_109
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 900
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5112221172515ed4c979defeda346268
+      internalID: 273874839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_110
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 900
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91afd509be04d548996ede1c3481c9d
+      internalID: 1284728585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_111
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 900
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be99fae3bc99a134682465264c458346
+      internalID: -832901778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_116
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 750
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967fe4ff6d38c65448230af63f4c7c71
+      internalID: -593839436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_121
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 750
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b067aeffeaa5394698e1b4dc35307fe
+      internalID: 946882406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_122
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 750
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a122cceaaa50a4e41ac64dfc8af470e0
+      internalID: 1938918605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_123
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8fbd4179df72c458de640cdfe014ca
+      internalID: 1732023570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_127
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5de5c33751d8045a89cac87a1da1b4
+      internalID: -1314166207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_128
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 600
+        width: 300
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be3da15f07303d141848c0e39bbc0f63
+      internalID: -1585025581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_130
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 600
+        width: 300
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e91a9c7af0d1a047ba0b0d987ae5724
+      internalID: 1921771284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_132
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73717bdcdfe2c8f488c692523a9fc905
+      internalID: 491159453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_133
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ab2f272230f064da7f7ae9abd6d8c8
+      internalID: 1130327973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_138
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8761c91dd816a94e899395b4d011f95
+      internalID: 718423996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_139
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598912099735637488b7a7eb49871906
+      internalID: -2132766892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_140
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f187c06ed5ef05d459bedabec88ab31e
+      internalID: -97879541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_141
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9275c44d5e9dfa40b8c31aa7273dd02
+      internalID: 1171254852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_142
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c24969f71cbb5524686129506534b71e
+      internalID: 295390597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_143
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17acae5809a4b8041a43dbec243945c1
+      internalID: 646809994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_152
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d171106a79537642896e1c333aa6861
+      internalID: -32301849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_153
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5269d1f52ab54e4ba13f14b7c73626c
+      internalID: 1528056961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_154
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 300
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1147441cdde003847939ede4c7d06cb2
+      internalID: 573557207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_156
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8f5d7587d01ba438bf6018727c331b
+      internalID: 582214977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_157
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e30b9960c82da4d812065164add3fd
+      internalID: 1341816784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_158
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 300
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f14e89212e452f4f9ac88d8a7220535
+      internalID: 810479405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_159
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 152
+        width: 600
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e75b2a9c8bd08488bd80b575ea9663
+      internalID: 1427669097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_163
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 150
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936e2028c2909524d8db4efaefcced10
+      internalID: -2061312346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_165
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 150
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67e3d83b448aab442b3f4ad9939e9013
+      internalID: -1354637831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_167
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da57b3fdb85215847a07f003f505a8ba
+      internalID: -1170614906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_168
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c21874d8ee27e4a9c21d30b42b68f1
+      internalID: 1149886973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_169
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d295995932861e34aadc67acd8c0c969
+      internalID: -1316501467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_170
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef144492655a6541aa4a8c314db1eab
+      internalID: -1792891115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_171
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3606012bacffa419c525707e556e76
+      internalID: 899644570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_172
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 150
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8e4879303e43249bb657d89f543130
+      internalID: -1711696310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_173
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb1e489f805e1a447a518e72f064e27d
+      internalID: 919802615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_174
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b03fa04a6d19249bd59cee29b86dc5
+      internalID: 59374712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_175
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d0ff90bc0fcdc4ba16bfe615a01823
+      internalID: 2079437130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_176
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a29209c3e21d72438541eff2de09847
+      internalID: 1546405527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_177
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04670a40f113c2a46a69ece26ffc7726
+      internalID: 1286824711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_178
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc9d049cf192dd241b939792dfb27455
+      internalID: 737982974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_179
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c6edbc68b8ca749a9841a9fb7eb9ec
+      internalID: 595326065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_180
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864d2ea8484461e4790c5b8dffa64933
+      internalID: 266544432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlas-stage-nassir_no_bg (1)_181
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 0
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f971b74515cef21488b9ab182d156823
+      internalID: -701864712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 024c8215aab710a439ef3624f5ac7167
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":150.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      atlas-stage-nassir_no_bg (1)_0: 3790080344440051554
+      atlas-stage-nassir_no_bg (1)_1: 7982074705010901701
+      atlas-stage-nassir_no_bg (1)_10: -2198810631442184303
+      atlas-stage-nassir_no_bg (1)_100: 141387456
+      atlas-stage-nassir_no_bg (1)_101: -996641788
+      atlas-stage-nassir_no_bg (1)_102: -879122783
+      atlas-stage-nassir_no_bg (1)_103: 240852767
+      atlas-stage-nassir_no_bg (1)_104: 1046714906
+      atlas-stage-nassir_no_bg (1)_105: -2143164288
+      atlas-stage-nassir_no_bg (1)_106: 57585917
+      atlas-stage-nassir_no_bg (1)_107: 2122947950
+      atlas-stage-nassir_no_bg (1)_108: -484159968
+      atlas-stage-nassir_no_bg (1)_109: 273874839
+      atlas-stage-nassir_no_bg (1)_11: 8690693922416297707
+      atlas-stage-nassir_no_bg (1)_110: 1284728585
+      atlas-stage-nassir_no_bg (1)_111: -832901778
+      atlas-stage-nassir_no_bg (1)_112: -666463426
+      atlas-stage-nassir_no_bg (1)_113: 1078988212
+      atlas-stage-nassir_no_bg (1)_114: 949578452
+      atlas-stage-nassir_no_bg (1)_115: -363035527
+      atlas-stage-nassir_no_bg (1)_116: -593839436
+      atlas-stage-nassir_no_bg (1)_117: -1636618720
+      atlas-stage-nassir_no_bg (1)_118: 1867245850
+      atlas-stage-nassir_no_bg (1)_119: -1226241130
+      atlas-stage-nassir_no_bg (1)_12: -1774812976009577915
+      atlas-stage-nassir_no_bg (1)_120: 1190860479
+      atlas-stage-nassir_no_bg (1)_121: 946882406
+      atlas-stage-nassir_no_bg (1)_122: 1938918605
+      atlas-stage-nassir_no_bg (1)_123: 1732023570
+      atlas-stage-nassir_no_bg (1)_124: -807479487
+      atlas-stage-nassir_no_bg (1)_125: 1169217974
+      atlas-stage-nassir_no_bg (1)_126: -580283060
+      atlas-stage-nassir_no_bg (1)_127: -1314166207
+      atlas-stage-nassir_no_bg (1)_128: -1585025581
+      atlas-stage-nassir_no_bg (1)_129: -849016903
+      atlas-stage-nassir_no_bg (1)_13: 7943961622550048411
+      atlas-stage-nassir_no_bg (1)_130: 1921771284
+      atlas-stage-nassir_no_bg (1)_131: 866127591
+      atlas-stage-nassir_no_bg (1)_132: 491159453
+      atlas-stage-nassir_no_bg (1)_133: 1130327973
+      atlas-stage-nassir_no_bg (1)_134: -674308347
+      atlas-stage-nassir_no_bg (1)_135: 103849843
+      atlas-stage-nassir_no_bg (1)_136: 270384264
+      atlas-stage-nassir_no_bg (1)_137: -1718537049
+      atlas-stage-nassir_no_bg (1)_138: 718423996
+      atlas-stage-nassir_no_bg (1)_139: -2132766892
+      atlas-stage-nassir_no_bg (1)_14: 8556026061299757457
+      atlas-stage-nassir_no_bg (1)_140: -97879541
+      atlas-stage-nassir_no_bg (1)_141: 1171254852
+      atlas-stage-nassir_no_bg (1)_142: 295390597
+      atlas-stage-nassir_no_bg (1)_143: 646809994
+      atlas-stage-nassir_no_bg (1)_144: 805658130
+      atlas-stage-nassir_no_bg (1)_145: 1185166346
+      atlas-stage-nassir_no_bg (1)_146: -1808681502
+      atlas-stage-nassir_no_bg (1)_147: -1497804648
+      atlas-stage-nassir_no_bg (1)_148: -2077432308
+      atlas-stage-nassir_no_bg (1)_149: -1760286376
+      atlas-stage-nassir_no_bg (1)_15: 5255725661989006224
+      atlas-stage-nassir_no_bg (1)_150: 1306747303
+      atlas-stage-nassir_no_bg (1)_151: 1151787919
+      atlas-stage-nassir_no_bg (1)_152: -32301849
+      atlas-stage-nassir_no_bg (1)_153: 1528056961
+      atlas-stage-nassir_no_bg (1)_154: 573557207
+      atlas-stage-nassir_no_bg (1)_155: -1539754574
+      atlas-stage-nassir_no_bg (1)_156: 582214977
+      atlas-stage-nassir_no_bg (1)_157: 1341816784
+      atlas-stage-nassir_no_bg (1)_158: 810479405
+      atlas-stage-nassir_no_bg (1)_159: 1427669097
+      atlas-stage-nassir_no_bg (1)_16: 3187185849977336734
+      atlas-stage-nassir_no_bg (1)_160: -1527587418
+      atlas-stage-nassir_no_bg (1)_161: 513509401
+      atlas-stage-nassir_no_bg (1)_162: -1326109562
+      atlas-stage-nassir_no_bg (1)_163: -2061312346
+      atlas-stage-nassir_no_bg (1)_164: 324950260
+      atlas-stage-nassir_no_bg (1)_165: -1354637831
+      atlas-stage-nassir_no_bg (1)_166: 1700724420
+      atlas-stage-nassir_no_bg (1)_167: -1170614906
+      atlas-stage-nassir_no_bg (1)_168: 1149886973
+      atlas-stage-nassir_no_bg (1)_169: -1316501467
+      atlas-stage-nassir_no_bg (1)_17: -8184741560322567748
+      atlas-stage-nassir_no_bg (1)_170: -1792891115
+      atlas-stage-nassir_no_bg (1)_171: 899644570
+      atlas-stage-nassir_no_bg (1)_172: -1711696310
+      atlas-stage-nassir_no_bg (1)_173: 919802615
+      atlas-stage-nassir_no_bg (1)_174: 59374712
+      atlas-stage-nassir_no_bg (1)_175: 2079437130
+      atlas-stage-nassir_no_bg (1)_176: 1546405527
+      atlas-stage-nassir_no_bg (1)_177: 1286824711
+      atlas-stage-nassir_no_bg (1)_178: 737982974
+      atlas-stage-nassir_no_bg (1)_179: 595326065
+      atlas-stage-nassir_no_bg (1)_18: -8693250642096031955
+      atlas-stage-nassir_no_bg (1)_180: 266544432
+      atlas-stage-nassir_no_bg (1)_181: -701864712
+      atlas-stage-nassir_no_bg (1)_19: 3597222867511994328
+      atlas-stage-nassir_no_bg (1)_2: 6595867953265886577
+      atlas-stage-nassir_no_bg (1)_20: 2645784322955302421
+      atlas-stage-nassir_no_bg (1)_21: -2848833132295791933
+      atlas-stage-nassir_no_bg (1)_22: 8040154505476307166
+      atlas-stage-nassir_no_bg (1)_23: 7003909533607954609
+      atlas-stage-nassir_no_bg (1)_24: 6898446361382833110
+      atlas-stage-nassir_no_bg (1)_25: 6056911419195743440
+      atlas-stage-nassir_no_bg (1)_26: -731180357618704620
+      atlas-stage-nassir_no_bg (1)_27: -7701228780703097718
+      atlas-stage-nassir_no_bg (1)_28: -2334514639604630547
+      atlas-stage-nassir_no_bg (1)_29: -1002669202
+      atlas-stage-nassir_no_bg (1)_3: -3395186895783202560
+      atlas-stage-nassir_no_bg (1)_30: 1315856938
+      atlas-stage-nassir_no_bg (1)_31: 1190487546
+      atlas-stage-nassir_no_bg (1)_32: -199636048
+      atlas-stage-nassir_no_bg (1)_33: -1274402686
+      atlas-stage-nassir_no_bg (1)_34: 29418921
+      atlas-stage-nassir_no_bg (1)_35: 277845630
+      atlas-stage-nassir_no_bg (1)_36: -1014071599
+      atlas-stage-nassir_no_bg (1)_37: 647899930
+      atlas-stage-nassir_no_bg (1)_38: 1241087825
+      atlas-stage-nassir_no_bg (1)_39: -314867764
+      atlas-stage-nassir_no_bg (1)_4: 2075627953789949661
+      atlas-stage-nassir_no_bg (1)_40: 1478493370
+      atlas-stage-nassir_no_bg (1)_41: -909178036
+      atlas-stage-nassir_no_bg (1)_42: 1149321268
+      atlas-stage-nassir_no_bg (1)_43: -1411451639
+      atlas-stage-nassir_no_bg (1)_44: -438717198
+      atlas-stage-nassir_no_bg (1)_45: 585192
+      atlas-stage-nassir_no_bg (1)_46: -1232399867
+      atlas-stage-nassir_no_bg (1)_47: -1019727940
+      atlas-stage-nassir_no_bg (1)_48: 809492799
+      atlas-stage-nassir_no_bg (1)_49: 280765198
+      atlas-stage-nassir_no_bg (1)_5: -1271343419567651735
+      atlas-stage-nassir_no_bg (1)_50: -1187691520
+      atlas-stage-nassir_no_bg (1)_51: 492370841
+      atlas-stage-nassir_no_bg (1)_52: -230434849
+      atlas-stage-nassir_no_bg (1)_53: -725645840
+      atlas-stage-nassir_no_bg (1)_54: 57390741
+      atlas-stage-nassir_no_bg (1)_55: -529648766
+      atlas-stage-nassir_no_bg (1)_56: -1771176649
+      atlas-stage-nassir_no_bg (1)_57: -583438972
+      atlas-stage-nassir_no_bg (1)_58: -1542951369
+      atlas-stage-nassir_no_bg (1)_59: 469998738
+      atlas-stage-nassir_no_bg (1)_6: -6708255278967752572
+      atlas-stage-nassir_no_bg (1)_60: -372663714
+      atlas-stage-nassir_no_bg (1)_61: -1268379460
+      atlas-stage-nassir_no_bg (1)_62: -1681210866
+      atlas-stage-nassir_no_bg (1)_63: 1705727459
+      atlas-stage-nassir_no_bg (1)_64: 523768797
+      atlas-stage-nassir_no_bg (1)_65: 200432310
+      atlas-stage-nassir_no_bg (1)_66: -1212485483
+      atlas-stage-nassir_no_bg (1)_67: -2117901151
+      atlas-stage-nassir_no_bg (1)_68: -189339332
+      atlas-stage-nassir_no_bg (1)_69: 34886071
+      atlas-stage-nassir_no_bg (1)_7: -775287041101575642
+      atlas-stage-nassir_no_bg (1)_70: 1750838862
+      atlas-stage-nassir_no_bg (1)_71: 125682668
+      atlas-stage-nassir_no_bg (1)_72: 736286511
+      atlas-stage-nassir_no_bg (1)_73: 93300460
+      atlas-stage-nassir_no_bg (1)_74: -1558346885
+      atlas-stage-nassir_no_bg (1)_75: -1017439913
+      atlas-stage-nassir_no_bg (1)_76: 2056580428
+      atlas-stage-nassir_no_bg (1)_77: 1448478427
+      atlas-stage-nassir_no_bg (1)_78: -1758738262
+      atlas-stage-nassir_no_bg (1)_79: 2075467809
+      atlas-stage-nassir_no_bg (1)_8: -1048173762879535570
+      atlas-stage-nassir_no_bg (1)_80: -446336312
+      atlas-stage-nassir_no_bg (1)_81: 1584630218
+      atlas-stage-nassir_no_bg (1)_82: -460752654
+      atlas-stage-nassir_no_bg (1)_83: 1221681684
+      atlas-stage-nassir_no_bg (1)_84: 1197523030
+      atlas-stage-nassir_no_bg (1)_85: -239334459
+      atlas-stage-nassir_no_bg (1)_86: 2040827014
+      atlas-stage-nassir_no_bg (1)_87: -538984681
+      atlas-stage-nassir_no_bg (1)_88: -1503406851
+      atlas-stage-nassir_no_bg (1)_89: -1038484774
+      atlas-stage-nassir_no_bg (1)_9: 7014139077141427974
+      atlas-stage-nassir_no_bg (1)_90: -665742602
+      atlas-stage-nassir_no_bg (1)_91: 741056282
+      atlas-stage-nassir_no_bg (1)_92: 1514019460
+      atlas-stage-nassir_no_bg (1)_93: -408260346
+      atlas-stage-nassir_no_bg (1)_94: 1795110881
+      atlas-stage-nassir_no_bg (1)_95: 272232586
+      atlas-stage-nassir_no_bg (1)_96: -635125595
+      atlas-stage-nassir_no_bg (1)_97: 1315334666
+      atlas-stage-nassir_no_bg (1)_98: 1881045003
+      atlas-stage-nassir_no_bg (1)_99: -677206196
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

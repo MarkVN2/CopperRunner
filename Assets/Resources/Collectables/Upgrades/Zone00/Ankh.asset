@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CopperRunner.Gameplay.Upgrade.UpgradeData
   collectableName:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:0386b5047e9cbb44686b5d5cf8e4208e
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 70570283008
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

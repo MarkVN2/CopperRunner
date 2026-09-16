@@ -15,6 +15,9 @@ public class CharacterMovement : MonoBehaviour
     [Min(0f)]
     private float forwardSpeed = 5f;
 
+    [SerializeField]
+    private bool horizontalMovementEnabled = true;
+
     [Header("Air Control")]
     [SerializeField]
     [Range(0f, 1f)]
@@ -33,6 +36,8 @@ public class CharacterMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         actor = GetComponent<Actor>();
+        if (FindFirstObjectByType<MapManager>() != null)
+            horizontalMovementEnabled = false;
 
         input = new InputSystem_Actions();
         moveAction = input.Player.Move;
@@ -64,11 +69,15 @@ public class CharacterMovement : MonoBehaviour
     {
         Vector2 velocity = body.linearVelocity;
         float horizontalInput = moveAction.ReadValue<Vector2>().x;
-        float targetHorizontalSpeed = autoRun
-            ? Mathf.Max(forwardSpeed, actor.GetMoveSpeed())
-            : horizontalInput * actor.GetMoveSpeed();
+        float targetHorizontalSpeed = 0f;
+        if (horizontalMovementEnabled)
+        {
+            targetHorizontalSpeed = autoRun
+                ? Mathf.Max(forwardSpeed, actor.GetMoveSpeed())
+                : horizontalInput * actor.GetMoveSpeed();
+        }
 
-        if (autoRun && !isGrounded)
+        if (horizontalMovementEnabled && autoRun && !isGrounded)
         {
             float airControlTarget = Mathf.Max(
                 0f,

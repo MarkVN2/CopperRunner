@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
+// [RequireComponent(typeof(Rigidbody2D))]
 public class HordeFollower : MonoBehaviour
 {
     [SerializeField]
@@ -11,13 +11,16 @@ public class HordeFollower : MonoBehaviour
     private float followSpeed = 3f;
 
     [SerializeField]
+    private bool followHorizontalPosition;
+
+    [SerializeField]
     private bool followVerticalPosition;
 
-    private Rigidbody2D body;
+    // private Rigidbody2D body;
 
     private void Awake()
     {
-        body = GetComponent<Rigidbody2D>();
+        // body = GetComponent<Rigidbody2D>();
     }
 
     private void FixedUpdate()
@@ -25,21 +28,44 @@ public class HordeFollower : MonoBehaviour
         if (target == null)
             return;
 
-        Vector2 targetPosition = body.position;
-        targetPosition.x = Mathf.MoveTowards(
-            targetPosition.x,
-            target.position.x,
-            followSpeed * Time.fixedDeltaTime
-        );
+        // Vector2 targetPosition = body.position;
+        // if (followHorizontalPosition)
+        // {
+        //     targetPosition.x = Mathf.MoveTowards(
+        //         targetPosition.x,
+        //         target.position.x,
+        //         followSpeed * Time.fixedDeltaTime
+        //     );
+        // }
 
-        if (followVerticalPosition)
-            targetPosition.y = Mathf.MoveTowards(
-                targetPosition.y,
-                target.position.y,
-                followSpeed * Time.fixedDeltaTime
-            );
+        // if (followVerticalPosition)
+        //     targetPosition.y = Mathf.MoveTowards(
+        //         targetPosition.y,
+        //         target.position.y,
+        //         followSpeed * Time.fixedDeltaTime
+        //     );
 
-        body.MovePosition(targetPosition);
+        // body.MovePosition(targetPosition);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        KillPlayer(collision.collider);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        KillPlayer(other);
+    }
+
+    private void KillPlayer(Collider2D collider)
+    {
+        if (collider == null)
+            return;
+
+        Player player = collider.GetComponentInParent<Player>();
+        if (player != null)
+            player.Die();
     }
 
     public void SetTarget(Transform newTarget)

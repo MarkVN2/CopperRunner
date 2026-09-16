@@ -1,0 +1,1166 @@
+fileFormatVersion: 2
+guid: a25170244bbacee46b7a44c8f3ac6a52
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1421713728917792107
+    second: Huds Ea Nasir_150px x 150px(1)_0
+  - first:
+      213: -5817697719982396801
+    second: Huds Ea Nasir_150px x 150px(1)_1
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1650
+        width: 600
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59a1f8765ee054ce0800000000000000
+      internalID: -1421713728917792107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_4
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c743aafde842eb4db24d05c5a7169ed
+      internalID: -195848535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_5
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038a7a281b711c344bd0d2f7c544456a
+      internalID: 137915257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_6
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eafc04dbf082c446acfddec076b512e
+      internalID: 53856251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_9
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1650
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45d735251a4dc94d98185238de6651a
+      internalID: -72162906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc3d67ea93ad9244b9d964d791beaa4
+      internalID: 1272052308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_16
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98b08ea9a481cd141a9f83d2ed2647bd
+      internalID: -2071707084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_17
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397c94cf04d917b4d81b3eab06edefe9
+      internalID: 1968553454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_18
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1500
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d7b8bfb0219ef4c8187ef069a3cf58
+      internalID: 1486501428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_20
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1500
+        width: 150
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19830ba60fad86b46a2cbc4d16ec78b5
+      internalID: 1493093186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_30
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8276f365ddd6a8a46837583d5ae1705c
+      internalID: -314410802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_31
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc1cf15e37cab14893519ffa253136a
+      internalID: -1424089043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_32
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35929ac3bb78b448bf95c2b5ef53f4f
+      internalID: -585000342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_34
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4770a751096fbd042b69fba2da9fee01
+      internalID: 1511344115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_35
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200049a08b46f2f479b69c0108b9a839
+      internalID: 70213321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_36
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbc82c1be793cb441b2687cad94c24d7
+      internalID: 1002718370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_37
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1350
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 534f6a3a2b527ba4cb596f5fe9943495
+      internalID: 2023199425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1200
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0aa5dee5f402f44587890d06f15780a
+      internalID: -1880007747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_49
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11e65ef1f3472d4fb3ba67be7bfd578
+      internalID: 840822037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_50
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ad99effe37d044ba4b3e74248a983c
+      internalID: -620675979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_51
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1200
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f71b2ddb213ad324383950830d2b3712
+      internalID: -888268474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_52
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 1200
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14dc7bdb20491949b5f74d73fab218d
+      internalID: 1955905987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 769964e2efaf8e94ab7f2da828c30886
+      internalID: -1818930307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_57
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0795da1e60f4234ebf235d431ce4767
+      internalID: -2105798281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_58
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04bbd951415381d43ab7404c6526feff
+      internalID: -1389697427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_59
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00b545001d4f414d88742c043085351
+      internalID: -965227578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_60
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc1c6bbbd005bd4496ed48f98f8b28b
+      internalID: 1178244223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_61
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ea9c91205b07d643a7a1523bcbe08a1
+      internalID: 842419488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_62
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865722970f257d942adbcfc59efa1435
+      internalID: 1063406683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_63
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43867b8e77cc21a409faa1c3666a76a3
+      internalID: 1617457309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_64
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb1ab38b162de54099f3ce36aef68ef
+      internalID: 1891528301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_65
+      rect:
+        serializedVersion: 2
+        x: 1350
+        y: 1050
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc94e0feb8d06e4eb3c702170943167
+      internalID: -1857420331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a5316f0c31bbb4f9f12b6666bc5e29
+      internalID: -1495958229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_107
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5df31bcad064d42bd7b24082a6faf9
+      internalID: -220834638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_109
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb75673b73c86d240bf4194ad7d6440a
+      internalID: -1540110391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_111
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5800e997eead391429b889665c9b1c3e
+      internalID: -2067557256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_113
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 300
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b10bdd440f033e743ad235074f30c688
+      internalID: 161714356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_127
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d098f285a35da8645a9430959bf2d8f1
+      internalID: 538372627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_129
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1842686b41119574c8d7b81be48bd733
+      internalID: 704627579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_131
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3da3958c26a5564882c3987c90fe9ce
+      internalID: -1307332834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huds Ea Nasir_150px x 150px(1)_133
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d546fca28210b1345a9f15afc84b9b96
+      internalID: 1121463828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c50e796cf8ea12a47a753ade7e40090a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":150.0,"y":150.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Huds Ea Nasir_150px x 150px(1)_0: -1421713728917792107
+      Huds Ea Nasir_150px x 150px(1)_1: -5817697719982396801
+      Huds Ea Nasir_150px x 150px(1)_10: 1542449978
+      Huds Ea Nasir_150px x 150px(1)_100: -924236754
+      Huds Ea Nasir_150px x 150px(1)_101: -1994923636
+      Huds Ea Nasir_150px x 150px(1)_102: -1468474535
+      Huds Ea Nasir_150px x 150px(1)_103: -425041838
+      Huds Ea Nasir_150px x 150px(1)_104: -743390412
+      Huds Ea Nasir_150px x 150px(1)_105: 184900694
+      Huds Ea Nasir_150px x 150px(1)_106: 943241087
+      Huds Ea Nasir_150px x 150px(1)_107: -220834638
+      Huds Ea Nasir_150px x 150px(1)_108: -158215163
+      Huds Ea Nasir_150px x 150px(1)_109: -1540110391
+      Huds Ea Nasir_150px x 150px(1)_11: -1369165492
+      Huds Ea Nasir_150px x 150px(1)_110: -398148254
+      Huds Ea Nasir_150px x 150px(1)_111: -2067557256
+      Huds Ea Nasir_150px x 150px(1)_112: 1870476281
+      Huds Ea Nasir_150px x 150px(1)_113: 161714356
+      Huds Ea Nasir_150px x 150px(1)_114: -45336398
+      Huds Ea Nasir_150px x 150px(1)_115: 1219680945
+      Huds Ea Nasir_150px x 150px(1)_116: 1764565470
+      Huds Ea Nasir_150px x 150px(1)_117: 264314305
+      Huds Ea Nasir_150px x 150px(1)_118: 1929845497
+      Huds Ea Nasir_150px x 150px(1)_119: -355558909
+      Huds Ea Nasir_150px x 150px(1)_12: 1272052308
+      Huds Ea Nasir_150px x 150px(1)_120: -536524934
+      Huds Ea Nasir_150px x 150px(1)_121: -1304512707
+      Huds Ea Nasir_150px x 150px(1)_122: -794703730
+      Huds Ea Nasir_150px x 150px(1)_123: -1541530357
+      Huds Ea Nasir_150px x 150px(1)_124: 597107686
+      Huds Ea Nasir_150px x 150px(1)_125: 706018737
+      Huds Ea Nasir_150px x 150px(1)_126: -2033225995
+      Huds Ea Nasir_150px x 150px(1)_127: 538372627
+      Huds Ea Nasir_150px x 150px(1)_128: 1229654645
+      Huds Ea Nasir_150px x 150px(1)_129: 704627579
+      Huds Ea Nasir_150px x 150px(1)_13: 591445913
+      Huds Ea Nasir_150px x 150px(1)_130: -1179075286
+      Huds Ea Nasir_150px x 150px(1)_131: -1307332834
+      Huds Ea Nasir_150px x 150px(1)_132: -474739316
+      Huds Ea Nasir_150px x 150px(1)_133: 1121463828
+      Huds Ea Nasir_150px x 150px(1)_134: 1391496274
+      Huds Ea Nasir_150px x 150px(1)_135: 1405286656
+      Huds Ea Nasir_150px x 150px(1)_136: -1794496521
+      Huds Ea Nasir_150px x 150px(1)_137: -81700914
+      Huds Ea Nasir_150px x 150px(1)_138: 1500392549
+      Huds Ea Nasir_150px x 150px(1)_14: -690132451
+      Huds Ea Nasir_150px x 150px(1)_15: 1017184375
+      Huds Ea Nasir_150px x 150px(1)_16: -2071707084
+      Huds Ea Nasir_150px x 150px(1)_17: 1968553454
+      Huds Ea Nasir_150px x 150px(1)_18: 1486501428
+      Huds Ea Nasir_150px x 150px(1)_19: 2009071660
+      Huds Ea Nasir_150px x 150px(1)_2: 901872517
+      Huds Ea Nasir_150px x 150px(1)_20: 1493093186
+      Huds Ea Nasir_150px x 150px(1)_21: 1716744690
+      Huds Ea Nasir_150px x 150px(1)_22: 519603413
+      Huds Ea Nasir_150px x 150px(1)_23: 1721411814
+      Huds Ea Nasir_150px x 150px(1)_24: -1575050050
+      Huds Ea Nasir_150px x 150px(1)_25: -154176050
+      Huds Ea Nasir_150px x 150px(1)_26: 382256429
+      Huds Ea Nasir_150px x 150px(1)_27: 1716635184
+      Huds Ea Nasir_150px x 150px(1)_28: 264840239
+      Huds Ea Nasir_150px x 150px(1)_29: 1345964716
+      Huds Ea Nasir_150px x 150px(1)_3: 1982933900
+      Huds Ea Nasir_150px x 150px(1)_30: -314410802
+      Huds Ea Nasir_150px x 150px(1)_31: -1424089043
+      Huds Ea Nasir_150px x 150px(1)_32: -585000342
+      Huds Ea Nasir_150px x 150px(1)_33: -641399280
+      Huds Ea Nasir_150px x 150px(1)_34: 1511344115
+      Huds Ea Nasir_150px x 150px(1)_35: 70213321
+      Huds Ea Nasir_150px x 150px(1)_36: 1002718370
+      Huds Ea Nasir_150px x 150px(1)_37: 2023199425
+      Huds Ea Nasir_150px x 150px(1)_38: 759152639
+      Huds Ea Nasir_150px x 150px(1)_39: -1966154043
+      Huds Ea Nasir_150px x 150px(1)_4: -195848535
+      Huds Ea Nasir_150px x 150px(1)_40: -1117608504
+      Huds Ea Nasir_150px x 150px(1)_41: -1880007747
+      Huds Ea Nasir_150px x 150px(1)_42: 1822878578
+      Huds Ea Nasir_150px x 150px(1)_43: 2066442475
+      Huds Ea Nasir_150px x 150px(1)_44: -1625421774
+      Huds Ea Nasir_150px x 150px(1)_45: -710350533
+      Huds Ea Nasir_150px x 150px(1)_46: 1911568665
+      Huds Ea Nasir_150px x 150px(1)_47: 393453867
+      Huds Ea Nasir_150px x 150px(1)_48: 585174304
+      Huds Ea Nasir_150px x 150px(1)_49: 840822037
+      Huds Ea Nasir_150px x 150px(1)_5: 137915257
+      Huds Ea Nasir_150px x 150px(1)_50: -620675979
+      Huds Ea Nasir_150px x 150px(1)_51: -888268474
+      Huds Ea Nasir_150px x 150px(1)_52: 1955905987
+      Huds Ea Nasir_150px x 150px(1)_53: 476166677
+      Huds Ea Nasir_150px x 150px(1)_54: 1237876272
+      Huds Ea Nasir_150px x 150px(1)_55: -1230018605
+      Huds Ea Nasir_150px x 150px(1)_56: -1818930307
+      Huds Ea Nasir_150px x 150px(1)_57: -2105798281
+      Huds Ea Nasir_150px x 150px(1)_58: -1389697427
+      Huds Ea Nasir_150px x 150px(1)_59: -965227578
+      Huds Ea Nasir_150px x 150px(1)_6: 53856251
+      Huds Ea Nasir_150px x 150px(1)_60: 1178244223
+      Huds Ea Nasir_150px x 150px(1)_61: 842419488
+      Huds Ea Nasir_150px x 150px(1)_62: 1063406683
+      Huds Ea Nasir_150px x 150px(1)_63: 1617457309
+      Huds Ea Nasir_150px x 150px(1)_64: 1891528301
+      Huds Ea Nasir_150px x 150px(1)_65: -1857420331
+      Huds Ea Nasir_150px x 150px(1)_66: -1152641493
+      Huds Ea Nasir_150px x 150px(1)_67: 853609154
+      Huds Ea Nasir_150px x 150px(1)_68: -166693879
+      Huds Ea Nasir_150px x 150px(1)_69: -1130565709
+      Huds Ea Nasir_150px x 150px(1)_7: -1332891074
+      Huds Ea Nasir_150px x 150px(1)_70: 938625909
+      Huds Ea Nasir_150px x 150px(1)_71: 1463420887
+      Huds Ea Nasir_150px x 150px(1)_72: -1645976861
+      Huds Ea Nasir_150px x 150px(1)_73: -1789071188
+      Huds Ea Nasir_150px x 150px(1)_74: 1792998847
+      Huds Ea Nasir_150px x 150px(1)_75: -115124185
+      Huds Ea Nasir_150px x 150px(1)_76: -1200430515
+      Huds Ea Nasir_150px x 150px(1)_77: 902134360
+      Huds Ea Nasir_150px x 150px(1)_78: -169821014
+      Huds Ea Nasir_150px x 150px(1)_79: 1517493415
+      Huds Ea Nasir_150px x 150px(1)_8: -183040993
+      Huds Ea Nasir_150px x 150px(1)_80: -22107322
+      Huds Ea Nasir_150px x 150px(1)_81: 1499457858
+      Huds Ea Nasir_150px x 150px(1)_82: -1145299877
+      Huds Ea Nasir_150px x 150px(1)_83: -1328641817
+      Huds Ea Nasir_150px x 150px(1)_84: 572546589
+      Huds Ea Nasir_150px x 150px(1)_85: -485894680
+      Huds Ea Nasir_150px x 150px(1)_86: 243654761
+      Huds Ea Nasir_150px x 150px(1)_87: -1495958229
+      Huds Ea Nasir_150px x 150px(1)_88: 1113439193
+      Huds Ea Nasir_150px x 150px(1)_89: 124208397
+      Huds Ea Nasir_150px x 150px(1)_9: -72162906
+      Huds Ea Nasir_150px x 150px(1)_90: -1654599684
+      Huds Ea Nasir_150px x 150px(1)_91: -1071476549
+      Huds Ea Nasir_150px x 150px(1)_92: -23903524
+      Huds Ea Nasir_150px x 150px(1)_93: 1688632069
+      Huds Ea Nasir_150px x 150px(1)_94: 1759031710
+      Huds Ea Nasir_150px x 150px(1)_95: 1386858163
+      Huds Ea Nasir_150px x 150px(1)_96: -1537414955
+      Huds Ea Nasir_150px x 150px(1)_97: 1026193911
+      Huds Ea Nasir_150px x 150px(1)_98: 1140027955
+      Huds Ea Nasir_150px x 150px(1)_99: 1801150582
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

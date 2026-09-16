@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 using CopperRunner.Gameplay.Item;
 using CopperRunner.Gameplay.Upgrade;
 using UnityEngine;
@@ -9,8 +10,16 @@ public class Player : Actor
     private int coinAmount;
     private ItemData equippedItem;
     private List<UpgradeData> upgrades = new List<UpgradeData>();
+    private bool isDead;
 
 	private float weight = 0;
+
+    public event Action<int> CoinsChanged;
+
+    public bool IsDead
+    {
+        get { return isDead; }
+    }
 
     void Update()
     {
@@ -52,6 +61,7 @@ public class Player : Actor
 	public void AddCoin(int amount)
 	{
 		coinAmount = Mathf.Max(0, coinAmount + amount);
+        CoinsChanged?.Invoke(coinAmount);
 	}
 	public int GetCoinAmount()
 	{
@@ -67,6 +77,7 @@ public class Player : Actor
 			return false;
 
 		coinAmount -= amount;
+        CoinsChanged?.Invoke(coinAmount);
 		return true;
 	}
 
@@ -78,4 +89,33 @@ public class Player : Actor
 		equippedItem.RunActions();
 	}
 
+    public void Die()
+    {
+        if (isDead)
+            return;
+
+        isDead = true;
+        enabled = false;
+
+        CharacterMovement movement = GetComponent<CharacterMovement>();
+        if (movement != null)
+            movement.enabled = false;
+
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+        if (body != null)
+        {
+            body.linearVelocity = Vector2.zero;
+            body.simulated = false;
+        }
+
+        EndRunMenu endRunMenu = FindFirstObjectByType<EndRunMenu>();
+        if (endRunMenu == null)
+        {
+            GameObject endRunMenuObject = new GameObject("End Run Menu");
+            endRunMenu = endRunMenuObject.AddComponent<EndRunMenu>();
+        }
+
+        if (endRunMenu != null)
+            endRunMenu.Show();
+    }
 }

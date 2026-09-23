@@ -29,6 +29,10 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     [Min(0f)]
+    private float minimumSpeed = 1f;
+
+    [SerializeField]
+    [Min(0f)]
     private float speedIncreasePerSecond = 1f;
 
     [SerializeField]
@@ -63,7 +67,11 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
-        currentSpeed = startingSpeed;
+        minimumSpeed = Mathf.Min(minimumSpeed, maximumSpeed);
+
+        currentSpeed = Mathf.Max(startingSpeed, minimumSpeed);
+        currentSpeed = Mathf.Min(currentSpeed, maximumSpeed);
+
         accelerationDelay = 0f;
     }
 
@@ -115,7 +123,7 @@ public class MapManager : MonoBehaviour
         // Start increasing the current speed again.
         currentSpeed += speedIncreasePerSecond * Time.fixedDeltaTime;
 
-        currentSpeed = Mathf.Min(currentSpeed, maximumSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
     }
 
     /// <summary>
@@ -142,10 +150,9 @@ public class MapManager : MonoBehaviour
         currentSpeed *= multiplier;
 
         // Prevent the speed from becoming zero.
-        currentSpeed = Mathf.Max(currentSpeed, 0.01f);
 
+        currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
         // Reset the acceleration delay.
-        // This means every new slowdown gives a fresh delay.
         accelerationDelay = Mathf.Max(0f, duration);
     }
 

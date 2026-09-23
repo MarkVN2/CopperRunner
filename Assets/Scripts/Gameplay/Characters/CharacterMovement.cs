@@ -39,7 +39,13 @@ public class CharacterMovement : MonoBehaviour
     private bool isGrounded;
     private bool jumpRequested;
 
+    [SerializeField]
     private float idealWorldX;
+
+    public void ShiftIdealWorldX(float amount)
+    {
+        idealWorldX -= amount;
+    }
 
     private void Awake()
     {
@@ -51,10 +57,7 @@ public class CharacterMovement : MonoBehaviour
         input = new InputSystem_Actions();
         moveAction = input.Player.Move;
         jumpAction = input.Player.Jump;
-    }
 
-    private void Start()
-    {
         idealWorldX = transform.position.x;
     }
 
@@ -73,26 +76,31 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 velocity = body.linearVelocity;
+
         float horizontalInput = moveAction.ReadValue<Vector2>().x;
 
-        float targetHorizontalSpeed = 0f;
+        // Always try to move toward the ideal X position.
+        float positionError = idealWorldX - transform.position.x;
+        float centeringCorrection = positionError * centeringSpeed;
 
         if (isGrounded)
         {
-            targetHorizontalSpeed = 0f;
-            idealWorldX = transform.position.x;
+            // Grounded:
+            // Player has no horizontal control.
+            // The only horizontal movement comes from idealWorldX.
+            velocity.x = centeringCorrection;
         }
         else
         {
+            // Airborne:
+            // Allow player-controlled horizontal movement while
+            // still pulling the player toward the ideal X position.
             float airOffset = horizontalInput * maxAirSpeedOffset;
-            float positionError = idealWorldX - transform.position.x;
-            float centeringCorrection = positionError * centeringSpeed;
 
             float desiredAirSpeed = centeringCorrection + airOffset;
-            targetHorizontalSpeed = Mathf.Lerp(velocity.x, desiredAirSpeed, airControl);
-        }
 
-        velocity.x = targetHorizontalSpeed;
+            velocity.x = Mathf.Lerp(velocity.x, desiredAirSpeed, airControl);
+        }
 
         if (jumpRequested)
         {

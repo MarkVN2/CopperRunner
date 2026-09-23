@@ -21,6 +21,8 @@ public class Trap : MonoBehaviour
     [SerializeField]
     private float hitCooldown = 0.75f;
 
+    [SerializeField]
+    private float idealWorldX;
     private float lastHitTime;
     private int mistakeCount;
 
@@ -59,16 +61,13 @@ public class Trap : MonoBehaviour
         if (mapManager != null)
             mapManager.ApplySpeedModifier(slowMultiplier, slowDuration);
 
-        Rigidbody2D body = other.attachedRigidbody;
+        CharacterMovement movement = player.GetComponent<CharacterMovement>();
+
         float pushAmount = playerPullToHorde * mistakeCount;
 
-        if (body != null)
+        if (movement != null)
         {
-            body.position += Vector2.left * pushAmount;
-        }
-        else
-        {
-            other.transform.position += Vector3.left * pushAmount;
+            movement.ShiftIdealWorldX(pushAmount);
         }
     }
 }

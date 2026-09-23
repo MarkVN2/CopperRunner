@@ -13,7 +13,7 @@ public class Trap : MonoBehaviour
     private float slowMultiplier = 0.75f;
 
     [SerializeField]
-    private float slowDuration = 999999f;
+    private float slowDuration = 5f;
 
     [SerializeField]
     private float playerPullToHorde = 1.5f;

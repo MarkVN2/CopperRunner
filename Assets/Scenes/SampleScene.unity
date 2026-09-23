@@ -1515,8 +1515,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoRun: 0
   forwardSpeed: 0
-  horizontalMovementEnabled: 1
   airControl: 0.5
+  centeringSpeed: 3
+  maxAirSpeedOffset: 10
 --- !u!114 &417959398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6529,7 +6530,7 @@ MonoBehaviour:
   sectionLength: 25
   spawnPoint: {fileID: 1492359384}
   despawnPoint: {fileID: 806213143}
-  startingSpeed: 20
+  startingSpeed: 10
   speedIncreasePerSecond: 1
   maximumSpeed: 50
 --- !u!4 &1674025945

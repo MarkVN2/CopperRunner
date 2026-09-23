@@ -29,80 +29,124 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     [Min(0f)]
-    private float speedIncreasePerSecond = 0.1f;
+    private float speedIncreasePerSecond = 1f;
 
     [SerializeField]
     [Min(0f)]
     private float maximumSpeed = 20f;
 
+    // The actual current speed.
+    private float currentSpeed;
+
+    // Time remaining before speed starts increasing again.
+    private float accelerationDelay;
+
     private readonly Dictionary<GameObject, ObjectPool<GameObject>> pools =
         new Dictionary<GameObject, ObjectPool<GameObject>>();
+
     private readonly Dictionary<GameObject, GameObject> prefabByInstance =
         new Dictionary<GameObject, GameObject>();
+
     private readonly List<GameObject> activeSections = new List<GameObject>();
+
     private GameObject previousPrefab;
+
     private float totalDistanceTravelled;
-    private float speedMultiplier = 1f;
-    private float runStartedAt;
+
     private bool hasLoggedMissingPrefabWarning;
 
     public List<GameObject> SectionsPrefabs => sectionPrefabs;
+
     public float TotalDistanceTravelled => totalDistanceTravelled;
 
-    public float CurrentSpeed
+    public float CurrentSpeed => currentSpeed;
+
+    private void Awake()
     {
-        get
-        {
-            float elapsedRunTime = Mathf.Max(0f, Time.time - runStartedAt);
-            float acceleratedSpeed = startingSpeed + speedIncreasePerSecond * elapsedRunTime;
-            return Mathf.Min(acceleratedSpeed, maximumSpeed) * speedMultiplier;
-        }
+        currentSpeed = startingSpeed;
+        accelerationDelay = 0f;
     }
 
+    private void Start()
+    {
+        SpawnInitialSections();
+    }
+
+    private void FixedUpdate()
+    {
+        if (activeSections.Count == 0)
+            return;
+
+        UpdateSpeed();
+
+        float distance = currentSpeed * Time.fixedDeltaTime;
+
+        Debug.Log(currentSpeed + "| | " + Time.fixedDeltaTime);
+        for (int i = 0; i < activeSections.Count; i++)
+        {
+            GameObject section = activeSections[i];
+
+            if (section != null)
+            {
+                section.transform.position += Vector3.left * distance;
+            }
+        }
+
+        totalDistanceTravelled += distance;
+
+        RecycleExitedSections();
+    }
+
+    private void UpdateSpeed()
+    {
+        // A slowdown has happened.
+        // Keep the current speed unchanged until the delay expires.
+        if (accelerationDelay > 0f)
+        {
+            accelerationDelay -= Time.fixedDeltaTime;
+
+            if (accelerationDelay < 0f)
+                accelerationDelay = 0f;
+
+            return;
+        }
+
+        // The slowdown duration has expired.
+        // Start increasing the current speed again.
+        currentSpeed += speedIncreasePerSecond * Time.fixedDeltaTime;
+
+        currentSpeed = Mathf.Min(currentSpeed, maximumSpeed);
+    }
+
+    /// <summary>
+    /// Permanently reduces the current speed.
+    ///
+    /// Example:
+    /// Current speed = 10
+    /// multiplier = 0.5
+    /// duration = 3
+    ///
+    /// Speed becomes 5 permanently.
+    /// It stays at 5 for 3 seconds.
+    /// Then it starts increasing again:
+    /// 5 -> 5.1 -> 5.2 -> etc.
+    /// </summary>
     public void ApplySpeedModifier(float multiplier, float duration)
     {
         if (multiplier <= 0f)
             multiplier = 0.01f;
 
-        speedMultiplier = Mathf.Clamp(
-            speedMultiplier * Mathf.Clamp(multiplier, 0.01f, 1f),
-            0.01f,
-            1f
-        );
-    }
+        multiplier = Mathf.Clamp(multiplier, 0.01f, 1f);
 
-    private void Start()
-    {
-        runStartedAt = Time.time;
-        SpawnInitialSections();
-    }
+        // Permanently reduce the current speed.
+        currentSpeed *= multiplier;
 
-    private void OnDestroy()
-    {
-        ClearActiveSections();
-        foreach (ObjectPool<GameObject> pool in pools.Values)
-            pool.Clear();
-        pools.Clear();
-        prefabByInstance.Clear();
-    }
+        // Prevent the speed from becoming zero.
+        currentSpeed = Mathf.Max(currentSpeed, 0.01f);
 
-    private void FixedUpdate()
-    {
-        if (runStartedAt <= 0f)
-            runStartedAt = Time.time;
-
-        if (activeSections.Count == 0)
-            return;
-
-        float distance = CurrentSpeed * Time.fixedDeltaTime;
-        for (int i = 0; i < activeSections.Count; i++)
-        {
-            if (activeSections[i] != null)
-                activeSections[i].transform.position += Vector3.left * distance;
-        }
-
-        totalDistanceTravelled += distance;
-        RecycleExitedSections();
+        // Reset the acceleration delay.
+        // This means every new slowdown gives a fresh delay.
+        accelerationDelay = Mathf.Max(0f, duration);
     }
 
     private void SpawnInitialSections()
@@ -110,10 +154,13 @@ public class MapManager : MonoBehaviour
         ClearActiveSections();
 
         int sectionCount = Mathf.Max(1, activeSectionCount);
+
         for (int i = 0; i < sectionCount; i++)
         {
             Vector3 position = GetSpawnPosition();
+
             position.x += i * sectionLength;
+
             SpawnSection(position);
         }
     }
@@ -131,10 +178,13 @@ public class MapManager : MonoBehaviour
         )
         {
             GameObject section = activeSections[0];
+
             activeSections.RemoveAt(0);
+
             ReleaseSection(section);
 
             Vector3 position = GetSpawnPosition();
+
             if (activeSections.Count > 0)
             {
                 position.x =
@@ -148,11 +198,13 @@ public class MapManager : MonoBehaviour
     private void SpawnSection(Vector3 position)
     {
         GameObject prefab = ChoosePrefab();
+
         if (prefab == null)
         {
             if (!hasLoggedMissingPrefabWarning)
             {
                 Debug.LogWarning("[MapManager] No valid section prefabs are configured.", this);
+
                 hasLoggedMissingPrefabWarning = true;
             }
 
@@ -160,19 +212,26 @@ public class MapManager : MonoBehaviour
         }
 
         GameObject section = GetPool(prefab).Get();
+
         section.transform.SetPositionAndRotation(position, Quaternion.identity);
+
         RandomlyActivateObject[] randomActivators =
             section.GetComponentsInChildren<RandomlyActivateObject>(true);
+
         for (int i = 0; i < randomActivators.Length; i++)
+        {
             randomActivators[i].ActivateRandomObject();
+        }
 
         activeSections.Add(section);
+
         previousPrefab = prefab;
     }
 
     private ObjectPool<GameObject> GetPool(GameObject prefab)
     {
         ObjectPool<GameObject> pool;
+
         if (pools.TryGetValue(prefab, out pool))
             return pool;
 
@@ -180,8 +239,11 @@ public class MapManager : MonoBehaviour
             createFunc: delegate
             {
                 GameObject instance = Instantiate(prefab, transform);
+
                 instance.name = prefab.name + " (Pooled)";
+
                 prefabByInstance[instance] = prefab;
+
                 return instance;
             },
             actionOnGet: delegate(GameObject instance)
@@ -191,11 +253,13 @@ public class MapManager : MonoBehaviour
             actionOnRelease: delegate(GameObject instance)
             {
                 instance.SetActive(false);
+
                 instance.transform.SetParent(transform);
             },
             actionOnDestroy: delegate(GameObject instance)
             {
                 prefabByInstance.Remove(instance);
+
                 if (instance != null)
                     Destroy(instance);
             },
@@ -203,19 +267,26 @@ public class MapManager : MonoBehaviour
             defaultCapacity: 1,
             maxSize: Mathf.Max(1, activeSectionCount)
         );
+
         pools.Add(prefab, pool);
+
         return pool;
     }
 
     private void ReleaseSection(GameObject section)
     {
+        if (section == null)
+            return;
+
         GameObject prefab;
         ObjectPool<GameObject> pool;
-        if (
-            section == null
-            || !prefabByInstance.TryGetValue(section, out prefab)
-            || !pools.TryGetValue(prefab, out pool)
-        )
+
+        if (!prefabByInstance.TryGetValue(section, out prefab))
+        {
+            return;
+        }
+
+        if (!pools.TryGetValue(prefab, out pool))
         {
             return;
         }
@@ -225,24 +296,54 @@ public class MapManager : MonoBehaviour
 
     private GameObject ChoosePrefab()
     {
-        List<GameObject> validPrefabs = new List<GameObject>();
+        int validCount = 0;
+
         for (int i = 0; i < sectionPrefabs.Count; i++)
         {
             if (sectionPrefabs[i] != null)
-                validPrefabs.Add(sectionPrefabs[i]);
+                validCount++;
         }
 
-        if (validPrefabs.Count == 0)
+        if (validCount == 0)
             return null;
 
-        if (validPrefabs.Count == 1 || previousPrefab == null)
-            return validPrefabs[UnityEngine.Random.Range(0, validPrefabs.Count)];
+        if (validCount == 1 || previousPrefab == null)
+        {
+            int selectedIndex = Random.Range(0, validCount);
 
-        int selectedIndex = UnityEngine.Random.Range(0, validPrefabs.Count - 1);
-        if (validPrefabs[selectedIndex] == previousPrefab)
-            selectedIndex++;
+            for (int i = 0; i < sectionPrefabs.Count; i++)
+            {
+                GameObject prefab = sectionPrefabs[i];
 
-        return validPrefabs[selectedIndex];
+                if (prefab == null)
+                    continue;
+
+                if (selectedIndex == 0)
+                    return prefab;
+
+                selectedIndex--;
+            }
+
+            return null;
+        }
+
+        // Pick a random prefab that isn't the previous prefab.
+        int randomIndex = Random.Range(0, validCount - 1);
+
+        for (int i = 0; i < sectionPrefabs.Count; i++)
+        {
+            GameObject prefab = sectionPrefabs[i];
+
+            if (prefab == null || prefab == previousPrefab)
+                continue;
+
+            if (randomIndex == 0)
+                return prefab;
+
+            randomIndex--;
+        }
+
+        return null;
     }
 
     private Vector3 GetSpawnPosition()
@@ -255,10 +356,13 @@ public class MapManager : MonoBehaviour
         for (int i = 0; i < activeSections.Count; i++)
         {
             if (activeSections[i] != null)
+            {
                 ReleaseSection(activeSections[i]);
+            }
         }
 
         activeSections.Clear();
+
         previousPrefab = null;
     }
 
@@ -267,13 +371,16 @@ public class MapManager : MonoBehaviour
         for (int i = activeSections.Count - 1; i >= 0; i--)
         {
             if (activeSections[i] == null)
+            {
                 activeSections.RemoveAt(i);
+            }
         }
     }
 
     public void SpawnSection()
     {
         Vector3 position = GetSpawnPosition();
+
         if (activeSections.Count > 0)
         {
             position.x =

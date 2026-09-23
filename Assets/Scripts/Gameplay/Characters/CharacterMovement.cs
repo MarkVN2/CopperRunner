@@ -15,49 +15,54 @@ public class CharacterMovement : MonoBehaviour
     [Min(0f)]
     private float forwardSpeed = 5f;
 
-    [SerializeField]
-    private bool horizontalMovementEnabled = true;
-
-    [Header("Air Control")]
+    [Header("Air Control & Centering")]
     [SerializeField]
     [Range(0f, 1f)]
     private float airControl = 0.5f;
 
+    [SerializeField]
+    private float centeringSpeed = 5f;
+
+    [SerializeField]
+    private float maxAirSpeedOffset = 3f;
+
     private Rigidbody2D body;
     private Actor actor;
+    private MapManager mapManager;
+    private Camera mainCamera;
+
     private InputSystem_Actions input;
     private InputAction moveAction;
     private InputAction jumpAction;
+
     private readonly HashSet<Collider2D> groundedColliders = new HashSet<Collider2D>();
     private bool isGrounded;
     private bool jumpRequested;
+
+    private float idealWorldX;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         actor = GetComponent<Actor>();
-        if (FindFirstObjectByType<MapManager>() != null)
-            horizontalMovementEnabled = false;
+        mapManager = FindFirstObjectByType<MapManager>();
+        mainCamera = Camera.main;
 
         input = new InputSystem_Actions();
         moveAction = input.Player.Move;
         jumpAction = input.Player.Jump;
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        input.Player.Enable();
+        idealWorldX = transform.position.x;
     }
 
-    private void OnDisable()
-    {
-        input.Player.Disable();
-    }
+    private void OnEnable() => input.Player.Enable();
 
-    private void OnDestroy()
-    {
-        input.Dispose();
-    }
+    private void OnDisable() => input.Player.Disable();
+
+    private void OnDestroy() => input.Dispose();
 
     private void Update()
     {
@@ -69,21 +74,22 @@ public class CharacterMovement : MonoBehaviour
     {
         Vector2 velocity = body.linearVelocity;
         float horizontalInput = moveAction.ReadValue<Vector2>().x;
-        float targetHorizontalSpeed = 0f;
-        if (horizontalMovementEnabled)
-        {
-            targetHorizontalSpeed = autoRun
-                ? Mathf.Max(forwardSpeed, actor.GetMoveSpeed())
-                : horizontalInput * actor.GetMoveSpeed();
-        }
 
-        if (horizontalMovementEnabled && autoRun && !isGrounded)
+        float targetHorizontalSpeed = 0f;
+
+        if (isGrounded)
         {
-            float airControlTarget = Mathf.Max(
-                0f,
-                forwardSpeed + horizontalInput * actor.GetMoveSpeed()
-            );
-            targetHorizontalSpeed = Mathf.Lerp(velocity.x, airControlTarget, airControl);
+            targetHorizontalSpeed = 0f;
+            idealWorldX = transform.position.x;
+        }
+        else
+        {
+            float airOffset = horizontalInput * maxAirSpeedOffset;
+            float positionError = idealWorldX - transform.position.x;
+            float centeringCorrection = positionError * centeringSpeed;
+
+            float desiredAirSpeed = centeringCorrection + airOffset;
+            targetHorizontalSpeed = Mathf.Lerp(velocity.x, desiredAirSpeed, airControl);
         }
 
         velocity.x = targetHorizontalSpeed;

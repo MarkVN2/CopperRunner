@@ -2,11 +2,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
+
+
+
 public class MapManager : MonoBehaviour
 {
+    [Header("Seed")]
+    [SerializeField] private bool randomizeSeed = true;
+    [SerializeField] private int seed = 12345;
+    public int RunSeed => seed;
+    private System.Random rng;
+
+    [Header("Difficult Settings")]
+    [SerializeField]
+    private float distanceUntilShop = 100f;
+
     [Header("Sections")]
     [SerializeField]
     private List<GameObject> sectionPrefabs = new List<GameObject>();
+    [SerializeField]
+    private GameObject shopPrefab;
+
 
     [SerializeField]
     [Min(1)]
@@ -14,7 +30,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     [Min(0.01f)]
-    private float sectionLength = 20f;
+    private float sectionLength = 25f;
 
     [SerializeField]
     private Transform spawnPoint;
@@ -29,7 +45,7 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     [Min(0f)]
-    private float minimumSpeed = 1f;
+    private float minimumSpeed = 3f;
 
     [SerializeField]
     [Min(0f)]
@@ -37,12 +53,10 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     [Min(0f)]
-    private float maximumSpeed = 20f;
+    private float maximumSpeed = 30f;
 
-    // The actual current speed.
     private float currentSpeed;
 
-    // Time remaining before speed starts increasing again.
     private float accelerationDelay;
 
     private readonly Dictionary<GameObject, ObjectPool<GameObject>> pools =
@@ -55,6 +69,7 @@ public class MapManager : MonoBehaviour
 
     private GameObject previousPrefab;
 
+    [SerializeField]
     private float totalDistanceTravelled;
 
     private bool hasLoggedMissingPrefabWarning;
@@ -62,11 +77,15 @@ public class MapManager : MonoBehaviour
     public List<GameObject> SectionsPrefabs => sectionPrefabs;
 
     public float TotalDistanceTravelled => totalDistanceTravelled;
-
+    private float distanceTraveledSinceLastShop = 0f;
     public float CurrentSpeed => currentSpeed;
 
     private void Awake()
     {
+        if (randomizeSeed)
+            seed = UnityEngine.Random.Range(10000, 100000);
+        rng = new System.Random(seed);
+
         minimumSpeed = Mathf.Min(minimumSpeed, maximumSpeed);
 
         currentSpeed = Mathf.Max(startingSpeed, minimumSpeed);
@@ -99,7 +118,7 @@ public class MapManager : MonoBehaviour
                 section.transform.position += Vector3.left * distance;
             }
         }
-
+        distanceTraveledSinceLastShop += distance;
         totalDistanceTravelled += distance;
 
         RecycleExitedSections();
@@ -204,14 +223,23 @@ public class MapManager : MonoBehaviour
 
     private void SpawnSection(Vector3 position)
     {
-        GameObject prefab = ChoosePrefab();
+        GameObject prefab;
+
+        if (distanceTraveledSinceLastShop >= distanceUntilShop)
+        {
+            prefab = shopPrefab;
+            distanceTraveledSinceLastShop = 0f;
+        }
+        else
+        {
+            prefab = ChoosePrefab();
+        }
 
         if (prefab == null)
         {
             if (!hasLoggedMissingPrefabWarning)
             {
-                Debug.LogWarning("[MapManager] No valid section prefabs are configured.", this);
-
+                Debug.LogWarning("[MapManager] No valid section prefab configured.", this);
                 hasLoggedMissingPrefabWarning = true;
             }
 
@@ -316,7 +344,7 @@ public class MapManager : MonoBehaviour
 
         if (validCount == 1 || previousPrefab == null)
         {
-            int selectedIndex = Random.Range(0, validCount);
+            int selectedIndex = rng.Next(validCount);
 
             for (int i = 0; i < sectionPrefabs.Count; i++)
             {
@@ -335,7 +363,8 @@ public class MapManager : MonoBehaviour
         }
 
         // Pick a random prefab that isn't the previous prefab.
-        int randomIndex = Random.Range(0, validCount - 1);
+        int randomIndex = rng.Next(validCount - 1);
+
 
         for (int i = 0; i < sectionPrefabs.Count; i++)
         {

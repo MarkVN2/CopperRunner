@@ -14,19 +14,20 @@ public class ShopProvider : MonoBehaviour
     {
         if (currentPool == null)
         {
-            Debug.LogWarning("No upgrade database assigned to the shop.");
+            Debug.LogWarning("[ShopProvider] No upgrade database assigned to the shop.");
             return new List<UpgradeData>();
         }
 
         return currentPool.GetRandomFromActivePool(offerCount, unlockedRegions);
     }
-
-    [ContextMenu("Test")]
-    public void TestListGetting()
+    public List<UpgradeData> GetRandomBuyableOffers(int offerCount)
     {
-        foreach (UpgradeData data in GetRandomOffers(3))
+        if (currentPool == null)
         {
-            Debug.Log(data.ToString());
+            Debug.LogWarning("[ShopProvider] No upgrade database assigned to the shop.");
+            return new List<UpgradeData>();
         }
+
+        return currentPool.GetRandomFromActivePool(offerCount, unlockedRegions);
     }
 }

@@ -2109,6 +2109,7 @@ MonoBehaviour:
   - {fileID: 4938480018529520923, guid: 31601f0d16bb3ca47968267ded8b81f4, type: 3}
   - {fileID: 6618173504429425329, guid: 64040a2343ecf1d438a90871b4fdafd6, type: 3}
   shopPrefab: {fileID: 6618173504429425329, guid: bb2775aac268ed049be9dbc52bf98e82, type: 3}
+  startingSectionPrefab: {fileID: 7371692460992094200, guid: 56052f9518bcc544abf69d6807a039a5, type: 3}
   activeSectionCount: 4
   sectionLength: 25
   spawnPoint: {fileID: 1492359384}

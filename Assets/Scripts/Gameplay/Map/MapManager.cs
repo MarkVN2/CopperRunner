@@ -23,6 +23,8 @@ public class MapManager : MonoBehaviour
     [SerializeField]
     private GameObject shopPrefab;
 
+    [SerializeField]
+    private GameObject startingSectionPrefab;
 
     [SerializeField]
     [Min(1)]
@@ -185,9 +187,14 @@ public class MapManager : MonoBehaviour
         {
             Vector3 position = GetSpawnPosition();
 
-            position.x += i * sectionLength;
+            bool isStartingSection = i == 0 && startingSectionPrefab != null;
 
-            SpawnSection(position);
+            if (startingSectionPrefab != null)
+                position.x += (i - 1) * sectionLength;
+            else
+                position.x += i * sectionLength;
+
+            SpawnSection(position, isStartingSection ? startingSectionPrefab : null);
         }
     }
 
@@ -221,11 +228,15 @@ public class MapManager : MonoBehaviour
         }
     }
 
-    private void SpawnSection(Vector3 position)
+    private void SpawnSection(Vector3 position, GameObject prefabOverride = null)
     {
         GameObject prefab;
 
-        if (distanceTraveledSinceLastShop >= distanceUntilShop)
+        if (prefabOverride != null)
+        {
+            prefab = prefabOverride;
+        }
+        else if (distanceTraveledSinceLastShop >= distanceUntilShop)
         {
             prefab = shopPrefab;
             distanceTraveledSinceLastShop = 0f;

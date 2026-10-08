@@ -2,10 +2,14 @@ using System.Collections.Generic;
 using CopperRunner.Gameplay.Upgrade;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UpgradeShopMenu : MonoBehaviour
 {
+    public static UpgradeShopMenu Instance;
+
+    public UnityEvent OnClose;
     [SerializeField]
     private UpgradeShop shop;
 
@@ -26,16 +30,24 @@ public class UpgradeShopMenu : MonoBehaviour
 
     [Header("Timer Settings")]
     [SerializeField]
-    private float shopDuration = 30f; // Total time available before the shop closes automatically
+    private float shopDuration = 30f; 
 
     [SerializeField]
-    private TMP_Text timerLabel; // UI text to display the remaining time
+    private TMP_Text timerLabel;
 
     private float remainingTime;
     private bool isOpen;
 
     private void Awake()
     {
+        if (Instance != this)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Instance = null;
+        }
         if (shop == null)
             shop = FindFirstObjectByType<UpgradeShop>();
         if (player == null)
@@ -47,7 +59,6 @@ public class UpgradeShopMenu : MonoBehaviour
         if (!isOpen)
             return;
 
-        // Use unscaledDeltaTime because Time.timeScale is set to 0 when paused
         remainingTime -= Time.unscaledDeltaTime;
 
         UpdateTimerDisplay();
@@ -71,13 +82,10 @@ public class UpgradeShopMenu : MonoBehaviour
             menu.SetActive(true);
         RefreshButtons();
 
-        // Initialize and start the timer
         remainingTime = shopDuration;
         isOpen = true;
         UpdateTimerDisplay();
 
-        // Pause the game
-        Time.timeScale = 0f;
     }
 
     public void Close()
@@ -86,8 +94,7 @@ public class UpgradeShopMenu : MonoBehaviour
 
         if (menu != null)
             menu.SetActive(false);
-
-        // Resume the game
+        OnClose.Invoke();
         Time.timeScale = 1f;
     }
 

@@ -2,9 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-
-
-
 public class MapManager : MonoBehaviour
 {
     [Header("Seed")]
@@ -110,7 +107,6 @@ public class MapManager : MonoBehaviour
 
         float distance = currentSpeed * Time.fixedDeltaTime;
 
-        Debug.Log(currentSpeed + "| | " + Time.fixedDeltaTime);
         for (int i = 0; i < activeSections.Count; i++)
         {
             GameObject section = activeSections[i];
@@ -128,8 +124,6 @@ public class MapManager : MonoBehaviour
 
     private void UpdateSpeed()
     {
-        // A slowdown has happened.
-        // Keep the current speed unchanged until the delay expires.
         if (accelerationDelay > 0f)
         {
             accelerationDelay -= Time.fixedDeltaTime;
@@ -140,26 +134,10 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        // The slowdown duration has expired.
-        // Start increasing the current speed again.
         currentSpeed += speedIncreasePerSecond * Time.fixedDeltaTime;
-
         currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
     }
 
-    /// <summary>
-    /// Permanently reduces the current speed.
-    ///
-    /// Example:
-    /// Current speed = 10
-    /// multiplier = 0.5
-    /// duration = 3
-    ///
-    /// Speed becomes 5 permanently.
-    /// It stays at 5 for 3 seconds.
-    /// Then it starts increasing again:
-    /// 5 -> 5.1 -> 5.2 -> etc.
-    /// </summary>
     public void ApplySpeedModifier(float multiplier, float duration)
     {
         if (multiplier <= 0f)
@@ -167,13 +145,8 @@ public class MapManager : MonoBehaviour
 
         multiplier = Mathf.Clamp(multiplier, 0.01f, 1f);
 
-        // Permanently reduce the current speed.
         currentSpeed *= multiplier;
-
-        // Prevent the speed from becoming zero.
-
         currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
-        // Reset the acceleration delay.
         accelerationDelay = Mathf.Max(0f, duration);
     }
 
@@ -285,27 +258,22 @@ public class MapManager : MonoBehaviour
             createFunc: delegate
             {
                 GameObject instance = Instantiate(prefab, transform);
-
                 instance.name = prefab.name + " (Pooled)";
-
                 prefabByInstance[instance] = prefab;
-
                 return instance;
             },
-            actionOnGet: delegate(GameObject instance)
+            actionOnGet: delegate (GameObject instance)
             {
                 instance.SetActive(true);
             },
-            actionOnRelease: delegate(GameObject instance)
+            actionOnRelease: delegate (GameObject instance)
             {
                 instance.SetActive(false);
-
                 instance.transform.SetParent(transform);
             },
-            actionOnDestroy: delegate(GameObject instance)
+            actionOnDestroy: delegate (GameObject instance)
             {
                 prefabByInstance.Remove(instance);
-
                 if (instance != null)
                     Destroy(instance);
             },
@@ -324,15 +292,12 @@ public class MapManager : MonoBehaviour
         if (section == null)
             return;
 
-        GameObject prefab;
-        ObjectPool<GameObject> pool;
-
-        if (!prefabByInstance.TryGetValue(section, out prefab))
+        if (!prefabByInstance.TryGetValue(section, out GameObject prefab))
         {
             return;
         }
 
-        if (!pools.TryGetValue(prefab, out pool))
+        if (!pools.TryGetValue(prefab, out ObjectPool<GameObject> pool))
         {
             return;
         }
@@ -342,55 +307,67 @@ public class MapManager : MonoBehaviour
 
     private GameObject ChoosePrefab()
     {
-        int validCount = 0;
+        List<GameObject> poolToUse = null;
+        bool usingCompatibleList = false;
 
-        for (int i = 0; i < sectionPrefabs.Count; i++)
+        // Check if the previous prefab has a MapSection component with defined compatible sections
+        if (previousPrefab != null)
         {
-            if (sectionPrefabs[i] != null)
-                validCount++;
+            MapSection mapSection = previousPrefab.GetComponent<MapSection>();
+            if (mapSection != null)
+            {
+                if (mapSection.CompatibleSections != null && mapSection.CompatibleSections.Count > 0)
+                {
+                    poolToUse = mapSection.CompatibleSections;
+                    usingCompatibleList = true;
+                }
+                else
+                {
+                    Debug.LogWarning($"[MapManager] '{previousPrefab.name}' has a MapSection component, but its 'CompatibleSections' list is empty. Falling back to general section prefabs.", this);
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"[MapManager] '{previousPrefab.name}' is missing a MapSection component. Falling back to general section prefabs.", this);
+            }
         }
 
-        if (validCount == 0)
-            return null;
-
-        if (validCount == 1 || previousPrefab == null)
+        if (poolToUse == null || poolToUse.Count == 0)
         {
-            int selectedIndex = rng.Next(validCount);
+            poolToUse = sectionPrefabs;
+        }
 
-            for (int i = 0; i < sectionPrefabs.Count; i++)
+        List<GameObject> validCandidates = new List<GameObject>();
+        for (int i = 0; i < poolToUse.Count; i++)
+        {
+            GameObject prefab = poolToUse[i];
+            if (prefab != null)
             {
-                GameObject prefab = sectionPrefabs[i];
-
-                if (prefab == null)
+                if (!usingCompatibleList && poolToUse == sectionPrefabs && prefab == previousPrefab && poolToUse.Count > 1)
                     continue;
 
-                if (selectedIndex == 0)
-                    return prefab;
-
-                selectedIndex--;
+                validCandidates.Add(prefab);
             }
-
-            return null;
         }
 
-        // Pick a random prefab that isn't the previous prefab.
-        int randomIndex = rng.Next(validCount - 1);
-
-
-        for (int i = 0; i < sectionPrefabs.Count; i++)
+        if (validCandidates.Count == 0)
         {
-            GameObject prefab = sectionPrefabs[i];
-
-            if (prefab == null || prefab == previousPrefab)
-                continue;
-
-            if (randomIndex == 0)
-                return prefab;
-
-            randomIndex--;
+            for (int i = 0; i < poolToUse.Count; i++)
+            {
+                if (poolToUse[i] != null)
+                    validCandidates.Add(poolToUse[i]);
+            }
         }
 
-        return null;
+        if (validCandidates.Count == 0)
+            return null;
+
+        int randomIndex = rng.Next(validCandidates.Count);
+        GameObject selectedPrefab = validCandidates[randomIndex];
+
+        Debug.Log($"[MapManager] Successfully chose next section prefab: '{selectedPrefab.name}' (Source: {(usingCompatibleList ? "Compatible List" : "General/Fallback List")})", this);
+
+        return selectedPrefab;
     }
 
     private Vector3 GetSpawnPosition()
@@ -409,7 +386,6 @@ public class MapManager : MonoBehaviour
         }
 
         activeSections.Clear();
-
         previousPrefab = null;
     }
 

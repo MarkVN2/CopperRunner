@@ -1018,6 +1018,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9063772304647141034}
   - component: {fileID: 543151593109212597}
+  - component: {fileID: 7296247922454417467}
   m_Layer: 0
   m_Name: Section3
   m_TagString: Untagged
@@ -1075,6 +1076,21 @@ MonoBehaviour:
   - {fileID: 8138370219296462617}
   activateOnStart: 1
   activationChance: 0.5
+--- !u!114 &7296247922454417467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618173504429425329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89d5ab2d62004645853dab44a0ab838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapSection
+  compatibleSections:
+  - {fileID: 4938480018529520923, guid: 31601f0d16bb3ca47968267ded8b81f4, type: 3}
+  - {fileID: 1413071249168101877, guid: cabdf3e38cf411d42a3ac73fa80776a6, type: 3}
 --- !u!1 &7606336086169955352
 GameObject:
   m_ObjectHideFlags: 0

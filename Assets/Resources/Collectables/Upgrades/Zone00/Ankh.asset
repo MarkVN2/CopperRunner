@@ -34,7 +34,11 @@ MonoBehaviour:
   rarity: 3
   maxRank: 1
   price: 20
-  upgradesActions: []
+  upgradesActions:
+  - rid: 2310000000000000001
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2310000000000000001
+      type: {class: ExtraLifeAction, ns: , asm: Assembly-CSharp}
+      data: {}

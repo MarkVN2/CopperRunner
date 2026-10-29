@@ -77,7 +77,7 @@ public class UpgradeShopMenu : MonoBehaviour
             return;
         }
 
-        shop.RefreshOffers();
+        shop.RefreshOffers(player);
         if (menu != null)
             menu.SetActive(true);
         RefreshButtons();

@@ -33,8 +33,12 @@ MonoBehaviour:
   icon: {fileID: 0}
   rarity: 0
   maxRank: 1
-  price: 0
-  upgradesActions: []
+  price: 15
+  upgradesActions:
+  - rid: 2310000000000000001
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2310000000000000001
+      type: {class: MoreSpeedAction, ns: , asm: Assembly-CSharp}
+      data: {}

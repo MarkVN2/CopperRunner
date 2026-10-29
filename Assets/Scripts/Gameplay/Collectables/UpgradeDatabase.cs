@@ -55,7 +55,11 @@ public class UpgradeDatabase : ScriptableObject
         return PickUnique(cachedListOfUpgrades, itemQuantity);
     }
 
-    public List<UpgradeData> GetRandomFromActivePool(int itemQuantity, RegionID[] activeRegions)
+    public List<UpgradeData> GetRandomFromActivePool(
+        int itemQuantity,
+        RegionID[] activeRegions,
+        Predicate<UpgradeData> isEligible = null
+    )
     {
         List<UpgradeData> upgradesOfActiveRegions = new();
         if (itemPool == null || activeRegions == null)
@@ -71,7 +75,9 @@ public class UpgradeDatabase : ScriptableObject
         {
             if (collection.GetUpgrades() != null)
                 upgradesOfActiveRegions.AddRange(
-                    collection.GetUpgrades().Where(data => data != null)
+                    collection
+                        .GetUpgrades()
+                        .Where(data => data != null && (isEligible == null || isEligible(data)))
                 );
         }
 

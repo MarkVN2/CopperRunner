@@ -31,7 +31,7 @@ public class CopperCoin : MonoBehaviour
             return;
 
         Player player = other.GetComponentInParent<Player>();
-        if (player == null || player.IsDead)
+        if (player == null || player.IsDead || !player.CanAddCoin(value))
             return;
 
         collected = true;

@@ -22,10 +22,16 @@ public class UpgradeShop : MonoBehaviour
             shopProvider = GetComponent<ShopProvider>();
     }
 
-    public void RefreshOffers()
+    public void RefreshOffers(Player player)
     {
         currentOffers.Clear();
-        currentOffers.AddRange(shopProvider.GetRandomOffers(offerCount));
+        if (player == null)
+        {
+            Debug.LogWarning("[UpgradeShop] Cannot refresh offers without a player.", this);
+            return;
+        }
+
+        currentOffers.AddRange(shopProvider.GetRandomOffers(offerCount, player));
     }
 
     public bool TryPurchase(Player player, int offerIndex)

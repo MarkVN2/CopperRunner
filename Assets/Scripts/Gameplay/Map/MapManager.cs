@@ -150,6 +150,17 @@ public class MapManager : MonoBehaviour
         accelerationDelay = Mathf.Max(0f, duration);
     }
 
+    public void IncreaseSpeed(float multiplier)
+    {
+        if (multiplier <= 0f)
+        {
+            Debug.LogWarning("[MapManager] Speed multiplier must be greater than zero.", this);
+            return;
+        }
+
+        currentSpeed = Mathf.Clamp(currentSpeed * multiplier, minimumSpeed, maximumSpeed);
+    }
+
     private void SpawnInitialSections()
     {
         ClearActiveSections();

@@ -210,7 +210,7 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 001f7cab18fd1e0d0800000000000000
       internalID: -3395186895783202560
@@ -232,7 +232,7 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 964c32155e74b5ee0800000000000000
       internalID: -1271343419567651735
@@ -254,7 +254,7 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 488fc7a9d5d77e2a0800000000000000
       internalID: -6708255278967752572
@@ -276,7 +276,7 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b9e6e6db10f9e3e60800000000000000
       internalID: 7943961622550048411
@@ -618,17 +618,44 @@ TextureImporter:
       name: atlas-stage-nassir_no_bg (1)_153
       rect:
         serializedVersion: 2
-        x: 1352
-        y: 1800
-        width: 150
-        height: 150
+        x: 1350
+        y: 1798
+        width: 146
+        height: 148
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: 72.21672, y: -70.115295}
+        - {x: 72.21672, y: -52.976624}
+        - {x: 65, y: -34}
+        - {x: 55.078045, y: -18.69928}
+        - {x: 73, y: 6.05658}
+        - {x: 73, y: 21.290956}
+        - {x: 68.40813, y: 34.621033}
+        - {x: 45.55656, y: 42.238224}
+        - {x: 45.55656, y: 53.664005}
+        - {x: 39.84367, y: 70.80267}
+        - {x: 32.226482, y: 74}
+        - {x: 11.279217, y: 74}
+        - {x: -5.8594556, y: 65.08978}
+        - {x: -15.38094, y: 57.4726}
+        - {x: -15.38094, y: 47.951115}
+        - {x: -13.476644, y: 34.621033}
+        - {x: -22.998129, y: 27.003847}
+        - {x: -26.806723, y: 11.769471}
+        - {x: -34.42391, y: 0.34368932}
+        - {x: -36.328205, y: -12.986389}
+        - {x: -47.75399, y: -11.082092}
+        - {x: -55.371178, y: -32.029358}
+        - {x: -64.89266, y: -33.933655}
+        - {x: -72.50985, y: -41.550842}
+        - {x: -72.50985, y: -70.115295}
+        - {x: -68.701256, y: -73.92389}
+        - {x: 68.40813, y: -73.92389}
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: 0.483
       bones: []
       spriteID: c5269d1f52ab54e4ba13f14b7c73626c
       internalID: 1528056961
@@ -641,9 +668,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1499
-        y: 1804
-        width: 300
-        height: 150
+        y: 1799
+        width: 288
+        height: 155
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -14,7 +14,7 @@ public class ShopTrigger : MonoBehaviour {
         //    CameraTarget previousTarget = Camera.main.GetComponent<CinemachineCamera>().Target;
         //    Camera.main.GetComponent<CinemachineCamera>().Target = previousTarget;
         //};
-        Camera.main.GetComponent<CinemachineCamera>().Target.LookAtTarget = cameraTarget;
+        //Camera.main.GetComponent<CinemachineCamera>().Target.LookAtTarget = cameraTarget;
 
         //UpgradeShopMenu.Instance.Open();
     }

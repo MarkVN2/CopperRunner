@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: ac1180efe92114b42b39cdcfb53d751c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1912695012880757932
+    second: Hud menus pausa e musica (150px x 150px)_0
+  - first:
+      213: 6445148759396153689
+    second: Hud menus pausa e musica (150px x 150px)_1
+  - first:
+      213: 2320105173282580311
+    second: Hud menus pausa e musica (150px x 150px)_2
+  - first:
+      213: 2551541989320488172
+    second: Hud menus pausa e musica (150px x 150px)_3
+  - first:
+      213: 5111044529682065404
+    second: Hud menus pausa e musica (150px x 150px)_4
+  - first:
+      213: -1951371114384890374
+    second: Hud menus pausa e musica (150px x 150px)_5
+  - first:
+      213: -6043396695612828157
+    second: Hud menus pausa e musica (150px x 150px)_6
+  - first:
+      213: 5952670552712806587
+    second: Hud menus pausa e musica (150px x 150px)_7
+  - first:
+      213: 7261556972801383556
+    second: Hud menus pausa e musica (150px x 150px)_8
+  - first:
+      213: -7951979668516708535
+    second: Hud menus pausa e musica (150px x 150px)_9
+  - first:
+      213: 831150014405684098
+    second: Hud menus pausa e musica (150px x 150px)_10
+  - first:
+      213: -5844863240707963344
+    second: Hud menus pausa e musica (150px x 150px)_11
+  - first:
+      213: -5303590627946950051
+    second: Hud menus pausa e musica (150px x 150px)_12
+  - first:
+      213: 2915770728298421947
+    second: Hud menus pausa e musica (150px x 150px)_13
+  - first:
+      213: -7025273768588160648
+    second: Hud menus pausa e musica (150px x 150px)_14
+  - first:
+      213: -3904527072648521550
+    second: Hud menus pausa e musica (150px x 150px)_15
+  - first:
+      213: 1697594404020929718
+    second: Hud menus pausa e musica (150px x 150px)_16
+  - first:
+      213: -4174061901997181535
+    second: Hud menus pausa e musica (150px x 150px)_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 498
+        width: 429
+        height: 564
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45bc499050eb475e0800000000000000
+      internalID: -1912695012880757932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_1
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1002
+        width: 62
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9597b5816a4c17950800000000000000
+      internalID: 6445148759396153689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 982
+        width: 281
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 757ed07dc5ba23020800000000000000
+      internalID: 2320105173282580311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_3
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 984
+        width: 144
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce4f0feabe5e86320800000000000000
+      internalID: 2551541989320488172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_4
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 951
+        width: 122
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf727e69be31ee640800000000000000
+      internalID: 5111044529682065404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_5
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 783
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af5612e6f465be4e0800000000000000
+      internalID: -1951371114384890374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_6
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 827
+        width: 281
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3065a3189ba812ca0800000000000000
+      internalID: -6043396695612828157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_7
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 826
+        width: 144
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0006f34522c9250800000000000000
+      internalID: 5952670552712806587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_8
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 682
+        width: 66
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c5618e79b36c460800000000000000
+      internalID: 7261556972801383556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_9
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 675
+        width: 281
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94fdee47f94e4a190800000000000000
+      internalID: -7951979668516708535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_10
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 677
+        width: 144
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b26b3d886d88b00800000000000000
+      internalID: 831150014405684098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_11
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 522
+        width: 65
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0360dd899dfd2eea0800000000000000
+      internalID: -5844863240707963344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_12
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 512
+        width: 28
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d52912b6c6cd566b0800000000000000
+      internalID: -5303590627946950051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_13
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 512
+        width: 28
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe95ba6706e67820800000000000000
+      internalID: 2915770728298421947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_14
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 515
+        width: 60
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871de6d9ab6318e90800000000000000
+      internalID: -7025273768588160648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 29
+        width: 425
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b893e2805550d9c0800000000000000
+      internalID: -3904527072648521550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_16
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 235
+        width: 213
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b4cb50cd111f8710800000000000000
+      internalID: 1697594404020929718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hud menus pausa e musica (150px x 150px)_17
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 75
+        width: 110
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a577f4b0d0c216c0800000000000000
+      internalID: -4174061901997181535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Hud menus pausa e musica (150px x 150px)_0: -1912695012880757932
+      Hud menus pausa e musica (150px x 150px)_1: 6445148759396153689
+      Hud menus pausa e musica (150px x 150px)_10: 831150014405684098
+      Hud menus pausa e musica (150px x 150px)_11: -5844863240707963344
+      Hud menus pausa e musica (150px x 150px)_12: -5303590627946950051
+      Hud menus pausa e musica (150px x 150px)_13: 2915770728298421947
+      Hud menus pausa e musica (150px x 150px)_14: -7025273768588160648
+      Hud menus pausa e musica (150px x 150px)_15: -3904527072648521550
+      Hud menus pausa e musica (150px x 150px)_16: 1697594404020929718
+      Hud menus pausa e musica (150px x 150px)_17: -4174061901997181535
+      Hud menus pausa e musica (150px x 150px)_2: 2320105173282580311
+      Hud menus pausa e musica (150px x 150px)_3: 2551541989320488172
+      Hud menus pausa e musica (150px x 150px)_4: 5111044529682065404
+      Hud menus pausa e musica (150px x 150px)_5: -1951371114384890374
+      Hud menus pausa e musica (150px x 150px)_6: -6043396695612828157
+      Hud menus pausa e musica (150px x 150px)_7: 5952670552712806587
+      Hud menus pausa e musica (150px x 150px)_8: 7261556972801383556
+      Hud menus pausa e musica (150px x 150px)_9: -7951979668516708535
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -10,9 +10,9 @@ public class MapManager : MonoBehaviour
     public int RunSeed => seed;
     private System.Random rng;
 
-    [Header("Difficult Settings")]
+    [Header("Difficulty Settings")]
     [SerializeField]
-    private float distanceUntilShop = 100f;
+    private float distanceUntilShop = 500f;
 
     [Header("Sections")]
     [SerializeField]

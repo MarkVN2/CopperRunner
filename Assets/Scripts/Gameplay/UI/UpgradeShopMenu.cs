@@ -10,6 +10,7 @@ public class UpgradeShopMenu : MonoBehaviour
     public static UpgradeShopMenu Instance;
 
     public UnityEvent OnClose;
+
     [SerializeField]
     private UpgradeShop shop;
 
@@ -35,8 +36,14 @@ public class UpgradeShopMenu : MonoBehaviour
     private List<Image> offerIcons = new List<Image>();
 
     [Header("Timer Settings")]
+    [Header("Step-Based Timer Settings")]
+    [Tooltip("How many seconds of real-world shop time the player gets PER REMAINING STEP.")]
     [SerializeField]
-    private float shopDuration = 30f; 
+    private float secondsPerStep = 2f;
+
+    [Tooltip("A baseline absolute minimum time given to the player even if steps are near 0.")]
+    [SerializeField]
+    private float safetyMinimumDuration = 5f;
 
     [SerializeField]
     private TMP_Text timerLabel;
@@ -51,10 +58,12 @@ public class UpgradeShopMenu : MonoBehaviour
         {
             Instance = this;
         }
-        else
+        else if (Instance != this)
         {
-            Instance = null;
+            Destroy(gameObject);
+            return;
         }
+
         if (shop == null)
             shop = FindFirstObjectByType<UpgradeShop>();
         if (player == null)
@@ -68,7 +77,7 @@ public class UpgradeShopMenu : MonoBehaviour
         if (!isOpen)
             return;
 
-        remainingTime -= Time.deltaTime;
+        remainingTime -= Time.unscaledDeltaTime;
 
         UpdateTimerDisplay();
 
@@ -91,18 +100,26 @@ public class UpgradeShopMenu : MonoBehaviour
             menu.SetActive(true);
         RefreshButtons();
 
-        remainingTime = GetDistanceBasedShopDuration() + nextCheckpointTimeBonus;
+        float calculatedDuration = player.RemainingSteps * secondsPerStep;
+        if (calculatedDuration < safetyMinimumDuration)
+        {
+            calculatedDuration = safetyMinimumDuration;
+        }
+
+        remainingTime = calculatedDuration + nextCheckpointTimeBonus;
         nextCheckpointTimeBonus = 0f;
         isOpen = true;
         UpdateTimerDisplay();
-
     }
 
     public void AddTimeToNextCheckpoint(float seconds)
     {
         if (seconds <= 0f)
         {
-            Debug.LogWarning("[UpgradeShopMenu] Checkpoint time bonus must be greater than zero.", this);
+            Debug.LogWarning(
+                "[UpgradeShopMenu] Checkpoint time bonus must be greater than zero.",
+                this
+            );
             return;
         }
 
@@ -156,7 +173,7 @@ public class UpgradeShopMenu : MonoBehaviour
                     offer.GetName().GetLocalizedString() + "\n" + Mathf.Max(0, offer.price);
 
             if (i < offerIcons.Count && offerIcons[i] != null)
-                offerIcons[i].sprite = offer.GetIcon();
+                offerIcons[i].sprite = offer.GetInventoryTexture();
         }
     }
 
@@ -168,59 +185,5 @@ public class UpgradeShopMenu : MonoBehaviour
         float clampedTime = Mathf.Max(0f, remainingTime);
         int seconds = Mathf.CeilToInt(clampedTime);
         timerLabel.text = $"Time Left: {seconds}s";
-    }
-
-    private float GetDistanceBasedShopDuration()
-    {
-        if (horde == null)
-        {
-            GameObject hordeObject = GameObject.FindGameObjectWithTag("Enemy");
-            if (hordeObject != null)
-                horde = hordeObject.transform;
-        }
-
-        if (horde == null || mapManager == null)
-        {
-            Debug.LogWarning(
-                "[UpgradeShopMenu] Horde or MapManager not found; using the configured shop duration.",
-                this
-            );
-            return Mathf.Max(0f, shopDuration);
-        }
-
-        float distanceToHorde;
-        Collider2D playerCollider = player.GetComponent<Collider2D>();
-        Collider2D hordeCollider = horde.GetComponent<Collider2D>();
-        if (playerCollider != null && hordeCollider != null)
-        {
-            Bounds playerBounds = playerCollider.bounds;
-            Bounds hordeBounds = hordeCollider.bounds;
-
-            if (hordeBounds.max.x <= playerBounds.min.x)
-                distanceToHorde = playerBounds.min.x - hordeBounds.max.x;
-            else if (playerBounds.max.x <= hordeBounds.min.x)
-                distanceToHorde = hordeBounds.min.x - playerBounds.max.x;
-            else
-                distanceToHorde = 0f;
-        }
-        else
-        {
-            Debug.LogWarning(
-                "[UpgradeShopMenu] Player or horde collider not found; using transform distance.",
-                this
-            );
-            distanceToHorde = Mathf.Abs(player.transform.position.x - horde.position.x);
-        }
-
-        if (mapManager.CurrentSpeed <= 0f)
-        {
-            Debug.LogWarning(
-                "[UpgradeShopMenu] Map speed must be greater than zero; using the configured shop duration.",
-                this
-            );
-            return Mathf.Max(0f, shopDuration);
-        }
-
-        return distanceToHorde / mapManager.CurrentSpeed;
     }
 }

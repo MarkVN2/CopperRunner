@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Serialization;
 
 public class CollectableData : ScriptableObject
 {
     public LocalizedString collectableName;
 	public LocalizedString description;
-	public Sprite icon;
+	[FormerlySerializedAs("icon")]
+	public Sprite inventoryTexture;
 	public Rarity rarity;
 
     public LocalizedString GetName()
@@ -20,7 +22,12 @@ public class CollectableData : ScriptableObject
 
     public Sprite GetIcon()
     {
-        return icon;    
+        return inventoryTexture;
+    }
+
+    public Sprite GetInventoryTexture()
+    {
+        return inventoryTexture;
     }
 
 	public Rarity GetRarity()

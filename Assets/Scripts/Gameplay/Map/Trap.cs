@@ -51,7 +51,8 @@ public class Trap : MonoBehaviour
         Player player = other.GetComponentInParent<Player>();
         if (player == null)
             return;
-
+        else
+            player.RemainingSteps -= 1;
         if (Time.time - lastHitTime < hitCooldown)
             return;
 

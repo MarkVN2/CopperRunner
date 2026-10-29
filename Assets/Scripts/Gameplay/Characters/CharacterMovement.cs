@@ -104,11 +104,14 @@ public class CharacterMovement : MonoBehaviour
 
         if (jumpRequested)
         {
-            velocity.y = actor.GetJumpForce();
+            //velocity.y = actor.GetJumpForce();
             jumpRequested = false;
             isGrounded = false;
+            body.AddForceY(actor.GetJumpForce() ,ForceMode2D.Impulse);
+            velocity.y = body.linearVelocity.y;
+            Debug.Log("aaa "+ velocity);
         }
-
+        
         body.linearVelocity = velocity;
     }
 

@@ -33,8 +33,12 @@ MonoBehaviour:
   icon: {fileID: -2067557256, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
   rarity: 0
   maxRank: 1
-  price: 0
-  upgradesActions: []
+  price: 10
+  upgradesActions:
+  - rid: 2310000000000000001
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2310000000000000001
+      type: {class: MoreShopTimeAction, ns: , asm: Assembly-CSharp}
+      data: {}

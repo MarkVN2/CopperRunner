@@ -1312,6 +1312,7 @@ MonoBehaviour:
   - {fileID: 355579437}
   - {fileID: 1241915998}
   - {fileID: 756606513}
+  closeButton: {fileID: 0}
   offerIcons:
   - {fileID: 1459042929}
   - {fileID: 1776365176}
@@ -2290,6 +2291,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 136040338726614527, guid: c5a8cf314708fcb49a56839a7048e8be, type: 3}
+      propertyPath: endingSectionPrefab
+      value: 
+      objectReference: {fileID: 1413071249168101877, guid: 31b7d11c73aeab24f98887dbcacc0004, type: 3}
     - target: {fileID: 909701679269635452, guid: c5a8cf314708fcb49a56839a7048e8be, type: 3}
       propertyPath: m_Name
       value: GameManagers

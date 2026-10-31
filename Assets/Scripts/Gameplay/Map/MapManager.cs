@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class MapManager : MonoBehaviour
 {
     [Header("Seed")]
-    [SerializeField] private bool randomizeSeed = true;
-    [SerializeField] private int seed = 12345;
+    [SerializeField]
+    private bool randomizeSeed = true;
+
+    [SerializeField]
+    private int seed = 12345;
     public int RunSeed => seed;
     private System.Random rng;
 
@@ -17,6 +21,7 @@ public class MapManager : MonoBehaviour
     [Header("Sections")]
     [SerializeField]
     private List<GameObject> sectionPrefabs = new List<GameObject>();
+
     [SerializeField]
     private GameObject shopPrefab;
 
@@ -71,6 +76,18 @@ public class MapManager : MonoBehaviour
     [SerializeField]
     private float totalDistanceTravelled;
 
+    [Header("End Run Settings")]
+    [SerializeField]
+    private float targetRunDistance = 1000f;
+
+    [SerializeField]
+    private GameObject endingSectionPrefab;
+
+    [SerializeField]
+    private UnityEvent OnRunFinished;
+
+    private bool runCompleted = false;
+    public bool IsRunCompleted => runCompleted;
     private bool hasLoggedMissingPrefabWarning;
 
     public List<GameObject> SectionsPrefabs => sectionPrefabs;
@@ -220,6 +237,15 @@ public class MapManager : MonoBehaviour
         {
             prefab = prefabOverride;
         }
+        else if (
+            !runCompleted
+            && totalDistanceTravelled >= targetRunDistance
+            && endingSectionPrefab != null
+        )
+        {
+            prefab = endingSectionPrefab;
+            runCompleted = true;
+        }
         else if (distanceTraveledSinceLastShop >= distanceUntilShop)
         {
             prefab = shopPrefab;
@@ -273,16 +299,16 @@ public class MapManager : MonoBehaviour
                 prefabByInstance[instance] = prefab;
                 return instance;
             },
-            actionOnGet: delegate (GameObject instance)
+            actionOnGet: delegate(GameObject instance)
             {
                 instance.SetActive(true);
             },
-            actionOnRelease: delegate (GameObject instance)
+            actionOnRelease: delegate(GameObject instance)
             {
                 instance.SetActive(false);
                 instance.transform.SetParent(transform);
             },
-            actionOnDestroy: delegate (GameObject instance)
+            actionOnDestroy: delegate(GameObject instance)
             {
                 prefabByInstance.Remove(instance);
                 if (instance != null)
@@ -327,19 +353,28 @@ public class MapManager : MonoBehaviour
             MapSection mapSection = previousPrefab.GetComponent<MapSection>();
             if (mapSection != null)
             {
-                if (mapSection.CompatibleSections != null && mapSection.CompatibleSections.Count > 0)
+                if (
+                    mapSection.CompatibleSections != null
+                    && mapSection.CompatibleSections.Count > 0
+                )
                 {
                     poolToUse = mapSection.CompatibleSections;
                     usingCompatibleList = true;
                 }
                 else
                 {
-                    Debug.LogWarning($"[MapManager] '{previousPrefab.name}' has a MapSection component, but its 'CompatibleSections' list is empty. Falling back to general section prefabs.", this);
+                    Debug.LogWarning(
+                        $"[MapManager] '{previousPrefab.name}' has a MapSection component, but its 'CompatibleSections' list is empty. Falling back to general section prefabs.",
+                        this
+                    );
                 }
             }
             else
             {
-                Debug.LogWarning($"[MapManager] '{previousPrefab.name}' is missing a MapSection component. Falling back to general section prefabs.", this);
+                Debug.LogWarning(
+                    $"[MapManager] '{previousPrefab.name}' is missing a MapSection component. Falling back to general section prefabs.",
+                    this
+                );
             }
         }
 
@@ -354,7 +389,12 @@ public class MapManager : MonoBehaviour
             GameObject prefab = poolToUse[i];
             if (prefab != null)
             {
-                if (!usingCompatibleList && poolToUse == sectionPrefabs && prefab == previousPrefab && poolToUse.Count > 1)
+                if (
+                    !usingCompatibleList
+                    && poolToUse == sectionPrefabs
+                    && prefab == previousPrefab
+                    && poolToUse.Count > 1
+                )
                     continue;
 
                 validCandidates.Add(prefab);
@@ -376,7 +416,10 @@ public class MapManager : MonoBehaviour
         int randomIndex = rng.Next(validCandidates.Count);
         GameObject selectedPrefab = validCandidates[randomIndex];
 
-        Debug.Log($"[MapManager] Successfully chose next section prefab: '{selectedPrefab.name}' (Source: {(usingCompatibleList ? "Compatible List" : "General/Fallback List")})", this);
+        Debug.Log(
+            $"[MapManager] Successfully chose next section prefab: '{selectedPrefab.name}' (Source: {(usingCompatibleList ? "Compatible List" : "General/Fallback List")})",
+            this
+        );
 
         return selectedPrefab;
     }

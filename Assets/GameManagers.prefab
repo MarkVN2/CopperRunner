@@ -221,3 +221,8 @@ MonoBehaviour:
   speedIncreasePerSecond: 0.1
   maximumSpeed: 30
   totalDistanceTravelled: 0
+  targetRunDistance: 1000
+  endingSectionPrefab: {fileID: 1413071249168101877, guid: 31b7d11c73aeab24f98887dbcacc0004, type: 3}
+  OnRunFinished:
+    m_PersistentCalls:
+      m_Calls: []

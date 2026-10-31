@@ -9,7 +9,9 @@ public class MoreShopTimeAction : UpgradeAction
         UpgradeShopMenu shopMenu = Object.FindFirstObjectByType<UpgradeShopMenu>();
         if (shopMenu == null)
         {
-            Debug.LogWarning("[MoreShopTimeAction] No shop menu found; checkpoint time was not increased.");
+            Debug.LogWarning(
+                "[MoreShopTimeAction] No shop menu found; checkpoint time was not increased."
+            );
             return;
         }
 

@@ -3,30 +3,11 @@ using UnityEngine;
 
 public class ShopTrigger : MonoBehaviour
 {
-    [SerializeField]
-    private Transform cameraTarget;
-
-    private CinemachineBrain cinemachineBrain;
-    private CinemachineCamera vCam;
     private float defaultFixedDeltaTime;
 
     private void Awake()
     {
         defaultFixedDeltaTime = Time.fixedDeltaTime;
-    }
-
-    private void Start()
-    {
-        if (Camera.main != null)
-        {
-            vCam = Camera.main.GetComponent<CinemachineCamera>();
-            cinemachineBrain = Camera.main.GetComponent<CinemachineBrain>();
-
-            if (cinemachineBrain != null)
-            {
-                cinemachineBrain.UpdateMethod = CinemachineBrain.UpdateMethods.FixedUpdate;
-            }
-        }
     }
 
     private void ShopTriggerOnClose()
@@ -38,9 +19,14 @@ public class ShopTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Time.timeScale = 0.5f;
-        Time.fixedDeltaTime = defaultFixedDeltaTime * Time.timeScale;
-        UpgradeShopMenu.Instance.OnClose.AddListener(ShopTriggerOnClose);
         UpgradeShopMenu.Instance.Open();
+        UpgradeShopMenu.Instance.OnClose.AddListener(ShopTriggerOnClose);
+
+        float shopDuration = UpgradeShopMenu.Instance.RemainingTime;
+
+        float targetTimeScale = Mathf.Clamp(shopDuration / 10f, 0.1f, 0.6f);
+
+        Time.timeScale = targetTimeScale;
+        Time.fixedDeltaTime = defaultFixedDeltaTime * Time.timeScale;
     }
 }

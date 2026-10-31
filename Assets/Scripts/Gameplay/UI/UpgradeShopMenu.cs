@@ -33,6 +33,12 @@ public class UpgradeShopMenu : MonoBehaviour
     private List<TMP_Text> offerLabels = new List<TMP_Text>();
 
     [SerializeField]
+    private List<TMP_Text> offerPrices = new List<TMP_Text>();
+
+    [SerializeField]
+    private Button closeButton;
+
+    [SerializeField]
     private List<Image> offerIcons = new List<Image>();
 
     [Header("Timer Settings")]
@@ -49,6 +55,7 @@ public class UpgradeShopMenu : MonoBehaviour
     private TMP_Text timerLabel;
 
     private float remainingTime;
+    public float RemainingTime => remainingTime;
     private bool isOpen;
     private float nextCheckpointTimeBonus;
 
@@ -70,6 +77,18 @@ public class UpgradeShopMenu : MonoBehaviour
             player = FindFirstObjectByType<Player>();
         if (mapManager == null)
             mapManager = FindFirstObjectByType<MapManager>();
+
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(Close);
+        }
+        else
+        {
+            Debug.LogWarning(
+                "[UpgradeShopMenu] CloseButton is not assigned in the Inspector!",
+                this
+            );
+        }
     }
 
     private void Update()
@@ -157,7 +176,17 @@ public class UpgradeShopMenu : MonoBehaviour
             if (!hasOffer)
                 continue;
 
+            UIHoverPopButton hoverButton = offerButtons[i].GetComponent<UIHoverPopButton>();
+            if (hoverButton == null)
+            {
+                hoverButton = offerButtons[i].gameObject.AddComponent<UIHoverPopButton>();
+            }
+
             UpgradeData offer = offers[i];
+
+            string description = offer.GetDescription()?.GetLocalizedString() ?? string.Empty;
+            hoverButton.SetupTooltipData(description);
+
             offerButtons[i].onClick.RemoveAllListeners();
             int index = i;
             offerButtons[i]
@@ -169,9 +198,9 @@ public class UpgradeShopMenu : MonoBehaviour
                 );
 
             if (i < offerLabels.Count && offerLabels[i] != null)
-                offerLabels[i].text =
-                    offer.GetName().GetLocalizedString() + "\n" + Mathf.Max(0, offer.price);
-
+                offerLabels[i].text = offer.GetName().GetLocalizedString();
+            if (i < offerPrices.Count && offerPrices[i] != null)
+                offerPrices[i].text = Mathf.Max(0, offer.price).ToString();
             if (i < offerIcons.Count && offerIcons[i] != null)
                 offerIcons[i].sprite = offer.GetInventoryTexture();
         }

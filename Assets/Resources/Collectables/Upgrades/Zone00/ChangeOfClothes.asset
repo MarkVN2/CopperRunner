@@ -23,15 +23,15 @@ MonoBehaviour:
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:0386b5047e9cbb44686b5d5cf8e4208e
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 16279661618995200
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
   inventoryTexture: {fileID: -2067557256, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
-  rarity: 0
+  rarity: 2
   maxRank: 1
   price: 0
   upgradesActions: []

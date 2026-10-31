@@ -455,6 +455,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &3280835464812300394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4638011480932962441}
+  m_Layer: 0
+  m_Name: Item Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4638011480932962441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3280835464812300394}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.6535645, y: -2.73582, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7451739465122517824}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3367728948648922323
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7451739465122517824}
   - component: {fileID: 515831173376131041}
+  - component: {fileID: 7634301492326804663}
   m_Layer: 0
   m_Name: Section0
   m_TagString: Untagged
@@ -906,6 +938,7 @@ Transform:
   - {fileID: 2347877226011818819}
   - {fileID: 1569674809195329208}
   - {fileID: 8636385318130346978}
+  - {fileID: 4638011480932962441}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &515831173376131041
@@ -922,6 +955,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapSection
   compatibleSections:
   - {fileID: 1413071249168101877, guid: cabdf3e38cf411d42a3ac73fa80776a6, type: 3}
+--- !u!114 &7634301492326804663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371692460992094200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4657e2b43bcc4ccab0e01bf5b906a319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
+  spawnPoints:
+  - point: {fileID: 0}
+    possibleItems: []
+  - point: {fileID: 4638011480932962441}
+    possibleItems:
+    - {fileID: 11400000, guid: b13b66d2063ecfa4b8fd5478d7bb2f5d, type: 2}
+    - {fileID: 11400000, guid: 4dc558b6b11c07047afc6096d87ca196, type: 2}
+    - {fileID: 11400000, guid: 53856e9bfcb149e4c84d6bce65b49aca, type: 2}
+    - {fileID: 11400000, guid: 584bccaa34260fa4c9ef22264ac09e0b, type: 2}
+  spawnOnStart: 1
+  sortingOrder: 0
 --- !u!1 &7430000115211436980
 GameObject:
   m_ObjectHideFlags: 0

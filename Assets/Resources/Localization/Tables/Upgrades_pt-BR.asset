@@ -38,6 +38,26 @@ MonoBehaviour:
     m_Localized: Ampulheta
     m_Metadata:
       m_Items: []
+  - m_Id: 16279033266118656
+    m_Localized: "Uma rel\xEDquia do antigo Egito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16279661618995200
+    m_Localized: "Diminui a velocidade da multid\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16280406971981824
+    m_Localized: Aumente a sua velocidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16280526216044544
+    m_Localized: Aumenta o tempo de venda nas lojas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16283259845287936
+    m_Localized: Melhora a quantidade de Cobre que a bolsa consegue carregar.
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

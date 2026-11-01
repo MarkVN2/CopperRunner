@@ -56,10 +56,15 @@ public class MapManager : MonoBehaviour
     private float speedIncreasePerSecond = 1f;
 
     [SerializeField]
+    [Min(0.01f)]
+    private float speedRecoveryRatio = 0.4f;
+
+    [SerializeField]
     [Min(0f)]
     private float maximumSpeed = 30f;
 
     private float currentSpeed;
+    private float normalSpeed;
 
     private float accelerationDelay;
 
@@ -95,6 +100,8 @@ public class MapManager : MonoBehaviour
     public float TotalDistanceTravelled => totalDistanceTravelled;
     private float distanceTraveledSinceLastShop = 0f;
     public float CurrentSpeed => currentSpeed;
+    public float NormalSpeed => normalSpeed;
+    public float SectionLength => sectionLength;
 
     private void Awake()
     {
@@ -106,6 +113,7 @@ public class MapManager : MonoBehaviour
 
         currentSpeed = Mathf.Max(startingSpeed, minimumSpeed);
         currentSpeed = Mathf.Min(currentSpeed, maximumSpeed);
+        normalSpeed = currentSpeed;
 
         accelerationDelay = 0f;
     }
@@ -141,6 +149,9 @@ public class MapManager : MonoBehaviour
 
     private void UpdateSpeed()
     {
+        float speedIncrease = speedIncreasePerSecond * Time.fixedDeltaTime;
+        normalSpeed = Mathf.Min(normalSpeed + speedIncrease, maximumSpeed);
+
         if (accelerationDelay > 0f)
         {
             accelerationDelay -= Time.fixedDeltaTime;
@@ -151,8 +162,11 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        currentSpeed += speedIncreasePerSecond * Time.fixedDeltaTime;
-        currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
+        currentSpeed = Mathf.MoveTowards(
+            currentSpeed,
+            normalSpeed,
+            normalSpeed * speedRecoveryRatio * Time.fixedDeltaTime
+        );
     }
 
     public void ApplySpeedModifier(float multiplier, float duration)
@@ -162,9 +176,8 @@ public class MapManager : MonoBehaviour
 
         multiplier = Mathf.Clamp(multiplier, 0.01f, 1f);
 
-        currentSpeed *= multiplier;
-        currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
-        accelerationDelay = Mathf.Max(0f, duration);
+        currentSpeed = Mathf.Min(currentSpeed, normalSpeed * multiplier);
+        accelerationDelay = Mathf.Max(accelerationDelay, duration);
     }
 
     public void IncreaseSpeed(float multiplier)
@@ -176,6 +189,7 @@ public class MapManager : MonoBehaviour
         }
 
         currentSpeed = Mathf.Clamp(currentSpeed * multiplier, minimumSpeed, maximumSpeed);
+        normalSpeed = Mathf.Clamp(normalSpeed * multiplier, minimumSpeed, maximumSpeed);
     }
 
     private void SpawnInitialSections()

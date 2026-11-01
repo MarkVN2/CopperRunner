@@ -1312,14 +1312,26 @@ MonoBehaviour:
   - {fileID: 355579437}
   - {fileID: 1241915998}
   - {fileID: 756606513}
-  closeButton: {fileID: 0}
+  closeButton: {fileID: 1948501177}
   offerIcons:
   - {fileID: 1459042929}
   - {fileID: 1776365176}
   - {fileID: 1298857830}
-  secondsPerStep: 2
-  safetyMinimumDuration: 5
+  minimumShopDuration: 5
+  maximumBaseShopDuration: 30
+  distanceForMaximumShopDuration: 50
   timerLabel: {fileID: 890502574}
+--- !u!114 &1948501177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1356522722645875008, guid: 1a81b98d060625f4bbda7302e1a42bcd, type: 3}
+  m_PrefabInstance: {fileID: 3683004682678911097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!114 &1674025944 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 136040338726614527, guid: c5a8cf314708fcb49a56839a7048e8be, type: 3}
@@ -2311,10 +2323,6 @@ PrefabInstance:
       propertyPath: timerLabel
       value: 
       objectReference: {fileID: 890502574}
-    - target: {fileID: 3289926950102910243, guid: c5a8cf314708fcb49a56839a7048e8be, type: 3}
-      propertyPath: secondsPerStep
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3289926950102910243, guid: c5a8cf314708fcb49a56839a7048e8be, type: 3}
       propertyPath: 'offerLabels.Array.data[0]'
       value: 

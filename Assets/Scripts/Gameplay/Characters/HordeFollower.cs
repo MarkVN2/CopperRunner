@@ -1,51 +1,66 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
-// [RequireComponent(typeof(Rigidbody2D))]
 public class HordeFollower : MonoBehaviour
 {
     [SerializeField]
     private Transform target;
 
+    [Tooltip("World units per real-time second while the horde approaches in a shop.")]
+    [FormerlySerializedAs("followSpeed")]
     [SerializeField]
     [Min(0f)]
-    private float followSpeed = 3f;
+    private float shopApproachSpeed = 0.75f;
+
+    [Tooltip("The horde runs at this fraction of the player's normal run speed.")]
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float runSpeedRatio = 0.9f;
 
     [SerializeField]
-    private bool followHorizontalPosition;
-
-    [SerializeField]
-    private bool followVerticalPosition;
-
-    // private Rigidbody2D body;
+    private MapManager mapManager;
 
     private void Awake()
     {
-        // body = GetComponent<Rigidbody2D>();
+        if (target == null)
+        {
+            Player player = FindFirstObjectByType<Player>();
+            if (player != null)
+                target = player.transform;
+        }
+
+        if (mapManager == null)
+            mapManager = FindFirstObjectByType<MapManager>();
+
+        if (target == null)
+            Debug.LogWarning("[HordeFollower] No player target is assigned or available.", this);
+        if (mapManager == null)
+            Debug.LogWarning("[HordeFollower] No MapManager is assigned or available.", this);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (target == null)
             return;
 
-        // Vector2 targetPosition = body.position;
-        // if (followHorizontalPosition)
-        // {
-        //     targetPosition.x = Mathf.MoveTowards(
-        //         targetPosition.x,
-        //         target.position.x,
-        //         followSpeed * Time.fixedDeltaTime
-        //     );
-        // }
+        Vector3 position = transform.position;
+        UpgradeShopMenu shopMenu = UpgradeShopMenu.Instance;
 
-        // if (followVerticalPosition)
-        //     targetPosition.y = Mathf.MoveTowards(
-        //         targetPosition.y,
-        //         target.position.y,
-        //         followSpeed * Time.fixedDeltaTime
-        //     );
+        if (shopMenu != null && shopMenu.IsOpen)
+        {
+            position.x = Mathf.MoveTowards(
+                position.x,
+                target.position.x,
+                shopApproachSpeed * Time.unscaledDeltaTime
+            );
+        }
+        else if (mapManager != null)
+        {
+            float hordeRunSpeed = mapManager.NormalSpeed * runSpeedRatio;
+            position.x += (hordeRunSpeed - mapManager.CurrentSpeed) * Time.deltaTime;
+        }
 
-        // body.MovePosition(targetPosition);
+        transform.position = position;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -73,8 +88,8 @@ public class HordeFollower : MonoBehaviour
         target = newTarget;
     }
 
-    public void SetFollowSpeed(float newSpeed)
+    public void SetShopApproachSpeed(float newSpeed)
     {
-        followSpeed = Mathf.Max(0f, newSpeed);
+        shopApproachSpeed = Mathf.Max(0f, newSpeed);
     }
 }

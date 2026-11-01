@@ -40,7 +40,6 @@ public class Player : Actor
         get { return isDead; }
     }
 
-    public int RemainingSteps { get; set; } = 10;
     public int ItemCount => items.Count;
     public IReadOnlyList<ItemData> Items => items;
     public IReadOnlyList<UpgradeData> Upgrades => upgrades;

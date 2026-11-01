@@ -152,9 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trap
   mapManager: {fileID: 0}
-  horde: {fileID: 0}
-  slowMultiplier: 0.5
+  slowMultiplier: 0.72
   slowDuration: 1.5
-  playerPullToHorde: 1
   hitCooldown: 2
-  idealWorldX: 0

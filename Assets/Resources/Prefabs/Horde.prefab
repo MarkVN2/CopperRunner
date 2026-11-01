@@ -152,6 +152,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HordeFollower
   target: {fileID: 0}
-  followSpeed: 0
-  followHorizontalPosition: 0
-  followVerticalPosition: 0
+  shopApproachSpeed: 0.75
+  runSpeedRatio: 0.9
+  mapManager: {fileID: 0}

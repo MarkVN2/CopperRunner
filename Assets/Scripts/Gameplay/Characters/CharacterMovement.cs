@@ -42,11 +42,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float idealWorldX;
 
-    public void ShiftIdealWorldX(float amount)
-    {
-        idealWorldX -= amount;
-    }
-
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();

@@ -219,6 +219,7 @@ MonoBehaviour:
   startingSpeed: 5
   minimumSpeed: 5
   speedIncreasePerSecond: 0.1
+  speedRecoveryRatio: 0.4
   maximumSpeed: 30
   totalDistanceTravelled: 0
   targetRunDistance: 1000

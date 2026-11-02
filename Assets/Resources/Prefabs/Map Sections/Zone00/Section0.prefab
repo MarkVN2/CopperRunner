@@ -968,15 +968,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
   spawnPoints:
-  - point: {fileID: 0}
-    possibleItems: []
   - point: {fileID: 4638011480932962441}
     possibleItems:
     - {fileID: 11400000, guid: b13b66d2063ecfa4b8fd5478d7bb2f5d, type: 2}
     - {fileID: 11400000, guid: 4dc558b6b11c07047afc6096d87ca196, type: 2}
     - {fileID: 11400000, guid: 53856e9bfcb149e4c84d6bce65b49aca, type: 2}
     - {fileID: 11400000, guid: 584bccaa34260fa4c9ef22264ac09e0b, type: 2}
-  spawnOnStart: 1
   sortingOrder: 0
 --- !u!1 &7430000115211436980
 GameObject:

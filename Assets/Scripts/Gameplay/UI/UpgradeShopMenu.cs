@@ -126,8 +126,7 @@ public class UpgradeShopMenu : MonoBehaviour
         activeShopSection = null;
         if (menu != null)
             menu.SetActive(false);
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = defaultFixedDeltaTime;
+        PauseMenu.SetGameTimeScale(1f, defaultFixedDeltaTime);
         OnClose.Invoke();
     }
 
@@ -139,7 +138,7 @@ public class UpgradeShopMenu : MonoBehaviour
 
     private void Update()
     {
-        if (!isOpen)
+        if (!isOpen || PauseMenu.IsPaused)
             return;
 
         remainingTime -= Time.unscaledDeltaTime;
@@ -236,8 +235,8 @@ public class UpgradeShopMenu : MonoBehaviour
             );
         }
 
-        Time.timeScale = Mathf.Clamp(targetScale, 0f, 0.6f);
-        Time.fixedDeltaTime = defaultFixedDeltaTime * Time.timeScale;
+        float timeScale = Mathf.Clamp(targetScale, 0f, 0.6f);
+        PauseMenu.SetGameTimeScale(timeScale, defaultFixedDeltaTime * timeScale);
     }
 
     public void AddTimeToNextCheckpoint(float seconds)
@@ -265,8 +264,7 @@ public class UpgradeShopMenu : MonoBehaviour
         if (menu != null)
             menu.SetActive(false);
 
-        Time.timeScale = 1f;
-        Time.fixedDeltaTime = defaultFixedDeltaTime;
+        PauseMenu.SetGameTimeScale(1f, defaultFixedDeltaTime);
         OnClose.Invoke();
     }
 

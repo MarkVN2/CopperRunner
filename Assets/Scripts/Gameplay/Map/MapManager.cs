@@ -125,6 +125,9 @@ public class MapManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         if (activeSections.Count == 0)
             return;
 
@@ -291,6 +294,12 @@ public class MapManager : MonoBehaviour
         for (int i = 0; i < randomActivators.Length; i++)
         {
             randomActivators[i].ActivateRandomObject();
+        }
+
+        ItemSpawner[] itemSpawners = section.GetComponentsInChildren<ItemSpawner>(true);
+        for (int i = 0; i < itemSpawners.Length; i++)
+        {
+            itemSpawners[i].SpawnItems();
         }
 
         activeSections.Add(section);

@@ -14,6 +14,9 @@ public class CopperHud : MonoBehaviour
     private TMP_Text copperText;
 
     [SerializeField]
+    private GameObject itemContainerButton;
+
+    [SerializeField]
     private Transform itemIconContainer;
 
     [SerializeField]
@@ -48,6 +51,7 @@ public class CopperHud : MonoBehaviour
             return;
 
         player.CoinsChanged += UpdateCopper;
+        player.CarryingCapacityChanged += UpdateCarryingCapacity;
         player.ItemsChanged += UpdateItems;
         player.UpgradesChanged += UpdateUpgrades;
         UpdateCopper(player.GetCoinAmount());
@@ -60,6 +64,7 @@ public class CopperHud : MonoBehaviour
         if (player != null)
         {
             player.CoinsChanged -= UpdateCopper;
+            player.CarryingCapacityChanged -= UpdateCarryingCapacity;
             player.ItemsChanged -= UpdateItems;
             player.UpgradesChanged -= UpdateUpgrades;
         }
@@ -71,6 +76,12 @@ public class CopperHud : MonoBehaviour
             copperText.text = $"{amount.ToString()} / {player.CopperCarryingCapacity}";
     }
 
+    private void UpdateCarryingCapacity(float capacity)
+    {
+        if (copperText != null)
+            copperText.text = $"{player.GetCoinAmount()} / {capacity}";
+    }
+
     private void UpdateItems(IReadOnlyList<ItemData> items)
     {
         if (itemIconContainer == null)
@@ -78,7 +89,10 @@ public class CopperHud : MonoBehaviour
 
         EnsureItemIcons(items.Count > 0 ? 1 : 0);
         if (itemIcons.Count == 0)
+        {
+            itemContainerButton.SetActive(false);
             return;
+        }
 
         ItemIconView icon = itemIcons[0];
         bool hasItem = items.Count > 0;
@@ -92,7 +106,9 @@ public class CopperHud : MonoBehaviour
 
             icon.image.sprite = sprite;
             icon.image.enabled = sprite != null;
-            icon.label.text = item.name;
+            // icon.label.text = item.name;
+
+            itemContainerButton.SetActive(true);
         }
     }
 

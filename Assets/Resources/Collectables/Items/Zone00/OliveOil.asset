@@ -30,8 +30,17 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 0}
-  rarity: 0
+  inventoryTexture: {fileID: -2071707084, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
+  rarity: 2
+  worldTexture: {fileID: -2071707084, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
+  price: 0
+  actions:
+  - rid: 2310000000000000001
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2310000000000000001
+      type: {class: OliveOilSlowAction, ns: , asm: Assembly-CSharp}
+      data:
+        speedMultiplier: 0.5
+        duration: 3

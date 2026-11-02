@@ -34,7 +34,11 @@ MonoBehaviour:
   rarity: 2
   maxRank: 1
   price: 0
-  upgradesActions: []
+  upgradesActions:
+  - rid: 2310000000000000001
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 2310000000000000001
+      type: {class: ChangeOfClothesAction, ns: , asm: Assembly-CSharp}
+      data:

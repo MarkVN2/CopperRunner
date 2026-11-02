@@ -64,12 +64,18 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         if (jumpAction.WasPressedThisFrame() && isGrounded)
             jumpRequested = true;
     }
 
     private void FixedUpdate()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         Vector2 velocity = body.linearVelocity;
 
         float horizontalInput = moveAction.ReadValue<Vector2>().x;

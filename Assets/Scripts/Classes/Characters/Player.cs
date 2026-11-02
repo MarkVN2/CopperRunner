@@ -30,6 +30,7 @@ public class Player : Actor
     private float weight;
 
     public event Action<int> CoinsChanged;
+    public event Action<float> CarryingCapacityChanged;
     public event Action<IReadOnlyList<ItemData>> ItemsChanged;
     public event Action<IReadOnlyList<UpgradeData>> UpgradesChanged;
 
@@ -47,7 +48,7 @@ public class Player : Actor
     private void Awake()
     {
         input = new InputSystem_Actions();
-        useItemAction = input.Player.Attack;
+        useItemAction = input.asset.FindAction("Player/UseItem", throwIfNotFound: true);
     }
 
     private void OnEnable()
@@ -67,6 +68,9 @@ public class Player : Actor
 
     private void Update()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         if (useItemAction != null && useItemAction.WasPressedThisFrame())
             UseItem();
     }
@@ -132,6 +136,21 @@ public class Player : Actor
         }
 
         carryingCapacity += amount;
+    }
+
+    public void ReduceCarryingCapacity(float amount)
+    {
+        if (amount <= 0f)
+        {
+            Debug.LogWarning(
+                "[Player] Carrying capacity reduction must be greater than zero.",
+                this
+            );
+            return;
+        }
+
+        carryingCapacity = Mathf.Max(1f, carryingCapacity - amount);
+        CarryingCapacityChanged?.Invoke(carryingCapacity);
     }
 
     public int GetCoinAmount()

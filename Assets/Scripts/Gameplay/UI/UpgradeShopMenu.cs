@@ -3,6 +3,7 @@ using CopperRunner.Gameplay.Upgrade;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UpgradeShopMenu : MonoBehaviour
@@ -10,6 +11,7 @@ public class UpgradeShopMenu : MonoBehaviour
     public static UpgradeShopMenu Instance;
 
     public UnityEvent OnClose;
+
     [SerializeField]
     private UpgradeShop shop;
 
@@ -32,18 +34,40 @@ public class UpgradeShopMenu : MonoBehaviour
     private List<TMP_Text> offerLabels = new List<TMP_Text>();
 
     [SerializeField]
+    private List<TMP_Text> offerPrices = new List<TMP_Text>();
+
+    [SerializeField]
+    private Button closeButton;
+
+    [SerializeField]
     private List<Image> offerIcons = new List<Image>();
 
     [Header("Timer Settings")]
+    [Tooltip("The minimum base time when the horde is close.")]
+    [FormerlySerializedAs("safetyMinimumDuration")]
     [SerializeField]
-    private float shopDuration = 30f; 
+    [Min(0f)]
+    private float minimumShopDuration = 5f;
+
+    [SerializeField]
+    [Min(0f)]
+    private float maximumBaseShopDuration = 30f;
+
+    [Tooltip("Edge-to-edge distance at which the base shop duration reaches its maximum.")]
+    [SerializeField]
+    [Min(0.01f)]
+    private float distanceForMaximumShopDuration = 50f;
 
     [SerializeField]
     private TMP_Text timerLabel;
 
     private float remainingTime;
+    public float RemainingTime => remainingTime;
     private bool isOpen;
+    public bool IsOpen => isOpen;
     private float nextCheckpointTimeBonus;
+    private float defaultFixedDeltaTime;
+    private Transform activeShopSection;
 
     private void Awake()
     {
@@ -53,33 +77,92 @@ public class UpgradeShopMenu : MonoBehaviour
         }
         else
         {
-            Instance = null;
+            Destroy(gameObject);
+            return;
         }
+
+        defaultFixedDeltaTime = Time.fixedDeltaTime;
+
         if (shop == null)
             shop = FindFirstObjectByType<UpgradeShop>();
         if (player == null)
             player = FindFirstObjectByType<Player>();
         if (mapManager == null)
             mapManager = FindFirstObjectByType<MapManager>();
+        if (horde == null)
+        {
+            HordeFollower hordeFollower = FindFirstObjectByType<HordeFollower>();
+            if (hordeFollower != null)
+                horde = hordeFollower.transform;
+        }
+
+        if (horde == null)
+        {
+            Debug.LogWarning(
+                "[UpgradeShopMenu] Horde is not assigned; shop time will be minimal.",
+                this
+            );
+        }
+
+        if (closeButton != null)
+        {
+            closeButton.onClick.AddListener(Close);
+        }
+        else
+        {
+            Debug.LogWarning(
+                "[UpgradeShopMenu] CloseButton is not assigned in the Inspector!",
+                this
+            );
+        }
     }
 
-    private void Update()
+    private void OnDisable()
     {
         if (!isOpen)
             return;
 
-        remainingTime -= Time.deltaTime;
+        isOpen = false;
+        activeShopSection = null;
+        if (menu != null)
+            menu.SetActive(false);
+        PauseMenu.SetGameTimeScale(1f, defaultFixedDeltaTime);
+        OnClose.Invoke();
+    }
 
-        UpdateTimerDisplay();
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
+    }
+
+    private void Update()
+    {
+        if (!isOpen || PauseMenu.IsPaused)
+            return;
+
+        remainingTime -= Time.unscaledDeltaTime;
 
         if (remainingTime <= 0f)
         {
             Close();
+            return;
         }
+
+        UpdateShopTimeScale();
+        UpdateTimerDisplay();
     }
 
     public void Open()
     {
+        Open(null);
+    }
+
+    public void Open(Transform shopSection)
+    {
+        if (isOpen)
+            return;
+
         if (shop == null || player == null)
         {
             Debug.LogWarning("[UpgradeShopMenu] Shop or player is not assigned.", this);
@@ -91,18 +174,79 @@ public class UpgradeShopMenu : MonoBehaviour
             menu.SetActive(true);
         RefreshButtons();
 
-        remainingTime = GetDistanceBasedShopDuration() + nextCheckpointTimeBonus;
+        float distanceFromHorde = GetHorizontalDistanceFromHorde();
+        float distanceForMaximum = Mathf.Max(0.01f, distanceForMaximumShopDuration);
+        float normalizedDistance = Mathf.Clamp01(distanceFromHorde / distanceForMaximum);
+        float minimumDuration = Mathf.Max(0f, minimumShopDuration);
+        float maximumDuration = Mathf.Max(minimumDuration, maximumBaseShopDuration);
+        float calculatedDuration = Mathf.Lerp(
+            minimumDuration,
+            maximumDuration,
+            normalizedDistance
+        );
+
+        remainingTime = calculatedDuration + nextCheckpointTimeBonus;
         nextCheckpointTimeBonus = 0f;
+        activeShopSection = shopSection;
         isOpen = true;
         UpdateTimerDisplay();
+        UpdateShopTimeScale();
+    }
 
+    private float GetHorizontalDistanceFromHorde()
+    {
+        if (horde == null)
+            return 0f;
+
+        Collider2D playerCollider = player.GetComponent<Collider2D>();
+        Collider2D hordeCollider = horde.GetComponent<Collider2D>();
+        if (playerCollider == null || hordeCollider == null)
+            return Mathf.Abs(player.transform.position.x - horde.position.x);
+
+        Bounds playerBounds = playerCollider.bounds;
+        Bounds hordeBounds = hordeCollider.bounds;
+
+        if (playerBounds.min.x >= hordeBounds.max.x)
+            return playerBounds.min.x - hordeBounds.max.x;
+        if (hordeBounds.min.x >= playerBounds.max.x)
+            return hordeBounds.min.x - playerBounds.max.x;
+
+        return 0f;
+    }
+
+    private void UpdateShopTimeScale()
+    {
+        float targetScale = Mathf.Clamp(remainingTime / 10f, 0.1f, 0.6f);
+        if (activeShopSection != null && mapManager != null && mapManager.CurrentSpeed > 0f)
+        {
+            float sectionExitX = activeShopSection.position.x - mapManager.SectionLength * 0.5f;
+            Collider2D playerCollider = player.GetComponent<Collider2D>();
+            float playerLeftEdgeX = playerCollider != null
+                ? playerCollider.bounds.min.x
+                : player.transform.position.x;
+            float safetyDistance =
+                mapManager.CurrentSpeed * defaultFixedDeltaTime * 0.6f;
+            float remainingSectionDistance = Mathf.Max(
+                0f,
+                playerLeftEdgeX - sectionExitX - safetyDistance
+            );
+            targetScale = remainingSectionDistance / (
+                mapManager.CurrentSpeed * Mathf.Max(remainingTime, 0.001f)
+            );
+        }
+
+        float timeScale = Mathf.Clamp(targetScale, 0f, 0.6f);
+        PauseMenu.SetGameTimeScale(timeScale, defaultFixedDeltaTime * timeScale);
     }
 
     public void AddTimeToNextCheckpoint(float seconds)
     {
         if (seconds <= 0f)
         {
-            Debug.LogWarning("[UpgradeShopMenu] Checkpoint time bonus must be greater than zero.", this);
+            Debug.LogWarning(
+                "[UpgradeShopMenu] Checkpoint time bonus must be greater than zero.",
+                this
+            );
             return;
         }
 
@@ -111,12 +255,17 @@ public class UpgradeShopMenu : MonoBehaviour
 
     public void Close()
     {
+        if (!isOpen)
+            return;
+
         isOpen = false;
+        activeShopSection = null;
 
         if (menu != null)
             menu.SetActive(false);
+
+        PauseMenu.SetGameTimeScale(1f, defaultFixedDeltaTime);
         OnClose.Invoke();
-        Time.timeScale = 1f;
     }
 
     public void PurchaseOffer(int offerIndex)
@@ -140,7 +289,17 @@ public class UpgradeShopMenu : MonoBehaviour
             if (!hasOffer)
                 continue;
 
+            UIHoverPopButton hoverButton = offerButtons[i].GetComponent<UIHoverPopButton>();
+            if (hoverButton == null)
+            {
+                hoverButton = offerButtons[i].gameObject.AddComponent<UIHoverPopButton>();
+            }
+
             UpgradeData offer = offers[i];
+
+            string description = offer.GetDescription()?.GetLocalizedString() ?? string.Empty;
+            hoverButton.SetupTooltipData(description);
+
             offerButtons[i].onClick.RemoveAllListeners();
             int index = i;
             offerButtons[i]
@@ -152,11 +311,11 @@ public class UpgradeShopMenu : MonoBehaviour
                 );
 
             if (i < offerLabels.Count && offerLabels[i] != null)
-                offerLabels[i].text =
-                    offer.GetName().GetLocalizedString() + "\n" + Mathf.Max(0, offer.price);
-
+                offerLabels[i].text = offer.GetName().GetLocalizedString();
+            if (i < offerPrices.Count && offerPrices[i] != null)
+                offerPrices[i].text = Mathf.Max(0, offer.price).ToString();
             if (i < offerIcons.Count && offerIcons[i] != null)
-                offerIcons[i].sprite = offer.GetIcon();
+                offerIcons[i].sprite = offer.GetInventoryTexture();
         }
     }
 
@@ -168,59 +327,5 @@ public class UpgradeShopMenu : MonoBehaviour
         float clampedTime = Mathf.Max(0f, remainingTime);
         int seconds = Mathf.CeilToInt(clampedTime);
         timerLabel.text = $"Time Left: {seconds}s";
-    }
-
-    private float GetDistanceBasedShopDuration()
-    {
-        if (horde == null)
-        {
-            GameObject hordeObject = GameObject.FindGameObjectWithTag("Enemy");
-            if (hordeObject != null)
-                horde = hordeObject.transform;
-        }
-
-        if (horde == null || mapManager == null)
-        {
-            Debug.LogWarning(
-                "[UpgradeShopMenu] Horde or MapManager not found; using the configured shop duration.",
-                this
-            );
-            return Mathf.Max(0f, shopDuration);
-        }
-
-        float distanceToHorde;
-        Collider2D playerCollider = player.GetComponent<Collider2D>();
-        Collider2D hordeCollider = horde.GetComponent<Collider2D>();
-        if (playerCollider != null && hordeCollider != null)
-        {
-            Bounds playerBounds = playerCollider.bounds;
-            Bounds hordeBounds = hordeCollider.bounds;
-
-            if (hordeBounds.max.x <= playerBounds.min.x)
-                distanceToHorde = playerBounds.min.x - hordeBounds.max.x;
-            else if (playerBounds.max.x <= hordeBounds.min.x)
-                distanceToHorde = hordeBounds.min.x - playerBounds.max.x;
-            else
-                distanceToHorde = 0f;
-        }
-        else
-        {
-            Debug.LogWarning(
-                "[UpgradeShopMenu] Player or horde collider not found; using transform distance.",
-                this
-            );
-            distanceToHorde = Mathf.Abs(player.transform.position.x - horde.position.x);
-        }
-
-        if (mapManager.CurrentSpeed <= 0f)
-        {
-            Debug.LogWarning(
-                "[UpgradeShopMenu] Map speed must be greater than zero; using the configured shop duration.",
-                this
-            );
-            return Mathf.Max(0f, shopDuration);
-        }
-
-        return distanceToHorde / mapManager.CurrentSpeed;
     }
 }

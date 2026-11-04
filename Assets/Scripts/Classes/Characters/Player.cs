@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using CopperRunner.Gameplay.Item;
 using CopperRunner.Gameplay.Upgrade;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterMovement))]
 public class Player : Actor
 {
     private int coinAmount;
-    private ItemData equippedItem;
+    private readonly List<ItemData> items = new List<ItemData>();
     private List<UpgradeData> upgrades = new List<UpgradeData>();
     private bool isDead;
+    private InputSystem_Actions input;
+    private InputAction useItemAction;
 
     private bool cheatDeath;
     private UpgradeData cheatDeathSource;
@@ -23,9 +26,13 @@ public class Player : Actor
     [SerializeField]
     [Min(0f)]
     private float carryingCapacity = 20f;
+    public float CopperCarryingCapacity => carryingCapacity;
     private float weight;
 
     public event Action<int> CoinsChanged;
+    public event Action<float> CarryingCapacityChanged;
+    public event Action<IReadOnlyList<ItemData>> ItemsChanged;
+    public event Action<IReadOnlyList<UpgradeData>> UpgradesChanged;
 
     public float CarryingCapacity => carryingCapacity;
 
@@ -34,7 +41,39 @@ public class Player : Actor
         get { return isDead; }
     }
 
-    void Update() { }
+    public int ItemCount => items.Count;
+    public IReadOnlyList<ItemData> Items => items;
+    public IReadOnlyList<UpgradeData> Upgrades => upgrades;
+
+    private void Awake()
+    {
+        input = new InputSystem_Actions();
+        useItemAction = input.asset.FindAction("Player/UseItem", throwIfNotFound: true);
+    }
+
+    private void OnEnable()
+    {
+        useItemAction?.Enable();
+    }
+
+    private void OnDisable()
+    {
+        useItemAction?.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        input?.Dispose();
+    }
+
+    private void Update()
+    {
+        if (PauseMenu.IsPaused)
+            return;
+
+        if (useItemAction != null && useItemAction.WasPressedThisFrame())
+            UseItem();
+    }
 
     public bool CanAddUpgrade(UpgradeData upgrade)
     {
@@ -59,6 +98,7 @@ public class Player : Actor
         }
 
         upgrade.ActivateUpgrades();
+        UpgradesChanged?.Invoke(upgrades);
         return true;
     }
 
@@ -67,7 +107,8 @@ public class Player : Actor
         if (newItem == null)
             return;
 
-        equippedItem = newItem;
+        items.Add(newItem);
+        ItemsChanged?.Invoke(items);
     }
 
     public void AddCoin(int amount)
@@ -95,6 +136,21 @@ public class Player : Actor
         }
 
         carryingCapacity += amount;
+    }
+
+    public void ReduceCarryingCapacity(float amount)
+    {
+        if (amount <= 0f)
+        {
+            Debug.LogWarning(
+                "[Player] Carrying capacity reduction must be greater than zero.",
+                this
+            );
+            return;
+        }
+
+        carryingCapacity = Mathf.Max(1f, carryingCapacity - amount);
+        CarryingCapacityChanged?.Invoke(carryingCapacity);
     }
 
     public int GetCoinAmount()
@@ -126,10 +182,13 @@ public class Player : Actor
 
     public void UseItem()
     {
-        if (equippedItem == null)
+        if (isDead || items.Count == 0)
             return;
 
-        equippedItem.RunActions();
+        ItemData item = items[0];
+        items.RemoveAt(0);
+        ItemsChanged?.Invoke(items);
+        item.RunActions();
     }
 
     public void Die()
@@ -138,7 +197,10 @@ public class Player : Actor
         {
             cheatDeath = false;
             if (cheatDeathSource != null)
+            {
                 upgrades.Remove(cheatDeathSource);
+                UpgradesChanged?.Invoke(upgrades);
+            }
             cheatDeathSource = null;
             return;
         }

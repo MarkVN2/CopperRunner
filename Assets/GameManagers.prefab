@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 498547731445025232}
   - component: {fileID: 2478578938447441226}
   - component: {fileID: 5389922994840788968}
-  - component: {fileID: 3289926950102910243}
   m_Layer: 0
   m_Name: UpgradeShop
   m_TagString: Untagged
@@ -251,5 +250,11 @@ MonoBehaviour:
   startingSpeed: 5
   minimumSpeed: 5
   speedIncreasePerSecond: 0.1
+  speedRecoveryRatio: 0.4
   maximumSpeed: 30
   totalDistanceTravelled: 0
+  targetRunDistance: 1000
+  endingSectionPrefab: {fileID: 1413071249168101877, guid: 31b7d11c73aeab24f98887dbcacc0004, type: 3}
+  OnRunFinished:
+    m_PersistentCalls:
+      m_Calls: []

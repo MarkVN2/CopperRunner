@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 268927307776
-    m_Localized: Troca de Roupas (Disfarce)
+    m_Localized: Disfarce
     m_Metadata:
       m_Items: []
   - m_Id: 369477357568
@@ -36,6 +36,26 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 651758211072
     m_Localized: Ampulheta
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16279033266118656
+    m_Localized: "Uma rel\xEDquia do antigo Egito."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16279661618995200
+    m_Localized: "Diminui a velocidade da multid\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16280406971981824
+    m_Localized: Aumente a sua velocidade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16280526216044544
+    m_Localized: Aumenta o tempo de venda nas lojas.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16283259845287936
+    m_Localized: Melhora a quantidade de Cobre que a bolsa consegue carregar.
     m_Metadata:
       m_Items: []
   references:

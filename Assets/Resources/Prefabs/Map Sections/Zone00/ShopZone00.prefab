@@ -411,6 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41970802a17e871439225fa7d5bc051a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopTrigger
+  cameraTarget: {fileID: 6402905826331522335}
 --- !u!1 &6618173504429425329
 GameObject:
   m_ObjectHideFlags: 0

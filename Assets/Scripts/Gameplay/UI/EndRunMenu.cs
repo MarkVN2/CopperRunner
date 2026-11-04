@@ -25,6 +25,7 @@ public class EndRunMenu : MonoBehaviour
 
     private float runStartedAt;
     private bool isShown;
+    public bool IsShown => isShown;
 
     private void Awake()
     {

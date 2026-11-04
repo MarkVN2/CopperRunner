@@ -35,6 +35,26 @@ MonoBehaviour:
     m_Key: upgrade_hourglass
     m_Metadata:
       m_Items: []
+  - m_Id: 16279033266118656
+    m_Key: upgrade_description_ankh
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16279661618995200
+    m_Key: upgrade_description_changeofclothes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16280406971981824
+    m_Key: upgrade_description_geesefeather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16280526216044544
+    m_Key: upgrade_description_hourglass
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16283259845287936
+    m_Key: upgrade_description_pouch
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -42,11 +42,6 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float idealWorldX;
 
-    public void ShiftIdealWorldX(float amount)
-    {
-        idealWorldX -= amount;
-    }
-
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -69,12 +64,18 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         if (jumpAction.WasPressedThisFrame() && isGrounded)
             jumpRequested = true;
     }
 
     private void FixedUpdate()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         Vector2 velocity = body.linearVelocity;
 
         float horizontalInput = moveAction.ReadValue<Vector2>().x;

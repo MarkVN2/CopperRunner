@@ -23,16 +23,16 @@ MonoBehaviour:
     m_LocalVariables: []
   description:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:0386b5047e9cbb44686b5d5cf8e4208e
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 16280406971981824
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  icon: {fileID: 0}
+  inventoryTexture: {fileID: 0}
   rarity: 0
-  maxRank: 1
+  maxRank: 4
   price: 15
   upgradesActions:
   - rid: 2310000000000000001
@@ -41,4 +41,4 @@ MonoBehaviour:
     RefIds:
     - rid: 2310000000000000001
       type: {class: MoreSpeedAction, ns: , asm: Assembly-CSharp}
-      data: {}
+      data: 

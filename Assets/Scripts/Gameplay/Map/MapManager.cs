@@ -1,12 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Pool;
 
 public class MapManager : MonoBehaviour
 {
     [Header("Seed")]
-    [SerializeField] private bool randomizeSeed = true;
-    [SerializeField] private int seed = 12345;
+    [SerializeField]
+    private bool randomizeSeed = true;
+
+    [SerializeField]
+    private int seed = 12345;
     public int RunSeed => seed;
     private System.Random rng;
 
@@ -17,6 +21,7 @@ public class MapManager : MonoBehaviour
     [Header("Sections")]
     [SerializeField]
     private List<GameObject> sectionPrefabs = new List<GameObject>();
+
     [SerializeField]
     private GameObject shopPrefab;
 
@@ -51,10 +56,15 @@ public class MapManager : MonoBehaviour
     private float speedIncreasePerSecond = 1f;
 
     [SerializeField]
+    [Min(0.01f)]
+    private float speedRecoveryRatio = 0.4f;
+
+    [SerializeField]
     [Min(0f)]
     private float maximumSpeed = 30f;
 
     private float currentSpeed;
+    private float normalSpeed;
 
     private float accelerationDelay;
 
@@ -71,6 +81,18 @@ public class MapManager : MonoBehaviour
     [SerializeField]
     private float totalDistanceTravelled;
 
+    [Header("End Run Settings")]
+    [SerializeField]
+    private float targetRunDistance = 1000f;
+
+    [SerializeField]
+    private GameObject endingSectionPrefab;
+
+    [SerializeField]
+    private UnityEvent OnRunFinished;
+
+    private bool runCompleted = false;
+    public bool IsRunCompleted => runCompleted;
     private bool hasLoggedMissingPrefabWarning;
 
     public List<GameObject> SectionsPrefabs => sectionPrefabs;
@@ -78,6 +100,8 @@ public class MapManager : MonoBehaviour
     public float TotalDistanceTravelled => totalDistanceTravelled;
     private float distanceTraveledSinceLastShop = 0f;
     public float CurrentSpeed => currentSpeed;
+    public float NormalSpeed => normalSpeed;
+    public float SectionLength => sectionLength;
 
     private void Awake()
     {
@@ -89,6 +113,7 @@ public class MapManager : MonoBehaviour
 
         currentSpeed = Mathf.Max(startingSpeed, minimumSpeed);
         currentSpeed = Mathf.Min(currentSpeed, maximumSpeed);
+        normalSpeed = currentSpeed;
 
         accelerationDelay = 0f;
     }
@@ -100,6 +125,9 @@ public class MapManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (PauseMenu.IsPaused)
+            return;
+
         if (activeSections.Count == 0)
             return;
 
@@ -124,6 +152,9 @@ public class MapManager : MonoBehaviour
 
     private void UpdateSpeed()
     {
+        float speedIncrease = speedIncreasePerSecond * Time.fixedDeltaTime;
+        normalSpeed = Mathf.Min(normalSpeed + speedIncrease, maximumSpeed);
+
         if (accelerationDelay > 0f)
         {
             accelerationDelay -= Time.fixedDeltaTime;
@@ -134,8 +165,11 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        currentSpeed += speedIncreasePerSecond * Time.fixedDeltaTime;
-        currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
+        currentSpeed = Mathf.MoveTowards(
+            currentSpeed,
+            normalSpeed,
+            normalSpeed * speedRecoveryRatio * Time.fixedDeltaTime
+        );
     }
 
     public void ApplySpeedModifier(float multiplier, float duration)
@@ -145,9 +179,8 @@ public class MapManager : MonoBehaviour
 
         multiplier = Mathf.Clamp(multiplier, 0.01f, 1f);
 
-        currentSpeed *= multiplier;
-        currentSpeed = Mathf.Clamp(currentSpeed, minimumSpeed, maximumSpeed);
-        accelerationDelay = Mathf.Max(0f, duration);
+        currentSpeed = Mathf.Min(currentSpeed, normalSpeed * multiplier);
+        accelerationDelay = Mathf.Max(accelerationDelay, duration);
     }
 
     public void IncreaseSpeed(float multiplier)
@@ -159,6 +192,7 @@ public class MapManager : MonoBehaviour
         }
 
         currentSpeed = Mathf.Clamp(currentSpeed * multiplier, minimumSpeed, maximumSpeed);
+        normalSpeed = Mathf.Clamp(normalSpeed * multiplier, minimumSpeed, maximumSpeed);
     }
 
     private void SpawnInitialSections()
@@ -220,6 +254,15 @@ public class MapManager : MonoBehaviour
         {
             prefab = prefabOverride;
         }
+        else if (
+            !runCompleted
+            && totalDistanceTravelled >= targetRunDistance
+            && endingSectionPrefab != null
+        )
+        {
+            prefab = endingSectionPrefab;
+            runCompleted = true;
+        }
         else if (distanceTraveledSinceLastShop >= distanceUntilShop)
         {
             prefab = shopPrefab;
@@ -253,6 +296,12 @@ public class MapManager : MonoBehaviour
             randomActivators[i].ActivateRandomObject();
         }
 
+        ItemSpawner[] itemSpawners = section.GetComponentsInChildren<ItemSpawner>(true);
+        for (int i = 0; i < itemSpawners.Length; i++)
+        {
+            itemSpawners[i].SpawnItems();
+        }
+
         activeSections.Add(section);
 
         previousPrefab = prefab;
@@ -273,16 +322,16 @@ public class MapManager : MonoBehaviour
                 prefabByInstance[instance] = prefab;
                 return instance;
             },
-            actionOnGet: delegate (GameObject instance)
+            actionOnGet: delegate(GameObject instance)
             {
                 instance.SetActive(true);
             },
-            actionOnRelease: delegate (GameObject instance)
+            actionOnRelease: delegate(GameObject instance)
             {
                 instance.SetActive(false);
                 instance.transform.SetParent(transform);
             },
-            actionOnDestroy: delegate (GameObject instance)
+            actionOnDestroy: delegate(GameObject instance)
             {
                 prefabByInstance.Remove(instance);
                 if (instance != null)
@@ -327,19 +376,28 @@ public class MapManager : MonoBehaviour
             MapSection mapSection = previousPrefab.GetComponent<MapSection>();
             if (mapSection != null)
             {
-                if (mapSection.CompatibleSections != null && mapSection.CompatibleSections.Count > 0)
+                if (
+                    mapSection.CompatibleSections != null
+                    && mapSection.CompatibleSections.Count > 0
+                )
                 {
                     poolToUse = mapSection.CompatibleSections;
                     usingCompatibleList = true;
                 }
                 else
                 {
-                    Debug.LogWarning($"[MapManager] '{previousPrefab.name}' has a MapSection component, but its 'CompatibleSections' list is empty. Falling back to general section prefabs.", this);
+                    Debug.LogWarning(
+                        $"[MapManager] '{previousPrefab.name}' has a MapSection component, but its 'CompatibleSections' list is empty. Falling back to general section prefabs.",
+                        this
+                    );
                 }
             }
             else
             {
-                Debug.LogWarning($"[MapManager] '{previousPrefab.name}' is missing a MapSection component. Falling back to general section prefabs.", this);
+                Debug.LogWarning(
+                    $"[MapManager] '{previousPrefab.name}' is missing a MapSection component. Falling back to general section prefabs.",
+                    this
+                );
             }
         }
 
@@ -354,7 +412,12 @@ public class MapManager : MonoBehaviour
             GameObject prefab = poolToUse[i];
             if (prefab != null)
             {
-                if (!usingCompatibleList && poolToUse == sectionPrefabs && prefab == previousPrefab && poolToUse.Count > 1)
+                if (
+                    !usingCompatibleList
+                    && poolToUse == sectionPrefabs
+                    && prefab == previousPrefab
+                    && poolToUse.Count > 1
+                )
                     continue;
 
                 validCandidates.Add(prefab);
@@ -376,7 +439,10 @@ public class MapManager : MonoBehaviour
         int randomIndex = rng.Next(validCandidates.Count);
         GameObject selectedPrefab = validCandidates[randomIndex];
 
-        Debug.Log($"[MapManager] Successfully chose next section prefab: '{selectedPrefab.name}' (Source: {(usingCompatibleList ? "Compatible List" : "General/Fallback List")})", this);
+        Debug.Log(
+            $"[MapManager] Successfully chose next section prefab: '{selectedPrefab.name}' (Source: {(usingCompatibleList ? "Compatible List" : "General/Fallback List")})",
+            this
+        );
 
         return selectedPrefab;
     }

@@ -106,6 +106,7 @@ GameObject:
   - component: {fileID: 498547731445025232}
   - component: {fileID: 2478578938447441226}
   - component: {fileID: 5389922994840788968}
+  - component: {fileID: 3289926950102910243}
   m_Layer: 0
   m_Name: UpgradeShop
   m_TagString: Untagged
@@ -171,7 +172,7 @@ MonoBehaviour:
   OnClose:
     m_PersistentCalls:
       m_Calls: []
-  shop: {fileID: 5389922994840788968}
+  shop: {fileID: 0}
   player: {fileID: 0}
   horde: {fileID: 0}
   mapManager: {fileID: 0}
@@ -184,8 +185,18 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  offerIcons: []
-  shopDuration: 10
+  offerPrices:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  closeButton: {fileID: 0}
+  offerIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  minimumShopDuration: 5
+  maximumBaseShopDuration: 30
+  distanceForMaximumShopDuration: 50
   timerLabel: {fileID: 0}
 --- !u!1 &8173412556435588144
 GameObject:

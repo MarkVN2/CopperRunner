@@ -81,6 +81,14 @@ public class PauseMenu : MonoBehaviour
         if (pauseAction == null || !pauseAction.WasPressedThisFrame())
             return;
 
+        TogglePause();
+    }
+
+    public void TogglePause()
+    {
+        if (instance != null && instance != this)
+            return;
+
         if (IsRunOver())
             return;
 

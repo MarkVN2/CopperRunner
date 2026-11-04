@@ -198,12 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Trap
   mapManager: {fileID: 0}
-  horde: {fileID: 0}
-  slowMultiplier: 0.5
+  slowMultiplier: 0.72
   slowDuration: 1.5
-  playerPullToHorde: 1
   hitCooldown: 2
-  idealWorldX: 0
 --- !u!61 &5522479184170066525
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,19 +247,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.151322, y: 0.85200644}
   m_EdgeRadius: 0
---- !u!114 &8350916426532326950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2876558855907993249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ecf1f24a5d70c94093e477e0d494516, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Trap
-  mapManager: {fileID: 0}
-  slowMultiplier: 0.72
-  slowDuration: 1.5
-  hitCooldown: 2

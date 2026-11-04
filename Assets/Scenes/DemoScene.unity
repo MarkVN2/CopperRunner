@@ -2213,17 +2213,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1674025944 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 136040338726614527, guid: c5a8cf314708fcb49a56839a7048e8be, type: 3}
-  m_PrefabInstance: {fileID: 4728056895092265539}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67efb773de2de9a4b94979f3c957275d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MapManager
 --- !u!114 &1680449667 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7329582814695375852, guid: 1a81b98d060625f4bbda7302e1a42bcd, type: 3}

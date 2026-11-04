@@ -18,6 +18,9 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private Button resumeButton;
 
+    [SerializeField]
+    private Button leaveButton;
+
     private bool isDuplicate;
     private float previousTimeScale = 1f;
     private float previousFixedDeltaTime;
@@ -46,6 +49,11 @@ public class PauseMenu : MonoBehaviour
             resumeButton.onClick.AddListener(Resume);
         else
             Debug.LogWarning("[PauseMenu] Assign a Continue button in the Inspector.", this);
+
+        if (leaveButton != null)
+            leaveButton.onClick.AddListener(LeaveToMainMenu);
+        else
+            Debug.LogWarning("[PauseMenu] Assign a Leave button in the Inspector.", this);
     }
 
     private void OnEnable()
@@ -66,6 +74,8 @@ public class PauseMenu : MonoBehaviour
     {
         if (resumeButton != null)
             resumeButton.onClick.RemoveListener(Resume);
+        if (leaveButton != null)
+            leaveButton.onClick.RemoveListener(LeaveToMainMenu);
 
         input?.Dispose();
 
@@ -137,6 +147,14 @@ public class PauseMenu : MonoBehaviour
 
         if (pauseUI != null)
             pauseUI.SetActive(false);
+    }
+
+    public void LeaveToMainMenu()
+    {
+        if (instance != null && instance != this)
+            return;
+
+        ScreenFadeTransition.LoadSceneWithFade("MainMenu");
     }
 
     public static void SetGameTimeScale(float timeScale, float fixedDeltaTime)

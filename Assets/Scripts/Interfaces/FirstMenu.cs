@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FirstMenu : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class FirstMenu : MonoBehaviour
 
     public void BeginRun()
     {
-        SceneManager.LoadSceneAsync(0);
+        ScreenFadeTransition.LoadSceneWithFade("DemoScene");
     }
 
     public void OpenFirstPanel()

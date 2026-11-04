@@ -31,6 +31,9 @@ public class CharacterMovement : MonoBehaviour
     private MapManager mapManager;
     private Camera mainCamera;
 
+    [SerializeField]
+    private ParticleSystem groundDust;
+
     private InputSystem_Actions input;
     private InputAction moveAction;
     private InputAction jumpAction;
@@ -49,6 +52,12 @@ public class CharacterMovement : MonoBehaviour
         mapManager = FindFirstObjectByType<MapManager>();
         mainCamera = Camera.main;
 
+        if (groundDust == null)
+            groundDust = GetComponentInChildren<ParticleSystem>(true);
+
+        if (groundDust == null)
+            Debug.LogWarning("[CharacterMovement] Assign the GroundDust particle system.", this);
+
         input = new InputSystem_Actions();
         moveAction = input.Player.Move;
         jumpAction = input.Player.Jump;
@@ -58,17 +67,42 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnEnable() => input.Player.Enable();
 
-    private void OnDisable() => input.Player.Disable();
+    private void OnDisable()
+    {
+        input.Player.Disable();
+        if (groundDust != null && groundDust.isEmitting)
+            groundDust.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+    }
 
-    private void OnDestroy() => input.Dispose();
+    private void OnDestroy()
+    {
+        input.Dispose();
+    }
 
     private void Update()
     {
         if (PauseMenu.IsPaused)
             return;
 
+        UpdateGroundDust();
+
         if (jumpAction.WasPressedThisFrame() && isGrounded)
             jumpRequested = true;
+    }
+
+    private void UpdateGroundDust()
+    {
+        if (groundDust == null)
+            return;
+
+        bool isMoving =
+            (mapManager != null && mapManager.CurrentSpeed > 0.05f)
+            || body.linearVelocity.sqrMagnitude > 0.01f;
+        bool shouldEmit = isGrounded && isMoving;
+        if (shouldEmit && !groundDust.isPlaying)
+            groundDust.Play();
+        else if (!shouldEmit && groundDust.isEmitting)
+            groundDust.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
 
     private void FixedUpdate()
@@ -108,11 +142,11 @@ public class CharacterMovement : MonoBehaviour
             //velocity.y = actor.GetJumpForce();
             jumpRequested = false;
             isGrounded = false;
-            body.AddForceY(actor.GetJumpForce() ,ForceMode2D.Impulse);
+            body.AddForceY(actor.GetJumpForce(), ForceMode2D.Impulse);
             velocity.y = body.linearVelocity.y;
-            Debug.Log("aaa "+ velocity);
+            Debug.Log("aaa " + velocity);
         }
-        
+
         body.linearVelocity = velocity;
     }
 

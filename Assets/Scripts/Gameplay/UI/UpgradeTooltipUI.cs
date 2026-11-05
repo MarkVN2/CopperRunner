@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class UpgradeTooltipUI : MonoBehaviour
 {
@@ -43,16 +44,21 @@ public class UpgradeTooltipUI : MonoBehaviour
     {
         if (tooltipPanel != null && tooltipPanel.activeSelf)
         {
+            Vector2 currentMousePosition = Vector2.zero;
+            if (Mouse.current != null)
+            {
+                currentMousePosition = Mouse.current.position.ReadValue();
+            }
+
             Vector2 localPoint;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 canvasRectTransform,
-                Input.mousePosition,
+                currentMousePosition,
                 parentCanvas.renderMode == RenderMode.ScreenSpaceOverlay
                     ? null
                     : parentCanvas.worldCamera,
                 out localPoint
             );
-
             rectTransform.anchoredPosition = localPoint + offset;
         }
     }

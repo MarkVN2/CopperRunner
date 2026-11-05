@@ -37,6 +37,9 @@ public class UpgradeShopMenu : MonoBehaviour
     private List<TMP_Text> offerPrices = new List<TMP_Text>();
 
     [SerializeField]
+    private List<TMP_Text> offerDescriptions = new List<TMP_Text>();
+
+    [SerializeField]
     private Button closeButton;
 
     [SerializeField]
@@ -316,6 +319,8 @@ public class UpgradeShopMenu : MonoBehaviour
                 offerPrices[i].text = Mathf.Max(0, offer.price).ToString();
             if (i < offerIcons.Count && offerIcons[i] != null)
                 offerIcons[i].sprite = offer.GetInventoryTexture();
+            if (i < offerDescriptions.Count && offerDescriptions[i] != null)
+                offerDescriptions[i].text = offer.GetDescription().GetLocalizedString();
         }
     }
 

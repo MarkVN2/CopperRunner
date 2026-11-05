@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
     private void Awake()
     {
+        activePlayer = Object.FindAnyObjectByType<Player>();
         if (Instance != this)
         {
             Instance = this;

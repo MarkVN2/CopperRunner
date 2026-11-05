@@ -70,6 +70,7 @@ public class EndRunMenu : MonoBehaviour
 
     public void RestartRun()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

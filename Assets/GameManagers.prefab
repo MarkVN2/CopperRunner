@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 230064788506187652}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.47, y: 3.5, z: 0}
+  m_LocalPosition: {x: 11.47, y: 5.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4333960083025205702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a075bb2aef5096b4ea6b86d0af2ab6bd, type: 3}
   m_Name: 
@@ -218,7 +218,7 @@ MonoBehaviour:
   OnClose:
     m_PersistentCalls:
       m_Calls: []
-  shop: {fileID: 0}
+  shop: {fileID: 5389922994840788968}
   player: {fileID: 0}
   horde: {fileID: 0}
   mapManager: {fileID: 0}

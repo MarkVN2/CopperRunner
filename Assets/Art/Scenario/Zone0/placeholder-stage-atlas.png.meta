@@ -1706,7 +1706,7 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1728,7 +1728,7 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1750,7 +1750,7 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1772,7 +1772,7 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1794,7 +1794,7 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1816,7 +1816,7 @@ TextureImporter:
         width: 150
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1825,6 +1825,710 @@ TextureImporter:
       bones: []
       spriteID: 95a08640a013476488a95b3ac44eface
       internalID: -1130929022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2550
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ee877ed39b31842a6d759e12c62836
+      internalID: -33998793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_21
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2550
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a429e5b00d2aa4e8f95a2eec1b1d15
+      internalID: 1166626430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_22
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2550
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a99d35c54218574280a044cfad778e5
+      internalID: -1170423576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2700
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5131d34f2229c94fa6786f66fc971c2
+      internalID: -1345783604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_31
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2700
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d484de6061934eb479c79fc8c314daaa
+      internalID: 1058499708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_37
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2700
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a4d7558df1a95428073e5cb322cd4e
+      internalID: -1479247388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2850
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d475db7b4d06a1b45bbbb6110c88f79c
+      internalID: 1946227232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_56
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2850
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ca8ac9d537f554ba418b29f3cb4a57
+      internalID: 987657271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_57
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 2850
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8dd22d7de65cc9448ffc2fc941cbaf2
+      internalID: -176684582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_61
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef25ac7297a00fd4ca4a4bfbb45b2bf8
+      internalID: 101507576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_62
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 3000
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a52d3a4b1284745b319d35b52e9114
+      internalID: -783232784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_63
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 3000
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f82414969a1ab884a8ff7626fc67689e
+      internalID: 1969485319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_64
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf7f711399e9a3c4f994679f3d0e40f1
+      internalID: 558414702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_65
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f5295793bc05d4ab58f60e29c0e328
+      internalID: 1130716763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_66
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b87efc9f3580c42965eb813d0666d4
+      internalID: 835314090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_67
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c7ccdd77822414f967ddeb7b03adb8
+      internalID: -509717731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_68
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85960345620b3f48a572e8c3e18aeec
+      internalID: 1373081479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_69
+      rect:
+        serializedVersion: 2
+        x: 2250
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c62b988f3c66a3544869351f8acf8865
+      internalID: -338812829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_70
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b8a821952c5ac4a835d67f18d7cc8d
+      internalID: -95283012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_71
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f343488f12c97943b69bdb2738c9951
+      internalID: -758431317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_72
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8672608fc8cbc6349915aa225da965bc
+      internalID: -1755073060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_73
+      rect:
+        serializedVersion: 2
+        x: 2550
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73fb376fd23b7fc41879af050a69c88b
+      internalID: 1274120131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_74
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4ff4bf8a244434197d3dda7fb938ff
+      internalID: 1947169962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_75
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869b1a326d7b0bb4a84003aafbb80f72
+      internalID: -369697629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_76
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ef27135bfb1874ba90865b9b428fce
+      internalID: -277718524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_77
+      rect:
+        serializedVersion: 2
+        x: 2850
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570938333b4ad93429ae9e4ae8b0563d
+      internalID: -1143632602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_78
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707066a3c22efd84c9abfcf5770c0833
+      internalID: 1388612188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_79
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19fb95d2518ab764f84de549cc6d79c8
+      internalID: 912800055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_80
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f029ff779e3185f43a962dba90deb5d2
+      internalID: 1798362244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_81
+      rect:
+        serializedVersion: 2
+        x: 3150
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 527c99a9e10d17c4fb0ea3271daa43ec
+      internalID: -631437555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_82
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 3450
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b6a561cf1b67d4098d7a323762f75b
+      internalID: -921641061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: placeholder-stage-atlas_83
+      rect:
+        serializedVersion: 2
+        x: 3300
+        y: 3600
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071aa2d8a25d38a4a908fb4dff8e76e7
+      internalID: -1851423657
       vertices: []
       indices: 
       edges: []
@@ -2032,6 +2736,7 @@ TextureImporter:
       placeholder-stage-atlas_0: -629567924
       placeholder-stage-atlas_1: 1350488628
       placeholder-stage-atlas_10: -1130929022
+      placeholder-stage-atlas_11: -33998793
       placeholder-stage-atlas_12: -578024222
       placeholder-stage-atlas_13: 1828408628
       placeholder-stage-atlas_14: 2140099171
@@ -2086,8 +2791,31 @@ TextureImporter:
       placeholder-stage-atlas_59: -238231877
       placeholder-stage-atlas_6: 1714673462
       placeholder-stage-atlas_60: -853886817
+      placeholder-stage-atlas_61: 101507576
+      placeholder-stage-atlas_62: -783232784
+      placeholder-stage-atlas_63: 1969485319
+      placeholder-stage-atlas_64: 558414702
+      placeholder-stage-atlas_65: 1130716763
+      placeholder-stage-atlas_66: 835314090
+      placeholder-stage-atlas_67: -509717731
+      placeholder-stage-atlas_68: 1373081479
+      placeholder-stage-atlas_69: -338812829
       placeholder-stage-atlas_7: 911801382
+      placeholder-stage-atlas_70: -95283012
+      placeholder-stage-atlas_71: -758431317
+      placeholder-stage-atlas_72: -1755073060
+      placeholder-stage-atlas_73: 1274120131
+      placeholder-stage-atlas_74: 1947169962
+      placeholder-stage-atlas_75: -369697629
+      placeholder-stage-atlas_76: -277718524
+      placeholder-stage-atlas_77: -1143632602
+      placeholder-stage-atlas_78: 1388612188
+      placeholder-stage-atlas_79: 912800055
       placeholder-stage-atlas_8: -1866000691
+      placeholder-stage-atlas_80: 1798362244
+      placeholder-stage-atlas_81: -631437555
+      placeholder-stage-atlas_82: -921641061
+      placeholder-stage-atlas_83: -1851423657
       placeholder-stage-atlas_9: -924904562
       sky: 7943961622550048411
   mipmapLimitGroupName: 

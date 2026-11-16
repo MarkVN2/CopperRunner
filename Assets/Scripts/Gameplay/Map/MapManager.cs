@@ -103,6 +103,34 @@ public class MapManager : MonoBehaviour
     public float NormalSpeed => normalSpeed;
     public float SectionLength => sectionLength;
 
+    [Header("Gizmos")]
+    [SerializeField]
+    private bool showGizmos = true;
+
+    [SerializeField]
+    private bool showSectionGizmos = true;
+
+    [SerializeField]
+    private bool showGizmoLabels = true;
+
+    [SerializeField]
+    private float gizmoHeight = 5f;
+
+    [SerializeField]
+    private float gizmoDepth = 10f;
+
+    [SerializeField]
+    private Color sectionGizmoColor = Color.cyan;
+
+    [SerializeField]
+    private Color spawnGizmoColor = Color.green;
+
+    [SerializeField]
+    private Color despawnGizmoColor = Color.red;
+
+    [SerializeField]
+    private Color connectionGizmoColor = Color.yellow;
+
     private void Awake()
     {
         if (randomizeSeed)
@@ -493,5 +521,123 @@ public class MapManager : MonoBehaviour
     public void ResetDistance()
     {
         totalDistanceTravelled = 0f;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (!showGizmos)
+            return;
+
+        DrawSpawnAndDespawnGizmos();
+
+        if (showSectionGizmos)
+        {
+            DrawSectionLayoutGizmos();
+        }
+    }
+
+    private void DrawSpawnAndDespawnGizmos()
+    {
+        float height = gizmoHeight;
+        float depth = gizmoDepth;
+
+        // Spawn point
+        if (spawnPoint != null)
+        {
+            Gizmos.color = spawnGizmoColor;
+
+            Vector3 spawnPosition = spawnPoint.position;
+
+            Gizmos.DrawWireCube(spawnPosition, new Vector3(0.5f, height, depth));
+
+            DrawGizmoLabel(spawnPosition + Vector3.up * (height * 0.5f + 0.5f), "SPAWN POINT");
+        }
+
+        // Despawn point
+        if (despawnPoint != null)
+        {
+            Gizmos.color = despawnGizmoColor;
+
+            Vector3 despawnPosition = despawnPoint.position;
+
+            Gizmos.DrawWireCube(despawnPosition, new Vector3(0.5f, height, depth));
+
+            DrawGizmoLabel(despawnPosition + Vector3.up * (height * 0.5f + 0.5f), "DESPAWN POINT");
+        }
+    }
+
+    private void DrawSectionLayoutGizmos()
+    {
+        if (sectionLength <= 0f)
+            return;
+
+        Vector3 origin = GetSpawnPosition();
+
+        float length = sectionLength;
+        float height = gizmoHeight;
+        float depth = gizmoDepth;
+
+        int count = Mathf.Max(1, activeSectionCount);
+
+        for (int i = 0; i < count; i++)
+        {
+            float offset = startingSectionPrefab != null ? (i - 1) * length : i * length;
+
+            Vector3 center = origin + Vector3.right * (offset + length * 0.5f);
+
+            Gizmos.color = sectionGizmoColor;
+
+            Gizmos.DrawWireCube(center, new Vector3(length, height, depth));
+
+            // Section start
+            Vector3 start = center - Vector3.right * (length * 0.5f);
+
+            // Section end
+            Vector3 end = center + Vector3.right * (length * 0.5f);
+
+            Gizmos.color = connectionGizmoColor;
+
+            Gizmos.DrawLine(start, start + Vector3.up * height);
+
+            Gizmos.DrawLine(end, end + Vector3.up * height);
+
+            // Section label
+            DrawGizmoLabel(
+                center + Vector3.up * (height * 0.5f + 0.5f),
+                $"SECTION {i + 1}\n{length:F2} units"
+            );
+
+            // Connection points
+            DrawGizmoLabel(start + Vector3.down * 0.5f, $"START: {start.x:F2}");
+
+            DrawGizmoLabel(end + Vector3.down * 0.5f, $"END: {end.x:F2}");
+        }
+
+        // Total layout length
+        Vector3 totalStart = origin;
+
+        Vector3 totalEnd = origin + Vector3.right * (count * length);
+
+        Gizmos.color = Color.cyan;
+
+        Gizmos.DrawLine(
+            totalStart + Vector3.up * (height + 1f),
+            totalEnd + Vector3.up * (height + 1f)
+        );
+
+        DrawGizmoLabel(
+            (totalStart + totalEnd) * 0.5f + Vector3.up * (height + 1.5f),
+            $"TOTAL LENGTH: {count * length:F2} units"
+        );
+    }
+
+    private void DrawGizmoLabel(Vector3 position, string label)
+    {
+#if UNITY_EDITOR
+        if (!showGizmoLabels)
+            return;
+
+        UnityEditor.Handles.Label(position, label);
+#endif
     }
 }

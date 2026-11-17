@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 1430665283646755852}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.09, y: -2.64, z: 0}
+  m_LocalPosition: {x: -0.69000006, y: -2.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 5013634281417493251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.78, y: -10.46, z: 0}
+  m_LocalPosition: {x: 0, y: -10.46, z: 0}
   m_LocalScale: {x: 17.283144, y: 7.4208155, z: 4.117798}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 5676178042598979123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.78, y: -10.46, z: 0}
+  m_LocalPosition: {x: 0, y: -10.46, z: 0}
   m_LocalScale: {x: 5.7798, y: 3.74361, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -347,7 +347,7 @@ Transform:
   m_GameObject: {fileID: 6395601145051567208}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.2800293, y: -3.72, z: 0}
+  m_LocalPosition: {x: -1.4999709, y: -3.72, z: 0}
   m_LocalScale: {x: 3.6047, y: 3.6047, z: 3.6047}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -420,6 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9063772304647141034}
+  - component: {fileID: 6360885949816410423}
   m_Layer: 0
   m_Name: ShopZone00
   m_TagString: Untagged
@@ -446,3 +447,25 @@ Transform:
   - {fileID: 6402905826331522335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6360885949816410423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6618173504429425329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b89d5ab2d62004645853dab44a0ab838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapSection
+  compatibleSections: []
+  showSizeGizmos: 1
+  showLabels: 1
+  expectedSectionLength: 25
+  pivotMarkerSize: 0.5
+  rendererColor: {r: 0, g: 1, b: 0, a: 1}
+  colliderColor: {r: 1, g: 0, b: 1, a: 1}
+  pivotExpectedColor: {r: 1, g: 0, b: 0, a: 1}
+  geometryExpectedColor: {r: 0, g: 0, b: 1, a: 1}
+  pivotColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}

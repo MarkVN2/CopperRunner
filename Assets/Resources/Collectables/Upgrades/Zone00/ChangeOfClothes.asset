@@ -30,7 +30,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  inventoryTexture: {fileID: -2067557256, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
+  inventoryTexture: {fileID: -585000342, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
   rarity: 2
   maxRank: 1
   price: 0
@@ -41,4 +41,4 @@ MonoBehaviour:
     RefIds:
     - rid: 2310000000000000001
       type: {class: ChangeOfClothesAction, ns: , asm: Assembly-CSharp}
-      data:
+      data: 

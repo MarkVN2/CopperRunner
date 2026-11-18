@@ -148,6 +148,7 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.PlayMusicLoop("ChaseMusic");
         SpawnInitialSections();
     }
 

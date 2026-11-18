@@ -87,28 +87,61 @@ public class CopperHud : MonoBehaviour
         if (itemIconContainer == null)
             return;
 
-        EnsureItemIcons(items.Count > 0 ? 1 : 0);
-        if (itemIcons.Count == 0)
+        // Group repeating items to count quantities
+        var itemCounts = new List<(ItemData data, int count)>();
+        if (items != null)
         {
-            itemContainerButton.SetActive(false);
-            return;
+            foreach (var item in items)
+            {
+                if (item == null)
+                    continue;
+
+                int index = itemCounts.FindIndex(x => x.data == item);
+                if (index >= 0)
+                {
+                    itemCounts[index] = (item, itemCounts[index].count + 1);
+                }
+                else
+                {
+                    itemCounts.Add((item, 1));
+                }
+            }
         }
 
-        ItemIconView icon = itemIcons[0];
-        bool hasItem = items.Count > 0;
-        icon.root.gameObject.SetActive(hasItem);
-        if (hasItem)
+        EnsureItemIcons(itemCounts.Count);
+
+        if (itemContainerButton != null)
+            itemContainerButton.SetActive(itemCounts.Count > 0);
+
+        for (int i = 0; i < itemIcons.Count; i++)
         {
-            ItemData item = items[0];
+            ItemIconView icon = itemIcons[i];
+            bool hasItem = i < itemCounts.Count;
+            icon.root.gameObject.SetActive(hasItem);
+
+            if (!hasItem)
+                continue;
+
+            var (item, count) = itemCounts[i];
             Sprite sprite = item.GetInventoryTexture();
             if (sprite == null)
                 sprite = item.GetWorldTexture();
 
             icon.image.sprite = sprite;
             icon.image.enabled = sprite != null;
-            // icon.label.text = item.name;
 
-            itemContainerButton.SetActive(true);
+            if (icon.countText != null)
+            {
+                if (count > 1)
+                {
+                    icon.countText.text = $"x{count}";
+                    icon.countText.gameObject.SetActive(true);
+                }
+                else
+                {
+                    icon.countText.gameObject.SetActive(false);
+                }
+            }
         }
     }
 
@@ -216,7 +249,30 @@ public class CopperHud : MonoBehaviour
             label.alignment = TextAlignmentOptions.Center;
             label.raycastTarget = false;
 
-            itemIcons.Add(new ItemIconView(slotRect, image, label));
+            // Create Counter Text at bottom-right
+            GameObject countObject = new GameObject(
+                "Item Count",
+                typeof(RectTransform),
+                typeof(CanvasRenderer),
+                typeof(TextMeshProUGUI)
+            );
+            RectTransform countRect = countObject.GetComponent<RectTransform>();
+            countRect.SetParent(slotRect, false);
+            countRect.anchorMin = new Vector2(1f, 0f);
+            countRect.anchorMax = new Vector2(1f, 0f);
+            countRect.pivot = new Vector2(1f, 0f);
+            countRect.anchoredPosition = new Vector2(-10f, 10f);
+            countRect.sizeDelta = new Vector2(60f, 30f);
+
+            TMP_Text countText = countObject.GetComponent<TMP_Text>();
+            if (TMP_Settings.defaultFontAsset != null)
+                countText.font = TMP_Settings.defaultFontAsset;
+            countText.fontSize = 20f;
+            countText.fontStyle = FontStyles.Bold;
+            countText.alignment = TextAlignmentOptions.BottomRight;
+            countText.raycastTarget = false;
+
+            itemIcons.Add(new ItemIconView(slotRect, image, label, countText));
         }
     }
 
@@ -225,12 +281,14 @@ public class CopperHud : MonoBehaviour
         public readonly RectTransform root;
         public readonly Image image;
         public readonly TMP_Text label;
+        public readonly TMP_Text countText;
 
-        public ItemIconView(RectTransform root, Image image, TMP_Text label)
+        public ItemIconView(RectTransform root, Image image, TMP_Text label, TMP_Text countText)
         {
             this.root = root;
             this.image = image;
             this.label = label;
+            this.countText = countText;
         }
     }
 }

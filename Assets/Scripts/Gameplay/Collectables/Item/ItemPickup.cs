@@ -27,6 +27,7 @@ public class ItemPickup : MonoBehaviour
             return;
 
         collected = true;
+        AudioManager.Instance.PlaySFX("CollectCopper");
         player.AddItem(itemData);
         Destroy(gameObject);
     }

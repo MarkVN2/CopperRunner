@@ -21,6 +21,9 @@ public class EndRunMenu : MonoBehaviour
     private Button restartButton;
 
     [SerializeField]
+    private Button leaveButton;
+
+    [SerializeField]
     private Player player;
 
     private float runStartedAt;
@@ -39,6 +42,8 @@ public class EndRunMenu : MonoBehaviour
 
         if (restartButton != null)
             restartButton.onClick.AddListener(RestartRun);
+        if (leaveButton != null)
+            leaveButton.onClick.AddListener(LeaveToMainMenu);
     }
 
     public void Show()
@@ -128,12 +133,12 @@ public class EndRunMenu : MonoBehaviour
         CreateFallbackText(buttonObject.transform, "RESTART", Vector2.zero, 28);
     }
 
-    private void CreateFallbackText(
-        Transform parent,
-        string value,
-        Vector2 position,
-        int fontSize
-    )
+    public void LeaveToMainMenu()
+    {
+        ScreenFadeTransition.LoadSceneWithFade("MainMenu");
+    }
+
+    private void CreateFallbackText(Transform parent, string value, Vector2 position, int fontSize)
     {
         GameObject textObject = new GameObject(value + " Text");
         textObject.transform.SetParent(parent, false);

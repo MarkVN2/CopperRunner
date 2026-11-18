@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Actor))]
+[RequireComponent(typeof(Animator))]
 public class CharacterMovement : MonoBehaviour
 {
     [Header("Runner")]
@@ -26,13 +27,22 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float maxAirSpeedOffset = 3f;
 
+    [Header("Jump Physics")]
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float variableJumpHeightMultiplier = 0.5f;
+
+    [Header("Animation")]
+    [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
+    private ParticleSystem groundDust;
+
     private Rigidbody2D body;
     private Actor actor;
     private MapManager mapManager;
     private Camera mainCamera;
-
-    [SerializeField]
-    private ParticleSystem groundDust;
 
     private InputSystem_Actions input;
     private InputAction moveAction;
@@ -41,6 +51,7 @@ public class CharacterMovement : MonoBehaviour
     private readonly HashSet<Collider2D> groundedColliders = new HashSet<Collider2D>();
     private bool isGrounded;
     private bool jumpRequested;
+    private bool jumpReleasedEarly;
 
     [SerializeField]
     private float idealWorldX;
@@ -49,6 +60,10 @@ public class CharacterMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         actor = GetComponent<Actor>();
+
+        if (animator == null)
+            animator = GetComponent<Animator>();
+
         mapManager = FindFirstObjectByType<MapManager>();
         mainCamera = Camera.main;
 
@@ -86,8 +101,16 @@ public class CharacterMovement : MonoBehaviour
 
         UpdateGroundDust();
 
+        // Poll inputs in Update() to avoid missing quick presses/releases
         if (jumpAction.WasPressedThisFrame() && isGrounded)
+        {
             jumpRequested = true;
+        }
+
+        if (jumpAction.WasReleasedThisFrame())
+        {
+            jumpReleasedEarly = true;
+        }
     }
 
     private void UpdateGroundDust()
@@ -111,53 +134,76 @@ public class CharacterMovement : MonoBehaviour
             return;
 
         Vector2 velocity = body.linearVelocity;
-
         float horizontalInput = moveAction.ReadValue<Vector2>().x;
 
-        // Always try to move toward the ideal X position.
+        // Centering X position logic
         float positionError = idealWorldX - transform.position.x;
         float centeringCorrection = positionError * centeringSpeed;
 
         if (isGrounded)
         {
-            // Grounded:
-            // Player has no horizontal control.
-            // The only horizontal movement comes from idealWorldX.
             velocity.x = centeringCorrection;
         }
         else
         {
-            // Airborne:
-            // Allow player-controlled horizontal movement while
-            // still pulling the player toward the ideal X position.
             float airOffset = horizontalInput * maxAirSpeedOffset;
-
             float desiredAirSpeed = centeringCorrection + airOffset;
-
             velocity.x = Mathf.Lerp(velocity.x, desiredAirSpeed, airControl);
+
+            // Variable jump height check
+            if (jumpReleasedEarly && velocity.y > 0f)
+            {
+                velocity.y *= variableJumpHeightMultiplier;
+                jumpReleasedEarly = false;
+            }
         }
 
+        // Handle Jump execution cleanly via velocity modification
         if (jumpRequested)
         {
-            //velocity.y = actor.GetJumpForce();
             jumpRequested = false;
-            isGrounded = false;
-            body.AddForceY(actor.GetJumpForce(), ForceMode2D.Impulse);
-            velocity.y = body.linearVelocity.y;
-            Debug.Log("aaa " + velocity);
+            SetGrounded(false);
+
+            // Use direct velocity assignment for the jump to ensure it triggers instantly and reliably
+            float jumpForce = actor.GetJumpForce();
+            // If Actor returns a force value instead of velocity, you can use body.AddForce instead,
+            // but setting velocity.y directly gives tight platformer control:
+            velocity.y = jumpForce;
+
+            Debug.Log("Jumping with velocity.y: " + velocity.y);
         }
 
         body.linearVelocity = velocity;
+
+        // Reset single-frame input flags
+        jumpReleasedEarly = false;
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void SetGrounded(bool grounded)
+    {
+        if (isGrounded != grounded)
+        {
+            isGrounded = grounded;
+            if (animator != null)
+            {
+                animator.SetBool("IsGrounded", isGrounded);
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) => EvaluateCollision(collision);
+
+    private void OnCollisionStay2D(Collision2D collision) => EvaluateCollision(collision);
+
+    private void EvaluateCollision(Collision2D collision)
     {
         foreach (ContactPoint2D contact in collision.contacts)
         {
-            if (contact.normal.y > 0.5f)
+            // Lowered threshold slightly to 0.3f to catch sloped floors or minor angle discrepancies
+            if (contact.normal.y > 0.3f)
             {
                 groundedColliders.Add(collision.collider);
-                isGrounded = true;
+                SetGrounded(true);
                 return;
             }
         }
@@ -166,6 +212,9 @@ public class CharacterMovement : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         groundedColliders.Remove(collision.collider);
-        isGrounded = groundedColliders.Count > 0;
+        if (groundedColliders.Count == 0)
+        {
+            SetGrounded(false);
+        }
     }
 }

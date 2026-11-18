@@ -93,7 +93,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.2, y: 1.41}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,17 +132,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.16356179, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.2, y: 1.41}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.2, y: 1.41}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7676948, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &1305314903355396098
 Rigidbody2D:
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   moveSpeed: 5
-  jumpForce: 6
+  jumpForce: 7
   carryingCapacity: 20
 --- !u!114 &6805603708584706767
 MonoBehaviour:
@@ -203,6 +203,8 @@ MonoBehaviour:
   airControl: 0.5
   centeringSpeed: 3
   maxAirSpeedOffset: 10
+  variableJumpHeightMultiplier: 0.5
+  animator: {fileID: 0}
   groundDust: {fileID: 8637272364564738861}
   idealWorldX: -7.35
 --- !u!114 &5786914298892998219
@@ -270,7 +272,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.61458105, y: -0.4868496, z: 0}
-  m_LocalScale: {x: 0.6694785, y: 1.7240493, z: 0.6694785}
+  m_LocalScale: {x: 2.847091, y: 7.3318644, z: 2.847091}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5330007276466436974}
@@ -530,7 +532,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0.21
-      minScalar: 0.13
+      minScalar: 0.7
       maxCurve:
         serializedVersion: 2
         m_Curve:

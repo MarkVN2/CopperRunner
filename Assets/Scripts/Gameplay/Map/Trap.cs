@@ -43,5 +43,11 @@ public class Trap : MonoBehaviour
 
         if (mapManager != null)
             mapManager.ApplySpeedModifier(slowMultiplier, slowDuration);
+
+        Animator playerAnimator = other.GetComponentInParent<Animator>();
+        if (playerAnimator != null)
+        {
+            playerAnimator.SetTrigger("TrapHit");
+        }
     }
 }

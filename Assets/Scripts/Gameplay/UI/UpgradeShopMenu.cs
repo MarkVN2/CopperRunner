@@ -74,16 +74,7 @@ public class UpgradeShopMenu : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != this)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
+        Instance = this;
         defaultFixedDeltaTime = Time.fixedDeltaTime;
 
         if (shop == null)
@@ -182,11 +173,7 @@ public class UpgradeShopMenu : MonoBehaviour
         float normalizedDistance = Mathf.Clamp01(distanceFromHorde / distanceForMaximum);
         float minimumDuration = Mathf.Max(0f, minimumShopDuration);
         float maximumDuration = Mathf.Max(minimumDuration, maximumBaseShopDuration);
-        float calculatedDuration = Mathf.Lerp(
-            minimumDuration,
-            maximumDuration,
-            normalizedDistance
-        );
+        float calculatedDuration = Mathf.Lerp(minimumDuration, maximumDuration, normalizedDistance);
 
         remainingTime = calculatedDuration + nextCheckpointTimeBonus;
         nextCheckpointTimeBonus = 0f;
@@ -224,18 +211,16 @@ public class UpgradeShopMenu : MonoBehaviour
         {
             float sectionExitX = activeShopSection.position.x - mapManager.SectionLength * 0.5f;
             Collider2D playerCollider = player.GetComponent<Collider2D>();
-            float playerLeftEdgeX = playerCollider != null
-                ? playerCollider.bounds.min.x
-                : player.transform.position.x;
-            float safetyDistance =
-                mapManager.CurrentSpeed * defaultFixedDeltaTime * 0.6f;
+            float playerLeftEdgeX =
+                playerCollider != null ? playerCollider.bounds.min.x : player.transform.position.x;
+            float safetyDistance = mapManager.CurrentSpeed * defaultFixedDeltaTime * 0.6f;
             float remainingSectionDistance = Mathf.Max(
                 0f,
                 playerLeftEdgeX - sectionExitX - safetyDistance
             );
-            targetScale = remainingSectionDistance / (
-                mapManager.CurrentSpeed * Mathf.Max(remainingTime, 0.001f)
-            );
+            targetScale =
+                remainingSectionDistance
+                / (mapManager.CurrentSpeed * Mathf.Max(remainingTime, 0.001f));
         }
 
         float timeScale = Mathf.Clamp(targetScale, 0f, 0.6f);
@@ -284,6 +269,12 @@ public class UpgradeShopMenu : MonoBehaviour
 
     private void RefreshButtons()
     {
+        if (shop == null)
+            return;
+
+        // Clean up any stale or destroyed button references
+        offerButtons.RemoveAll(btn => btn == null);
+
         IReadOnlyList<UpgradeData> offers = shop.CurrentOffers;
         for (int i = 0; i < offerButtons.Count; i++)
         {
@@ -309,18 +300,20 @@ public class UpgradeShopMenu : MonoBehaviour
                 .onClick.AddListener(
                     delegate
                     {
+                        AudioManager.Instance.PlaySFX("UpgradeSound");
                         PurchaseOffer(index);
                     }
                 );
 
             if (i < offerLabels.Count && offerLabels[i] != null)
-                offerLabels[i].text = offer.GetName().GetLocalizedString();
+                offerLabels[i].text = offer.GetName()?.GetLocalizedString() ?? string.Empty;
             if (i < offerPrices.Count && offerPrices[i] != null)
                 offerPrices[i].text = Mathf.Max(0, offer.price).ToString();
             if (i < offerIcons.Count && offerIcons[i] != null)
                 offerIcons[i].sprite = offer.GetInventoryTexture();
             if (i < offerDescriptions.Count && offerDescriptions[i] != null)
-                offerDescriptions[i].text = offer.GetDescription().GetLocalizedString();
+                offerDescriptions[i].text =
+                    offer.GetDescription()?.GetLocalizedString() ?? string.Empty;
         }
     }
 
@@ -331,6 +324,6 @@ public class UpgradeShopMenu : MonoBehaviour
 
         float clampedTime = Mathf.Max(0f, remainingTime);
         int seconds = Mathf.CeilToInt(clampedTime);
-        timerLabel.text = $"Time Left: {seconds}s";
+        timerLabel.text = $"{seconds}s";
     }
 }

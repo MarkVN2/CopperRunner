@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using CopperRunner.Gameplay.Item;
 using CopperRunner.Gameplay.Upgrade;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,8 @@ public class Player : Actor
     private InputSystem_Actions input;
     private InputAction useItemAction;
 
+    [SerializeField]
+    private EndRunMenu endRunMenu;
     private bool cheatDeath;
     private UpgradeData cheatDeathSource;
     public bool CheatDeath
@@ -182,12 +185,15 @@ public class Player : Actor
 
     public void UseItem()
     {
+        Debug.Log("[Player] UseItem called. Current item count: " + items.Count);
+
         if (isDead || items.Count == 0)
             return;
 
         ItemData item = items[0];
         items.RemoveAt(0);
         ItemsChanged?.Invoke(items);
+
         item.RunActions();
     }
 
@@ -221,13 +227,12 @@ public class Player : Actor
             body.linearVelocity = Vector2.zero;
             body.simulated = false;
         }
-
-        EndRunMenu endRunMenu = FindFirstObjectByType<EndRunMenu>();
         if (endRunMenu == null)
         {
             GameObject endRunMenuObject = new GameObject("End Run Menu");
             endRunMenu = endRunMenuObject.AddComponent<EndRunMenu>();
         }
+        endRunMenu.gameObject.SetActive(true);
 
         if (endRunMenu != null)
             endRunMenu.Show();

@@ -30,7 +30,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  inventoryTexture: {fileID: -1540110391, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
+  inventoryTexture: {fileID: -1424089043, guid: a25170244bbacee46b7a44c8f3ac6a52, type: 3}
   rarity: 3
   maxRank: 1
   price: 20

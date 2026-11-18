@@ -35,6 +35,7 @@ public class CopperCoin : MonoBehaviour
             return;
 
         collected = true;
+        AudioManager.Instance.PlaySFX("CollectCopper");
         player.AddCoin(value);
         gameObject.SetActive(false);
     }

@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 9682f607dce93b147873ea05026251d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1189679970477603290
+    second: Relogio de agua - sem contagem_0
+  - first:
+      213: 7778145143479434971
+    second: Relogio de agua - sem contagem_1
+  - first:
+      213: 4287153943214536155
+    second: Relogio de agua - sem contagem_2
+  - first:
+      213: 5766743085562960270
+    second: Relogio de agua - sem contagem_3
+  - first:
+      213: 2778256369480677933
+    second: Relogio de agua - sem contagem_4
+  - first:
+      213: -3496516684974457121
+    second: Relogio de agua - sem contagem_5
+  - first:
+      213: 6628402164367053819
+    second: Relogio de agua - sem contagem_6
+  - first:
+      213: 8274832128008178031
+    second: Relogio de agua - sem contagem_7
+  - first:
+      213: -5983274112113163454
+    second: Relogio de agua - sem contagem_8
+  - first:
+      213: 7971941822575648990
+    second: Relogio de agua - sem contagem_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 449
+        width: 263
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626094bbe586d7fe0800000000000000
+      internalID: -1189679970477603290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_1
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 449
+        width: 263
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bde75803cc581fb60800000000000000
+      internalID: 7778145143479434971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_2
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 448
+        width: 263
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5b7ba0cc70f7b30800000000000000
+      internalID: 4287153943214536155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_3
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 448
+        width: 263
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e899be56846970050800000000000000
+      internalID: 5766743085562960270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_4
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 447
+        width: 263
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2abcddb2795e8620800000000000000
+      internalID: 2778256369480677933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 263
+        height: 419
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdefed0b990e97fc0800000000000000
+      internalID: -3496516684974457121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_6
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 0
+        width: 263
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf3578356a0dcfb50800000000000000
+      internalID: 6628402164367053819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_7
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 0
+        width: 263
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f69caed7afb16d270800000000000000
+      internalID: 8274832128008178031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_8
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 0
+        width: 263
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24344b155e327fca0800000000000000
+      internalID: -5983274112113163454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Relogio de agua - sem contagem_9
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 0
+        width: 263
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0a3b8b9d602ae60800000000000000
+      internalID: 7971941822575648990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Relogio de agua - sem contagem_0: -1189679970477603290
+      Relogio de agua - sem contagem_1: 7778145143479434971
+      Relogio de agua - sem contagem_2: 4287153943214536155
+      Relogio de agua - sem contagem_3: 5766743085562960270
+      Relogio de agua - sem contagem_4: 2778256369480677933
+      Relogio de agua - sem contagem_5: -3496516684974457121
+      Relogio de agua - sem contagem_6: 6628402164367053819
+      Relogio de agua - sem contagem_7: 8274832128008178031
+      Relogio de agua - sem contagem_8: -5983274112113163454
+      Relogio de agua - sem contagem_9: 7971941822575648990
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

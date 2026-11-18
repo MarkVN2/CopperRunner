@@ -109,59 +109,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_Cycle_wout_Bag_0019_0
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 2
-        width: 61
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe0eacb50d965a840800000000000000
-      internalID: 5234706485502206191
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_Cycle_wout_Bag_0019_1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 28
-        width: 67
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a07f766a9e3119b80800000000000000
-      internalID: -8389902736574384374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Run_Cycle_wout_Bag_0019_2
       rect:
         serializedVersion: 2
-        x: 81
-        y: 18
-        width: 134
-        height: 126
+        x: 0
+        y: 0
+        width: 220
+        height: 143
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -174,33 +130,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Run_Cycle_wout_Bag_0019_3
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 0
-        width: 92
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8fcce0f781e765020800000000000000
-      internalID: 2330188500886801656
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

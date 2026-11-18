@@ -25,6 +25,8 @@ public class CopperHud : MonoBehaviour
     private readonly List<ItemIconView> itemIcons = new List<ItemIconView>();
     private readonly List<Image> upgradeIcons = new List<Image>();
 
+    [SerializeField]
+    private TMP_Text distanceLabel;
     private void Awake()
     {
         if (player == null)
@@ -44,7 +46,10 @@ public class CopperHud : MonoBehaviour
                 upgradeIconContainer = upgradeList.transform;
         }
     }
-
+    private void Update()
+    {
+        distanceLabel.text = ((int)MapManager.instance.TotalDistanceTravelled).ToString() + "M";
+    }
     private void OnEnable()
     {
         if (player == null)

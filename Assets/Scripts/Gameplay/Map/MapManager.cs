@@ -5,6 +5,7 @@ using UnityEngine.Pool;
 
 public class MapManager : MonoBehaviour
 {
+    public static  MapManager instance;
     [Header("Seed")]
     [SerializeField]
     private bool randomizeSeed = true;
@@ -133,6 +134,7 @@ public class MapManager : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         if (randomizeSeed)
             seed = UnityEngine.Random.Range(10000, 100000);
         rng = new System.Random(seed);

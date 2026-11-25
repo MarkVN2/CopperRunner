@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 62b2abb1b2fe99e4cacade3baf5a91ea
+guid: d80e65ca787cfc5419af8ef8d4c8fb0d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7435435226553910991
-    second: INSRUCOES_NASSIR_0
+      213: 3637927224185420456
+    second: Foto de Pedro R_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -57,7 +57,7 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: INSRUCOES_NASSIR_0
+      name: Foto de Pedro R_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 1600
+        height: 900
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc60c25a1f8ff2760800000000000000
-      internalID: 7435435226553910991
+      spriteID: 8aa7b4c29838c7230800000000000000
+      internalID: 3637927224185420456
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      INSRUCOES_NASSIR_0: 7435435226553910991
+      Foto de Pedro R_0: 3637927224185420456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

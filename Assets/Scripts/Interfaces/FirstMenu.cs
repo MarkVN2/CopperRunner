@@ -12,7 +12,7 @@ public class FirstMenu : MonoBehaviour
 
     public void Start()
     {
-        AudioManager.Instance.PlayMusicLoop("JazzMusic");
+        AudioManager.Instance.CrossfadeMusic("JazzMusic", 1.2f, true);
     }
 
     public void BeginRun()

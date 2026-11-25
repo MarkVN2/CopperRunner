@@ -45,6 +45,7 @@ public class Player : Actor
     }
 
     public int ItemCount => items.Count;
+    public int maxItemsCarry = 1;
     public IReadOnlyList<ItemData> Items => items;
     public IReadOnlyList<UpgradeData> Upgrades => upgrades;
 
@@ -107,6 +108,8 @@ public class Player : Actor
 
     public void AddItem(ItemData newItem)
     {
+        if (items.Count + 1 > maxItemsCarry)
+            return;
         if (newItem == null)
             return;
 
@@ -233,6 +236,7 @@ public class Player : Actor
             endRunMenu = endRunMenuObject.AddComponent<EndRunMenu>();
         }
         endRunMenu.gameObject.SetActive(true);
+        AudioManager.Instance.FadeOutMusic(3);
 
         if (endRunMenu != null)
             endRunMenu.Show();
